@@ -13,10 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151104023105) do
 
-  # This doesn't get used (may delete it later)
-  create_table "sessions", force: :cascade do |t|
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
