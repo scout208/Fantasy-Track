@@ -1,3 +1,19 @@
-<h1>Welcome to Fantasy Track and Field</h1>
-<p>This page will show links to sign in or create an account.</p>
-<p>This page can also show some information about the site.</p>
+
+
+<div id="getting-started">
+  
+  <ol>
+    <p>Introduction for the web app goes here</a>.
+    <br />
+   
+    <a <%= button_to "Login/Sign Up", method: :get, :id => 'login'%></a>
+      
+  </ol>
+</div>
+
+<%# This is the same panel shown in the Rails welcome template %>
+<div id="about">
+  <h3 class='section-heading'><a href="/rails/info/properties">About</a></h3>
+  <div id="about-content" class="well" style="display: none"></div>
+</div>
+
