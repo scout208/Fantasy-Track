@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     has_secure_password #if bcrypt installed
 	before_save {|user| user.email = user.email.downcase }
+	before_save :create_session_token
 	validates :name, presence: true, length: {mximum: 50}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true,
@@ -9,4 +10,8 @@ class User < ActiveRecord::Base
 
 	validates :password, presence: true, length: {minimum: 6}
 	validates :password_confirmation, presence: true
+	
+	def create_session_token
+		self.session_token = SecureRandom.url
+	end
 end
