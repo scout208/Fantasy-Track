@@ -5,13 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <h1>Welcome to Fantasy Track and Field</h1>
+  <h6>Welcome to Fantasy Track and Field</h6>
 </head>
 <body>
 
 
 
 <%= yield %>
+   <%# This is the same panel shown in the Rails welcome template %>
+   <div id="about">
+       <h3 class='section-heading'><a href="/rails/info/properties">About</a></h3>
+       <div id="about-content" class="well" style="display: none"></div>
+    </div>
+
     <div id='footer'>
        <p id='copyright'><a href='/list'>Technomancy</a> is &copy; 2015 &ndash; <%= Time.now.year %> Phil Hagelberg, Soli Deo Gloria.</p>
     </div>

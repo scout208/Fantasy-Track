@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151104174521) do
 
-  create_table "sessions", force: :cascade do |t|
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
