@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   match '/login', to: 'sessions#new', via: :get
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
+  
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
