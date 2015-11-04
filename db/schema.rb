@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104021311) do
+ActiveRecord::Schema.define(version: 20151104023105) do
 
   create_table "sessions", force: :cascade do |t|
   end
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151104021311) do
     t.string   "session_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
 end
