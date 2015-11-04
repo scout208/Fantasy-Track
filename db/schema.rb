@@ -22,10 +22,4 @@ ActiveRecord::Schema.define(version: 20151104023105) do
     t.string   "role"
   end
 
-  create_table "athletes", force: :cascade do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "athlete_id"
-  end
-  
 end
