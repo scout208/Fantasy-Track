@@ -6,21 +6,35 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <h6>Welcome to Fantasy Track and Field</h6>
+    <header class="navbar navbar-fixed-top navbar-inverse" id = 'globalmenu'>
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+             <%= link_to "Home", :root, :id => 'home'%>
+  
+             <%= link_to "Log in", 'login', :id => 'login' %>
+          </ul>
+        </nav>
+      </div>
+    </header>
 </head>
 <body>
-
-
+    
+  
 
 <%= yield %>
    <%# This is the same panel shown in the Rails welcome template %>
-   <div id="about">
-       <h3 class='section-heading'><a href="/rails/info/properties">About</a></h3>
-       <div id="about-content" class="well" style="display: none"></div>
+    <div id="footerWrap">
+      <div>
+        <%= link_to "About", :root, :id => 'about'%>
+      </div>
+      <div class="footer">
+        <div class="footerContent">
+          <p id='copyright'><a href='/list'>FantasyTrack</a> is &copy; 2015 &ndash; <%= Time.now.year %> Ruby Software Design.</p>
+        </div>     
     </div>
-
-    <div id='footer'>
-       <p id='copyright'><a href='/list'>Technomancy</a> is &copy; 2015 &ndash; <%= Time.now.year %> Phil Hagelberg, Soli Deo Gloria.</p>
-    </div>
+</div>
+    
 </body>
 
 </html>
