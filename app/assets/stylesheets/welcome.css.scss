@@ -93,23 +93,15 @@
   }
 }
 
+
 #Firstslide {
   background-image:image-url('background.jpg');
-<<<<<<< HEAD
-  background-size:cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat:no-repeat;
-  background-position:bottom;
-}
-=======
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
   h1 {
     color:black;
-    font-size: 500%;
+    font-size: 400%;
     font-weight: bolder;
   }
 }
@@ -126,5 +118,3 @@
 }
 
 
-
->>>>>>> styling
