@@ -11,9 +11,13 @@
             <%= f.password_field :password,  :placeholder => "Your Password", class: 'form-control' %>
 
             <%= f.submit "Log in", class: "btn btn-primary" %>
+            <% if flash[:danger] %>
+              <div class="notice", style="color:white"><%= flash[:danger] %></div>
+            <% end %>
             <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
           <% end %>
         </div>
+        
       </div>
   </div>
  
