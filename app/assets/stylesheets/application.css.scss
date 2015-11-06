@@ -15,120 +15,51 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// html {
-  
-//   background-image:image-url('background.jpg');
-//   color: DarkSlateGrey;
-//   background-size:cover;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-repeat:no-repeat;
-//   background-position:top bottom;
-//   font-family: Tahoma, Verdana, sans-serif;
-//   font-size: 10pt;
-//   margin-top: auto;
-//   margin-bottom: auto;
-//   text-align: center;
-// }
+ 
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
 
 body {
-  background-color:transparent;
-  height: 100%;
-  padding-top: 60px;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
 
 
-/* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
 }
 
-#home, #login {
-
-  font-weight: bolder;
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
 }
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+.navbar-wrapper .navbar .container {
+  width: auto;
 }
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-$gray-light: #777;
-$gray-medium-light: #eaeaea;
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color:darkgray;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 50px;
-    }
-  }
+  bottom: 20px;
+  padding: 40px;
+  border-top: 1px;
+  
 }
 
-
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
+#wrapper {
+  position:auto;
 }
