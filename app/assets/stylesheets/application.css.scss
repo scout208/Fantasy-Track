@@ -13,77 +13,53 @@
  *= require_tree .
  *= require_self
  */
-html {
-  
-  background-image:image-url('background.jpg');
-  color: DarkSlateGrey;
-  background-size:cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat:no-repeat;
-  background-position:top bottom;
-  font-family: Tahoma, Verdana, sans-serif;
-  font-size: 10pt;
-  margin-top: auto;
-  margin-bottom: auto;
-  text-align: center;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
 
 body {
-  background-color:transparent;
-  height: 100%;
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
 
 
 
-h6 {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-  background-image:image-url('welcometitle.jpg');
-  background-position:bottom;
-  background-repeat:no-repeat;
-  text-align: center;
-  color: white;
-  font-size: 3em;
-  font-style: normal;
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
 }
 
-#home, #login {
-  color:brown;
-  font-weight: bolder;
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
 }
 
-#footerWrap {
-    width:100%;
-    position:fixed;
-    bottom: 0px;
-}
 footer {
-    width:auto;
-    margin:auto;
+  bottom: 20px;
+  padding: 40px;
+  border-top: 1px;
+  
 }
-.footerContent {
-    float:left;
-    width:100%;
-    background-color:silver;
-    padding:10px 0;
-    color:black;
-}
-.footer p {float:left; width:100%; text-align:center; }
 
-#globalmenu {
-  background-image:image-url('welcometitle.jpg');
-  background-position:top;
-  font-size: x-large;
-  width: 1000px;
-  margin-left:auto;
-  margin-right:auto;
- 
-}
-#about {
-  font-size: large;
-  font-weight: bold;
-  color: black;
+#wrapper {
+  position:auto;
 }
