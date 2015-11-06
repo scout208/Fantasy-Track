@@ -26,7 +26,17 @@ body {
   color: #5a5a5a;
 }
 
+/* forms */
 
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -58,8 +68,4 @@ footer {
   padding: 40px;
   border-top: 1px;
   
-}
-
-#wrapper {
-  position:auto;
 }

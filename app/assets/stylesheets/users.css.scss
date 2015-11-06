@@ -1,0 +1,25 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* CUSTOMIZE THE CAROUSEL
+*= require bootstrap
+*= require_tree .
+*= require_self
+-------------------------------------------------- */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+
+#signup {
+    margin-top: 100px;
+    h1{
+      text-align:center;
+      font-weight:bolder;
+    }
+    background-image:image-url('welcometitle.jpg');
+   
+    background-size: cover;
+}
+
+
+  
