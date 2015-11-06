@@ -26,11 +26,27 @@ body {
   color: #5a5a5a;
 }
 
+/* forms */
 
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+<<<<<<< HEAD
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+=======
+input {
+  height: auto !important;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
+>>>>>>> styling
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: absolute;
@@ -59,7 +75,10 @@ footer {
   border-top: 1px;
   
 }
+<<<<<<< HEAD
 
 #wrapper {
   position:auto;
 }
+=======
+>>>>>>> styling
