@@ -5,35 +5,41 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <h6>Welcome to Fantasy Track and Field</h6>
-    <header class="navbar navbar-fixed-top navbar-inverse" id = 'globalmenu'>
+   <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+</head>
+<body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        <a id="logo" href="/">Fantasy Track</a>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-             <%= link_to "Home", :root, :id => 'home'%>
-  
-             <%= link_to "Log in", 'login', :id => 'login' %>
+            <li><%= link_to "Home", :root, :id => 'home'%></li>
+            <li><%= link_to "Log in", 'login', :id => 'login' %></li>
+            <li><a href="/Support">Support</a></li>
           </ul>
         </nav>
       </div>
     </header>
-</head>
-<body>
-    
   
-
-<%= yield %>
-   <%# This is the same panel shown in the Rails welcome template %>
-    <div id="footerWrap">
-      <div>
-        <%= link_to "About", :root, :id => 'about'%>
-      </div>
-      <div class="footer">
-        <div class="footerContent">
-          <p id='copyright'><a href='/list'>FantasyTrack</a> is &copy; 2015 &ndash; <%= Time.now.year %> Ruby Software Design.</p>
-        </div>     
-    </div>
-</div>
+    
+  <div>
+    <footer class="footer">
+      <small>
+        The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+        by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+      </small>
+      <nav>
+        <ul>
+          <li><%= link_to "About",   '#' %></li>
+          <li><%= link_to "Contact", '#' %></li>
+          <li><a href="http://news.railstutorial.org/">News</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
     
 </body>
 
