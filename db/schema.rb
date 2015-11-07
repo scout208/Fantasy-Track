@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151107051103) do
-=======
 ActiveRecord::Schema.define(version: 20151107193113) do
 
   create_table "events", force: :cascade do |t|
@@ -36,7 +33,6 @@ ActiveRecord::Schema.define(version: 20151107193113) do
 
   create_table "sessions", force: :cascade do |t|
   end
->>>>>>> meetMigration
 
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
