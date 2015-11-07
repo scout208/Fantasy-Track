@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  before_save :create_session_token
   attr_accessor :remember_token
   
 	before_save { email.downcase! }
