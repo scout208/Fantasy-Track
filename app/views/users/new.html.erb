@@ -5,7 +5,7 @@
     <br/>
     <div class="col-md-6 col-md-offset-3">
       <br/>
-      <%= form_for(:users, url: users_path) do |f| %>
+      <%= form_for(:user, url: users_path) do |f| %>
         <%= render 'shared/error_messages' %>
       
         <%= f.label :username %>
@@ -17,18 +17,12 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
   
-<<<<<<< HEAD
+
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation,  :placeholder => "Confirm Your Password" %>
         </br>
         </br>
         <%= f.submit "Sign Up", class: "btn btn-primary" %>
-=======
-        <%= f.label :password_confirmation, "Confirm password" %>
-        <%= f.password_field :password_confirmation %>
-
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
->>>>>>> a3abf265d3d1213a336db962bc40c3cc61029453
       <% end %>
     </div>
   </div>
