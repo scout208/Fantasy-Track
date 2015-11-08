@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107051103) do
+ActiveRecord::Schema.define(version: 20151107193113) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "event_name"
+    t.integer  "meet"       #this is a foreign key to the meet primary key
+    t.integer  "event_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meets", force: :cascade do |t|
+    t.string   "meet_name"
+    t.string   "location_city"
+    t.string   "location_country"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
