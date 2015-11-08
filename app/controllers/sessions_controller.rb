@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       @user.update_attribute(:session_token, string)
       @user.save
       session[:session_token] = @user.session_token
-      redirect_to @user
+      redirect_to root_url
     else
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'new'

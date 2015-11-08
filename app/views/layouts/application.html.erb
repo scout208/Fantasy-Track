@@ -46,8 +46,16 @@
                     <li><a href='/login'>Login</a></li>
                   <% end %>
                 </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <% if logged_in? %>
+                  <% if @current_user.role == "admin" %>
+                    <li><a href="#about">Create</a></li>
+                  <% else %>
+                    <li><a href="#contact">My Leagues</a></li>
+                  <% end %>
+                <% end %>
+                <% if logged_in? %>
+                  <li><h4>Welcome, <%= @current_user.user_id %>!</h4></li>
+                <% end %>
               </ul>
             </div>
           </div>
