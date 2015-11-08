@@ -8,6 +8,10 @@ class MeetsController < ApplicationController
     @meet = Meet.new
   end
   
+  def index
+    @meets = Meet.all()
+  end
+  
   def create
     @meet = Meet.new(meet_params)    # Not the final implementation!
     if @meet.save
