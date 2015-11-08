@@ -7,6 +7,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+      o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+      string = (0...50).map { o[rand(o.length)] }.join
+      @user.update_attribute(:session_token, string)
+      @user.save
+      session[:session_token] = @user.session_token
       redirect_to @user
     else
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
