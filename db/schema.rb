@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20151107193113) do
 
   create_table "events", force: :cascade do |t|
     t.string   "event_name"
-    t.integer  "meet"       #this is a foreign key to the meet primary key
+    t.integer  "meet"
     t.integer  "event_type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(version: 20151107193113) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "sessions", force: :cascade do |t|
   end
 
   create_table "users", force: :cascade do |t|
