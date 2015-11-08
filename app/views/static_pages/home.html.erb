@@ -16,7 +16,7 @@
               <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p>
                 <% if !logged_in? %>
-                  <%= link_to 'Sign up Today !', signup_path, class: "btn btn-lg btn-primary" %>
+                  <%= link_to 'Sign up Today !', 'signup', method: 'get',class: "btn btn-lg btn-primary" %>
                 <% end %>    
               </p>
             </div>
