@@ -23,4 +23,13 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_url
   end
+  
+  def show
+     @user = User.find_by_session_token(session[:session_token])
+    if @user != nil
+      redirect_to @user
+    else 
+      redirect_to root_url
+    end
+  end
 end
