@@ -2,6 +2,7 @@ class MeetsController < ApplicationController
 
   def show
     @meet = Meet.find(params[:id])
+    session[:currentMeet] = @meet.id
   end
 
   def new
