@@ -56,7 +56,7 @@
                 <% if logged_in? %>
                   <% if @current_user.role == "admin" %>
                     <li><%= link_to "Meets", meets_path, method: "get" %></li>
-                    <li><%= link_to "Athletes", meets_path, method: "get" %></li>
+                    <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
                   <% else %>
                     <li><a href="#contact">My Leagues</a></li>
                   <% end %>
