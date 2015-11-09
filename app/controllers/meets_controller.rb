@@ -1,8 +1,8 @@
 class MeetsController < ApplicationController
 
   def show
-    @meet = Meet.find(params[:id])
-    session[:currentMeet] = @meet.id
+    id = params[:id]
+    @meet = Meet.find(id)
   end
 
   def new
