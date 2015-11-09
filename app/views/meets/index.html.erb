@@ -20,7 +20,7 @@
         <tbody>
            <% @meets.each do |p| %>
             <tr>
-                <td><%= p.meet_name %></td>
+                <td><%= link_to "#{p.meet_name}", {:controller => "meets", :action => "show", :id => p.id }%></td>
                 <td><%= p.location_city %>, <%= p.location_country %></td>
                 <td><%= p.start_date %></td>
                 <td><%= p.end_date %></td>

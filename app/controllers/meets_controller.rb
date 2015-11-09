@@ -1,7 +1,7 @@
 class MeetsController < ApplicationController
 
   def show
-    @meet = User.find(params[:id])
+    @meet = Meet.find(params[:id])
   end
 
   def new
