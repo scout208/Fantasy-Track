@@ -20,7 +20,7 @@ class MeetsController < ApplicationController
     @meet = Meet.new(meet_params)    # Not the final implementation!
     if @meet.save
       flash[:success] = "#{@meet.meet_name} successcully created."
-      redirect_to @meet
+      redirect_to meets_path
     else
       render 'new'
     end
