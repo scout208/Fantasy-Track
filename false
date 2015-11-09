@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20151109005502_add_released_to_meets.rb
