@@ -1,0 +1,30 @@
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker1" ).datepicker();
+  });
+</script>
+
+<div class="col-md-6 col-md-offset-3">
+      <br/>
+      <%= form_for(:meet, url: meets_path) do |f| %>
+      
+        <%= f.label :meet_name, "Meet Name: " %>
+        <%= f.text_field :meet_name %>
+
+        <%= f.label :location_city, "Location (City): " %>
+        <%= f.text_field :location_city %>
+
+        <%= f.label :location_country, "Location (Country): " %>
+        <%= f.text_field :location_country %>
+  
+        <%= f.label :start_date, "Start Date: " %>
+        <%= f.text_field :start_date, :id => "datepicker" %>
+        
+        <%= f.label :end_date, "End Date: " %>
+        <%= f.text_field :end_date, :id => "datepicker1" %>
+        </br>
+        </br>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      <% end %>
+    </div>

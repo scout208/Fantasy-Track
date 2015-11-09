@@ -12,6 +12,10 @@ class MeetsController < ApplicationController
     @meets = Meet.all()
   end
   
+  def index
+    @meets = Meet.all()
+  end
+  
   def create
     @meet = Meet.new(meet_params)    # Not the final implementation!
     if @meet.save
