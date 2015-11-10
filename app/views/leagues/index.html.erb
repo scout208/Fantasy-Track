@@ -1,5 +1,7 @@
-<h2>All leagues will go here.</h2>
-<%= link_to "Create New League", new_league_path, method: "get" %>
-<% @leagues.each do |p| %>
-<h5><%= p.league_name %></h5>
-<% end %>
+<div class = "container" id = "leagues">
+  <h2>All leagues will go here.</h2>
+  <%= link_to "Create New League", new_league_path, method: "get" %>
+  <% @leagues.each do |p| %>
+    <h5><%= p.league_name %></h5>
+  <% end %>
+</div>
