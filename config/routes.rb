@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :meets
   resources :events
   resources :athletes
+  resources :leagues
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :leagues
   attr_accessor :remember_token
   
 	before_save { email.downcase! }
