@@ -20,10 +20,10 @@
         <tbody>
            <% @meets.each do |p| %>
             <tr>
-                <td><%= link_to "#{p.meet_name}", meet_path(:id => p.id), method: "get" %></td>
+                <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
                 <td><%= p.location_city %>, <%= p.location_country %></td>
                 <td><%= p.start_date %></td>
-                <td><%= p.end_date %></td>
+                <td><%= p.end_date %>id is <%= p.id %></td>
             </tr>
           <% end %>
         </tbody>

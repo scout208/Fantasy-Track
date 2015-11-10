@@ -1,16 +1,11 @@
 class MeetsController < ApplicationController
 
   def show
-    id = params[:id]
-    @meet = Meet.find(id)
+    @meet = Meet.find(2)
   end
 
   def new
     @meet = Meet.new
-  end
-  
-  def index
-    @meets = Meet.all()
   end
   
   def index
