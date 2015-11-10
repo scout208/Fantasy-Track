@@ -9,7 +9,8 @@ class LeaguesController < ApplicationController
   end
   
   def index
-    @leagues = League.all() #will do @current_user.leagues
+    @leagues = League.all() #will do @thisUser = User.find_by_session_token(session[:session_token])
+                            # @leagues = @thisUser.leagues
   end
   
   def create
