@@ -9,10 +9,12 @@ class EventsController < ApplicationController
   end
   
   def create
-    @event = Event.new(event_params)    # Not the final implementation!
+    @current_meet = Meet.find(session[:current_meet])
+    @event = @current_meet.events.build(event_params)
+    #@event = Event.new(event_params)    # Not the final implementation!
     if @event.save
       flash[:success] = "Created #{@event.event_name}!"
-      redirect_to meets_path
+      redirect_to meet_path(@current_meet)
     else
       render 'new'
     end
