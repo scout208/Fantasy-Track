@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :leagues
+  has_many :leaguemembers
+  has_many :leagues, through: :leaguemembers
   attr_accessor :remember_token
   
 	before_save { email.downcase! }
