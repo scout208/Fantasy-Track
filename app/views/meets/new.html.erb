@@ -1,7 +1,6 @@
 <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
-    $( "#datepicker1" ).datepicker();
+    $( ".datepicker" ).datepicker();
   });
 </script>
 <div class = "container" id = "newmeet">
@@ -11,19 +10,19 @@
       <%= form_for(:meet, url: meets_path) do |f| %>
       
         <%= f.label :meet_name, "Meet Name: " %>
-        <%= f.text_field :meet_name %>
+        <%= f.text_field :meet_name, :required => true %>
 
         <%= f.label :location_city, "Location (City): " %>
-        <%= f.text_field :location_city %>
+        <%= f.text_field :location_city, :required => true%>
 
         <%= f.label :location_country, "Location (Country): " %>
-        <%= f.text_field :location_country %>
+        <%= f.text_field :location_country, :required => true %>
   
         <%= f.label :start_date, "Start Date: " %>
-        <%= f.text_field :start_date, :id => "datepicker" %>
+        <%= f.text_field :start_date, :class => "datepicker", :required => true%>
         
         <%= f.label :end_date, "End Date: " %>
-        <%= f.text_field :end_date, :id => "datepicker1" %>
+        <%= f.text_field :end_date, :class => "datepicker", :required => true %>
         </br>
         </br>
         <%= f.submit "Save", class: "btn btn-primary" %>
