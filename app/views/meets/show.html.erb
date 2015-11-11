@@ -18,7 +18,20 @@
            <% @events.each do |p| %>
             <tr>
                 <td><%= link_to "#{p.event_name}", event_path(p), method: "get" %></td>
-                <td><%= p.event_type %></td>
+                <td>
+                    <% if(p.event_type == 0) %>
+                        Sprint/Hurdle
+                    <% end %>
+                    <% if(p.event_type == 1) %>
+                        Mid Distance
+                    <% end %>
+                    <% if(p.event_type == 2) %>
+                        Throws
+                    <% end %>
+                    <% if(p.event_type == 3) %>
+                        Jumps
+                    <% end %>
+                </td>
             </tr>
           <% end %>
         </tbody>

@@ -6,9 +6,7 @@
 <br/>
 <div class = "container" id = "meets">
   <div>
-    <h2>Meet list will go here. Changed HTML.</h2>
-    <a href="/meets/new">Create New Meet</a>
-    <!--<h4><% link_to "Create New Meet", new_meet_path, method: "get" %></h4> -->
+    <h3><a href="/meets/new">Create New Meet</a></h3>
   </div>
   <div>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -24,7 +22,7 @@
                 <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
                 <td><%= p.location_city %>, <%= p.location_country %></td>
                 <td><%= p.start_date %></td>
-                <td><%= p.end_date %>id is <%= p.id %></td>
+                <td><%= p.end_date %></td>
             </tr>
           <% end %>
         </tbody>
