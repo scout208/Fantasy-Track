@@ -1,0 +1,132 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* CUSTOMIZE THE CAROUSEL
+*= require bootstrap
+*= require_tree .
+*= require_self
+-------------------------------------------------- */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+
+#Firstslide {
+  background-image:image-url('background.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  h1 {
+    color:black;
+    font-size: 400%;
+    font-weight: bolder;
+  }
+}
+
+#Secondslide {
+  background-image:image-url('welcometitle.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  h1 {
+    font-size: 300%;
+    font-weight: bolder;
+  }
+}
+
+#Thirdslide {
+  background-image:image-url('thirdSlide.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  h1 {
+    color: gold;
+    font-size: 300%;
+    font-weight: bolder;
+  }
+}
+
+
