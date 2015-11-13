@@ -20,6 +20,14 @@ class EventsController < ApplicationController
     end
   end
   
+  def destroy
+    @current_meet = Meet.find(session[:current_meet])
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = "Event '#{@event.event_name}' deleted."
+    redirect_to meet_path(@current_meet)
+  end
+  
   private
 
     def event_params
