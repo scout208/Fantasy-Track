@@ -1,3 +1,3 @@
-class Meet < ActiveRecord::Base
+class Athlete < ActiveRecord::Base
     
 end
