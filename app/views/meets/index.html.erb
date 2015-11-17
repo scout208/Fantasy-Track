@@ -1,0 +1,31 @@
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+<br/>
+<div class = "container" id = "meets">
+  <div>
+    <h3><a href="/meets/new">Create New Meet</a></h3>
+  </div>
+  <div>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <td>Meet</td>
+            <td>Location</td>
+            <td>Start Date</td>
+            <td>End Date</td>
+        </thead>
+        <tbody>
+           <% @meets.each do |p| %>
+            <tr>
+                <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
+                <td><%= p.location_city %>, <%= p.location_country %></td>
+                <td><%= p.start_date %></td>
+                <td><%= p.end_date %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>

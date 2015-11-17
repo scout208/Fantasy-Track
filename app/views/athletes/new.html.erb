@@ -1,0 +1,43 @@
+<script>
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      dateFormat: 'M d, yy',
+      timeFormat: 'hh:mm tt',
+      changeMonth: true,
+      changeYear: true,
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      yearRange: "1930:2020"
+    });
+  });
+</script>
+<div class = "container" id = "newathlete">
+  <h2>Enter Athlete Details</h2>
+  <div class="col-md-6 col-md-offset-3">
+      <br/>
+      <%= form_for(:athlete, url: athletes_path) do |f| %>
+      
+        <%= f.label :first_name, "First Name: " %>
+        <%= f.text_field :first_name, :required => true %>
+
+        <%= f.label :last_name, "Last Name: " %>
+        <%= f.text_field :last_name, :required => true%>
+
+        <%= f.label :country, "Country: " %>
+        <%= f.text_field :country, :required => true %>
+        
+        
+        <%= f.label :birth_date, "Birth Date: " %>
+        <div class="hero-unit">
+            <%= f.text_field :birth_date,  :class => "datepicker", :required => true %>
+        </div>
+        
+        <%= f.label :notes, "Comments: " %>
+        <%= f.text_area :notes, :required => false %>
+        
+        </br>
+        </br>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>  

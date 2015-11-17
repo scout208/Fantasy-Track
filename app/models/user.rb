@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
   attr_accessor :remember_toke
+=======
+  has_many :active_league_memberships, class_name:  "LeagueMember",
+                                  foreign_key: "user_id",
+                                  dependent:   :destroy
+  has_many :leagues, through: :active_league_memberships, source: :league
+  attr_accessor :remember_token
+>>>>>>> fef8af350c6af8b1bbb603e7f526cfce602faa16
   
 	before_save { email.downcase! }
 	validates :user_id, presence: true, length: {maximum: 50},

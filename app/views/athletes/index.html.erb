@@ -1,0 +1,28 @@
+  <script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+  <div class = "container" id = "meets">
+  <h3><a href="/athletes/new">Create New Athlete</a></h3>
+  <div>
+      <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <td>Name</td>
+                <td>Country</td>
+                <td>Birth Date</td>
+                <td>Delete</td>
+            </thead>
+            <tbody>
+               <% @athletes.each do |p| %>
+                <tr>
+                    <td><%= link_to "#{p.first_name} #{p.last_name}", athlete_path(p), method: "get" %></td>
+                    <td><%= p.country %></td>
+                    <td><%= p.birth_date %></td>
+                    <td><%= link_to 'Delete', athlete_path(p), :method => :delete, :confirm => 'Are you sure?'%></td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+    </div>
+    </div>

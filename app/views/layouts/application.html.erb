@@ -7,6 +7,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"> 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body>
     <header class="navbar-wrapper">
@@ -31,9 +40,9 @@
                 <li>
                   <% if logged_in? %>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @current_user.user_id %><span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
+                        <li><a href='/current_user'>User Interface</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -46,8 +55,15 @@
                     <li><a href='/login'>Login</a></li>
                   <% end %>
                 </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <% if logged_in? %>
+                  <% if @current_user.role == "admin" %>
+                    <li><%= link_to "Meets", meets_path, method: "get" %></li>
+                    <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
+                  <% else %>
+                    <li><%= link_to "My Leagues", leagues_path, method: "get" %></li>
+                  <% end %>
+                <% end %>
+                
               </ul>
             </div>
           </div>
