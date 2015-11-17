@@ -36,11 +36,6 @@ ActiveRecord::Schema.define(version: 20151116161208) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "leaguemembers", force: :cascade do |t|
-    t.integer "league_id"
-    t.integer "user_id"
-  end
-
   create_table "leagues", force: :cascade do |t|
     t.integer "creator_id"
     t.string  "league_name"
@@ -58,15 +53,11 @@ ActiveRecord::Schema.define(version: 20151116161208) do
     t.boolean  "released"
   end
 
-  create_table "sessions", force: :cascade do |t|
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
-    t.string   "session_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "role"
     t.string   "password_digest"
     t.string   "remember_digest"
