@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :leagues
+  has_many :active_league_memberships, class_name:  "LeagueMember",
+                                  foreign_key: "user_id",
+                                  dependent:   :destroy
+  has_many :leagues, through: :active_league_memberships, source: :league
   attr_accessor :remember_token
   
 	before_save { email.downcase! }

@@ -3,7 +3,7 @@ class MeetsController < ApplicationController
   def show
     id = params[:id]
     session[:current_meet] = id
-    @meet = Meet.find(id)
+    @meet = Meet.find(params[:id])
     @events = @meet.events()
   end
 
@@ -23,6 +23,13 @@ class MeetsController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+   def destroy
+    @meet = Meet.find(params[:id])
+    @meet.destroy
+    flash[:notice] = "Meet '#{@meet.meet_name}' deleted."
+    redirect_to meets_path
   end
   
   private

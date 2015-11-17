@@ -9,7 +9,9 @@ class LeaguesController < ApplicationController
   end
   
   def index
-    @leagues = League.all() #will do @thisUser = User.find_by_session_token(session[:session_token])
+    @thisUser = User.find_by_session_token(session[:session_token])
+    @leagues = @thisUser.leagues()
+   # @leagues = League.all() #will do @thisUser = User.find_by_session_token(session[:session_token])
                             # @leagues = @thisUser.leagues
   end
   
@@ -18,6 +20,8 @@ class LeaguesController < ApplicationController
     @creator = User.find_by_session_token(session[:session_token])
     @league.creator_id = @creator.id #this needs to be the user's id
     if @league.save
+      @savedLeague = League.find_by(:league_name => @league.league_name)
+      @creator.active_league_memberships.create(league_id: @savedLeague.id, user_id: @creator.id)
       flash[:success] = "#{@league.league_name} successcully created."
       redirect_to leagues_path
     else
