@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   delete  'eventdetail'  => 'events#destroy'
   resources :users
   resources :meets
-  resources :events
+  resources :events do
+    member do
+      get :selectEntrant
+    end
+  end
   resources :athletes
   resources :leagues
 end

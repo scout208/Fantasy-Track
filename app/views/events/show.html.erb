@@ -1,9 +1,48 @@
-
-
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
 <div class = "container" id = "eventdetail">
   <h4>Event Detail</h4>
-  <h5>Description:</h5> 
+  <h5>Event: <%= @event.event_name %></h5> 
+  <h5>Event type:
+    <% if(@event.event_type == 0) %>
+        Sprint/Hurdle
+    <% end %>
+    <% if(@event.event_type == 1) %>
+        Mid Distance
+    <% end %>
+    <% if(@event.event_type == 2) %>
+        Throws
+    <% end %>
+    <% if(@event.event_type == 3) %>
+        Jumps
+    <% end %>
+  </h5>
+  <h4><%= link_to "Add Entrant", selectEntrant_event_path(@event) %></h4>
+  <div>
+    <h3>Entrants</h3>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <td>Name</td>
+            <td>Country</td>
+            <td>Birth Date</td>
+            <td>Comments</td>
+        </thead>
+        <tbody>
+           <% @entrants.each do |p| %>
+            <tr>
+                <td><%= link_to "#{p.first_name} #{p.last_name}", athlete_path(p), method: "get" %></td>
+                <td><%= p.country %></td>
+                <td><%= p.birth_date %></td>
+                <td><%= p.notes %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
 
    
-  <label><%= button_to 'Delete', event_path(@event), :method => :delete, :confirm => 'Are you sure?'%></label>
+  <label><%= button_to 'Delete Event', event_path(@event), :method => :delete, :confirm => 'Are you sure?'%></label>
 </div>
