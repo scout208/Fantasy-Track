@@ -13,12 +13,16 @@ class StaticPagesController < ApplicationController
       #text = doc.css('li')[0].text
       #puts(text)
       doc = Nokogiri::HTML(open("http://www.flotrack.org/"))
-      links = doc.css('section#recentArticles a')
-      titles = doc.css('section#recentArticles').css('strong')
-      puts(titles)
-      hrefs = links.map {|link| link.attribute('href').to_s}.uniq.sort.delete_if {|href| href.empty?}
+      @links = doc.css('section#recentBanners a')
+      @titles = doc.css('section#recentBanners').css('strong').to_ary
+      @title_images = doc.css('section#recentBanners').attr('src')
+      
+      puts(@titles)
+      @hrefs = @links.map {|link| link.attribute('href').to_s}.uniq.sort.delete_if {|href| href.empty?}
+      @hrefs.to_ary
       puts("###########################################################################################")
-      puts(hrefs)
+      
+      puts(@hrefs)
 
   end
   
