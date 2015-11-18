@@ -1,15 +1,25 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
   attr_accessor :remember_toke
-=======
   has_many :active_league_memberships, class_name:  "LeagueMember",
                                   foreign_key: "user_id",
                                   dependent:   :destroy
   has_many :leagues, through: :active_league_memberships, source: :league
   attr_accessor :remember_token
->>>>>>> fef8af350c6af8b1bbb603e7f526cfce602faa16
   
-	before_save { email.downcase! }
+	
+	before_create :confirmation_token
+	
+	
+	
+	before_validation :prep_email
+	     
+	    def email_activate
+	      self.email_confirmed = true
+	      self.confirm_token = nil
+	      save!(:validate => false)
+    	end
+    	
+	
 	validates :user_id, presence: true, length: {maximum: 50},
 											uniqueness: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -19,6 +29,8 @@ class User < ActiveRecord::Base
   has_secure_password
   
   validates :password, :on => :create, presence: true,length: {minimum: 6}
+	
+	
 	
 	class << self
     # Returns the hash digest of the given string.
@@ -49,5 +61,18 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+  
+  private 
+  
+  def prep_email
+    self.email = self.email.strip.downcase if self.email
+  end
+  
+  def confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
+  end
+  
   
 end
