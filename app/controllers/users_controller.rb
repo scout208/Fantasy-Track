@@ -8,12 +8,23 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
+  
+  def confirm_email
+    @user = User.find_by_confirm_token(params[:id])
+    if @user
+      @user.email_activate
+      log_in @user
+      redirect_to @user, notice: 'Welcome to Fantasy Track and Field! Your account has now been confirmed.'
+    else
+      redirect_to 'login', error: 'Error: User does not exist.'
+    end
+  end
+  
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the FantasyTrack!"
-      redirect_to @user
+      UserMailer.registration_confirmation(@user).deliver
+      redirect_to @user, notice: "Registration completed! Please confirm your email address."
     else
       render 'new'
     end

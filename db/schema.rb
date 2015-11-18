@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117014734) do
+ActiveRecord::Schema.define(version: 20151117201549) do
 
   create_table "athletes", force: :cascade do |t|
     t.string "first_name"
@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 20151117014734) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "leaguemembers", force: :cascade do |t|
+    t.integer "league_id"
+    t.integer "user_id"
+  end
+
   create_table "leagues", force: :cascade do |t|
     t.integer "creator_id"
     t.string  "league_name"
@@ -60,21 +65,26 @@ ActiveRecord::Schema.define(version: 20151117014734) do
     t.boolean  "released"
   end
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
   create_table "sessions", force: :cascade do |t|
   end
 >>>>>>> fef8af350c6af8b1bbb603e7f526cfce602faa16
+=======
+>>>>>>> styling
 
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
     t.string   "session_token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "role"
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
   end
 
 end
