@@ -64,15 +64,10 @@ ActiveRecord::Schema.define(version: 20151117201549) do
     t.datetime "updated_at"
     t.boolean  "released"
   end
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  
+
+
   create_table "sessions", force: :cascade do |t|
   end
->>>>>>> fef8af350c6af8b1bbb603e7f526cfce602faa16
-=======
->>>>>>> styling
 
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
