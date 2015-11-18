@@ -21,5 +21,9 @@ class StaticPagesController < ApplicationController
       puts(hrefs)
 
   end
+  
+  def about
+    
+  end
 end
   
