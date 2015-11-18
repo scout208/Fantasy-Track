@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root                'static_pages#home'
+  get    'about'   => 'static_pages#about'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get :selectEntrant
+      get :addEntrant
     end
   end
   resources :athletes

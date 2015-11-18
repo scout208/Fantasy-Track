@@ -15,7 +15,7 @@
         <tbody>
            <% @athletes.each do |p| %>
             <tr>
-                <td><%= p.first_name %> <%= p.last_name %></td>
+                <td><%= p.first_name %> <%= p.last_name %> <%= link_to "Add", addEntrant_event_path(p) %></td>
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
             </tr>

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   helper_method :selectEntrant
+  helper_method :addEntrant
   def show
     @event = Event.find(params[:id])
     @entrants = @event.entrants
@@ -31,12 +32,17 @@ class EventsController < ApplicationController
   
   def addEntrant
     #this receives the id of the athlete to create an eventEntrant thing.
-    redirect_to event_path
+    @athlete = Athlete.find(params[:id])
+    @event = Event.find(session[:current_event])
+    @event.active_event_entrants.create(event_id: @event.id, athlete_id: @athlete.id)
+    
+    redirect_to event_path(@event)
   end
   
   def selectEntrant
     #this is to return the view to search/select an athlete
     @event = Event.find(params[:id])
+    session[:current_event] = @event.id
     @meet = Meet.find(@event.meet_id)
     @athletes = Athlete.all()
   end

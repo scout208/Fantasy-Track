@@ -36,7 +36,7 @@
               <ul class="nav navbar-nav">
 
                 <li><%= link_to 'Home', :root %></li>
-
+                <li><%= link_to 'About', about_path %></li>
                 <li>
                   <% if logged_in? %>
                     <li class="dropdown">
@@ -61,6 +61,7 @@
                     <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
                   <% else %>
                     <li><%= link_to "My Leagues", leagues_path, method: "get" %></li>
+                    <li><%= link_to "Join An Existing League", leagues_path, method: "get" %></li>
                   <% end %>
                 <% end %>
                 
