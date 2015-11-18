@@ -117,4 +117,16 @@
   }
 }
 
+#Thirdslide {
+  background-image:image-url('thirdSlide.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  h1 {
+    color: gold;
+    font-size: 300%;
+    font-weight: bolder;
+  }
+}
+
 

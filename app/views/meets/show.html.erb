@@ -1,0 +1,38 @@
+<div class = "container" id = "meetdetail">
+  <h2>Meet Detail</h2>
+  
+    <h4>Meet: <%= @meet.meet_name %></h4>
+    <h4>Location: <%= @meet.location_city %>, <%= @meet.location_country %></h4>
+    <h4>Start Date: <%= @meet.start_date %> </h4>
+    <h4>End Date: <%= @meet.end_date %></h4>
+<h5><a href="/events/new">Create New Event</a></h5>
+<label><%= button_to 'Delete', meet_path(@meet), :method => :delete, :confirm => 'Are you sure?'%></label>
+<div>
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <td>Event</td>
+            <td>Event Type</td>
+        </thead>
+        <tbody>
+           <% @events.each do |p| %>
+            <tr>
+                <td><%= link_to "#{p.event_name}", event_path(p), method: "get" %></td>
+                <td>
+                    <% if(p.event_type == 0) %>
+                        Sprint/Hurdle
+                    <% end %>
+                    <% if(p.event_type == 1) %>
+                        Mid Distance
+                    <% end %>
+                    <% if(p.event_type == 2) %>
+                        Throws
+                    <% end %>
+                    <% if(p.event_type == 3) %>
+                        Jumps
+                    <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+</div>

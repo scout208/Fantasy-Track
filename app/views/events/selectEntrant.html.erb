@@ -1,0 +1,26 @@
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+<div class="container"
+<h2>Select an athlete to add to event: <%= @event.event_name %> for meet: <%= @meet.meet_name %>.</h2>
+<div>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <td>Name</td>
+            <td>Country</td>
+            <td>Birth Date</td>
+        </thead>
+        <tbody>
+           <% @athletes.each do |p| %>
+            <tr>
+                <td><%= p.first_name %> <%= p.last_name %> <%= link_to "Add", addEntrant_event_path(p) %></td>
+                <td><%= p.country %></td>
+                <td><%= p.birth_date %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>

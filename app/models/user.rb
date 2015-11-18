@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :active_league_memberships, class_name:  "LeagueMember",
+                                  foreign_key: "user_id",
+                                  dependent:   :destroy
+  has_many :leagues, through: :active_league_memberships, source: :league
   attr_accessor :remember_token
   
 	before_save { email.downcase! }
@@ -23,10 +27,9 @@ class User < ActiveRecord::Base
     def new_token
       SecureRandom.urlsafe_base64
     end
+    
 	end
-  
-  # Remembers a user in the database for use in persitent sessions.
-  def remember
+	def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
