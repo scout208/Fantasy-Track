@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-    users = [{user_id: 'Admin', email: 'admin@gmail.com', password: 'password', password_confirmation: 'password', role: 'admin'},
-             {user_id: 'tester', email: 'tester@testing.com', password: 'tester', password_confirmation: 'tester', role: 'user'},
-             {user_id: 'tester0', email: 'tester0@testing.com', password: 'tester0', password_confirmation: 'tester0', role: 'user'},
+    users = [{user_id: 'Admin', email: 'admin@gmail.com', password: 'password', password_confirmation: 'password', role: 'admin',email_confirmed: true},
+             {user_id: 'tester', email: 'tester@testing.com', password: 'tester', password_confirmation: 'tester', role: 'user',email_confirmed: true},
+             {user_id: 'tester0', email: 'tester0@testing.com', password: 'tester0', password_confirmation: 'tester0', role: 'user',email_confirmed: true},
              ]
              
     athletes = [{first_name: 'Aaron', last_name:'Andrews', birth_date: '01/01/1991',country:'Argentina',notes:'Player A'},

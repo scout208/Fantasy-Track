@@ -1,7 +1,8 @@
-
+     
       <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <%= flash[:notice] if flash[:notice] %>
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -12,7 +13,7 @@
         <div class="item active"  id="Firstslide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Welcome to Fantasy Track and Field</h1>
+              <h1><%= link_to @titles[0].text, @hrefs[1]%></h1>
                 </br>
                 </br>
                 <% if !logged_in? %>
@@ -25,7 +26,7 @@
         <div class="item" id="Secondslide">
           <div class="container" >
             <div class="carousel-caption">
-              <h1>Smart and Fantastic</h1>
+              <h1><%= link_to @titles[1].text, @hrefs[2]%></h1>
               <p>Brief Description about the advantage of the application</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
@@ -34,7 +35,7 @@
         <div class="item" id="Thirdslide">
           <div class="container" >
             <div class="carousel-caption">
-              <h1>All The Way Run!</h1>
+              <h1><%= link_to @titles[2].text, @hrefs[3]%></h1>
               <p>Slide through the stories of our athletes</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a> <a class="btn btn-lg btn-success" href="#" role="button">Share Your Story</a></p>
             </div>

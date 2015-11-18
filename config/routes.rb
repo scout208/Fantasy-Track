@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   get    'current_user' => 'sessions#show'
   delete  'meetdetail'  => 'meets#destroy'
   delete  'eventdetail'  => 'events#destroy'
-  resources :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   resources :meets
   resources :events do
     member do
