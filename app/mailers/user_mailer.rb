@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-    default :from => "\"NOREPLY@Fantasy-Track\"<yujun-huang@gmail.com>"
+    default :from => "\"NOREPLY@Fantasy-Track\"<fantasytrack1.0@gmail.com>"
 
     
     def registration_confirmation(user)
