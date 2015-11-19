@@ -4,4 +4,6 @@ class Athlete < ActiveRecord::Base
                                   dependent:   :destroy
                                   
     has_many :events, through: :active_event_entrants, source: :event
+    
+    validates_uniqueness_of :last_name, scope: :first_name
 end
