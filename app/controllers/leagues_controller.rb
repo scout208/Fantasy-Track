@@ -11,6 +11,10 @@ class LeaguesController < ApplicationController
     @league = League.new
   end
   
+  def show_all
+    @allLeagues = League.all()
+  end
+  
   def index
     @thisUser = User.find_by_session_token(session[:session_token])
     @leagues = @thisUser.leagues()
