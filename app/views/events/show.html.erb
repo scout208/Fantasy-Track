@@ -4,7 +4,8 @@
     } );
 </script>
 <div class = "container" id = "eventdetail">
-  <h4>Event Detail</h4>
+   <% provide(:title, 'Event Info') %>
+  <h2>Event Detail</h2>
   <h5>Event: <%= @event.event_name %></h5> 
   <h5>Event type:
     <% if(@event.event_type == 0) %>

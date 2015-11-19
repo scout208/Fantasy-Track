@@ -52,6 +52,8 @@ group :development, :test do
 end
 
 group :development do
+  
+  gem 'youtube_it', '~> 2.4.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   
@@ -65,6 +67,8 @@ group :development do
 end
 
 group :production do
+  
+  gem 'youtube_it', '~> 2.4.0'
   
   gem 'rails_12factor', '0.0.2'
   

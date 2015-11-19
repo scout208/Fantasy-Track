@@ -15,10 +15,7 @@
     h2{
       text-align:center;
       font-weight:bolder;
-    }
-    //background-image:image-url('welcometitle.jpg');
-   
-    //background-size: cover;
+   }
 }
 
 #newmeet {
@@ -26,7 +23,11 @@
    h2{
       text-align:center;
       font-weight:bold;
+      color:black;
    }
+   background-image:image-url('meetBg.jpg');
+   
+   background-size: cover;
 }
 
 #meetdetail {
@@ -35,4 +36,26 @@
       text-align:left;
       font-weight:bold;
    }
+}
+
+#newathlete {
+   //#margin-top: 100px;
+   h2{
+      text-align:center;
+      font-weight:bold;
+   }
+   background-image:image-url('thirdSlide.jpg');
+   
+   background-size: cover;
+}
+
+#editathlete {
+   h2{
+      text-align:center;
+      font-weight:bold;
+      color:white;
+   }
+   background-image:image-url('editathlete.jpg');
+   
+   background-size: cover;
 }

@@ -12,19 +12,21 @@
 
 #eventdetail {
     //margin-top: 100px;
-    h4{
+    h2{
       text-align:center;
       font-weight:bold;
+      color:black;
     }
-    //background-image:image-url('welcometitle.jpg');
-   
-    //background-size: cover;
+    
 }
 
 #newevent {
    //#margin-top: 100px;
-   h4{
+   h2{
       text-align:center;
       font-weight:bolder;
    }
+   background-image:image-url('eventbg.jpg');
+   
+   background-size: cover;
 }
