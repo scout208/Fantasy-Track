@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
-      redirect_to @user, notice: "Registration completed! Please confirm your email address."
+      redirect_to root_url, notice: "Registration completed! Please confirm your email address."
     else
       render 'new'
     end
