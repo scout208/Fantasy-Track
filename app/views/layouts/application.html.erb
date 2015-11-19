@@ -37,7 +37,6 @@
 
                 <li><%= link_to 'Home', :root %></li>
                 <li><%= link_to 'About', about_path %></li>
-                <li><%= link_to 'Upcoming Meets', meets_path%></li>
                 <li>
                   <% if logged_in? %>
                     <li class="dropdown">
@@ -63,6 +62,7 @@
                   <% else %>
                     <li><%= link_to "My Leagues", leagues_path, method: "get" %></li>
                     <li><%= link_to "Join An Existing League", leagues_path, method: "get" %></li>
+                    <li><%= link_to 'Upcoming Meets', meets_path%></li>
                   <% end %>
                 <% end %>
                 
