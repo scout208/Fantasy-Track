@@ -7,4 +7,12 @@ class League < ActiveRecord::Base
     
     validates :league_name, presence: true, length: {maximum: 64},
 											uniqueness: true
+											
+	
+	
+	
+	def self.search(search)
+	   where("name LIKE ?", "%#{search}%") 
+       where("content LIKE ?", "%#{search}%")
+    end
 end

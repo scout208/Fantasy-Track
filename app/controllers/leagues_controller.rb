@@ -13,6 +13,7 @@ class LeaguesController < ApplicationController
   
   def show_all
     @allLeagues = League.all()
+    
   end
   
   def index

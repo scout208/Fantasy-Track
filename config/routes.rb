@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
   resources :athletes
   resources :leagues
+  resources :singleleague
 end
