@@ -69,13 +69,20 @@
             </div>
           </div>
         </nav>
-
+     
       </div>
     </header>
     </br>
     </br>
     </br>
     </br>
+    <div class = "container">
+      <div class = "centre">
+        <%= flash[:notice] if flash[:notice] %>
+        <%= flash[:warning] if flash[:warning] %>
+      </div>
+    </div>
+      
   <%= yield %>  
   
   <!-- FOOTER -->
