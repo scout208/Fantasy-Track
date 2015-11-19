@@ -10,9 +10,11 @@ class League < ActiveRecord::Base
 											
 	
 	
-	
-	def self.search(search)
-	   where("name LIKE ?", "%#{search}%") 
-       where("content LIKE ?", "%#{search}%")
+  def self.search(search)
+    if search
+     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
     end
+  end
 end

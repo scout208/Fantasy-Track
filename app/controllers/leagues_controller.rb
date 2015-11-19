@@ -14,6 +14,12 @@ class LeaguesController < ApplicationController
   def show_all
     @allLeagues = League.all()
     
+    if params[:search]
+      @allLeagues = League.search(params[:search])
+    else
+      @allLeagues = League.all()
+    end
+    
   end
   
   def index
