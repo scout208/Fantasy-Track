@@ -7,7 +7,9 @@
 <%= form_for(:league, url: addMember_league_path) do |f| %>
       
         <%= f.label :pass_code, "Enter Code: " %>
-        <%= f.text_field :pass_code, :required => true %>
+        <%= f.text_field :pass_code, :value => "", :required => true %>
+        
+        <%= f.hidden_field :id, :value => @league.id %>
         
         </br>
         </br>

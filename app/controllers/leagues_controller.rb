@@ -42,7 +42,15 @@ class LeaguesController < ApplicationController
   end
   
   def addMember
-    
+    @leagueInfo = League.new(league_params)
+    @existingLeague = League.find(@leagueInfo.id)
+    if(@leagueInfo.pass_code == @existingLeague.pass_code)
+      @thisUser = User.find_by_session_token(session[:session_token])
+      @thisUser.active_league_memberships.create(league_id: @existingLeague.id, user_id: @thisUser.id)
+      redirect_to leagues_path
+    else
+      redirect_to joinLeague_league_path(@existingLeague)
+    end
   end
   
   def create
@@ -62,6 +70,6 @@ class LeaguesController < ApplicationController
   private
 
     def league_params
-      params.require(:league).permit(:league_name, :pass_code)
+      params.require(:league).permit(:league_name, :pass_code, :id)
     end
 end
