@@ -30,6 +30,7 @@
             <td>Country</td>
             <td>Birth Date</td>
             <td>Comments</td>
+            <td>Remove</td>
         </thead>
         <tbody>
            <% @entrants.each do |p| %>
@@ -38,6 +39,7 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
+                <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
             </tr>
           <% end %>
         </tbody>

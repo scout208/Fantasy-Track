@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do
       get :selectEntrant
       get :addEntrant
+      get :removeEntrant
     end
   end
   resources :athletes
