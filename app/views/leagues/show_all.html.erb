@@ -1,5 +1,6 @@
 <div class = "container" id = "leagues">
-    
+
+<h2>Search For a League</h2>
 <%= form_tag(show_all_path, :method => 'get', :id => "search-league-form") do %>
     <div> <%= text_field_tag :search, params[:search] %></div>
     <div> <%= submit_tag "Search", :name => nil %></div>
