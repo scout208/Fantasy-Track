@@ -14,6 +14,17 @@ class LeaguesController < ApplicationController
     @league = League.new
   end
   
+  def show_all
+    @allLeagues = League.all()
+    
+    if params[:search]
+      @allLeagues = League.search(params[:search])
+    else
+      @allLeagues = League.all()
+    end
+    
+  end
+  
   def index
     @thisUser = User.find_by_session_token(session[:session_token])
     @leagues = @thisUser.leagues()
