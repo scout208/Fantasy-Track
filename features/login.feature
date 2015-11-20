@@ -1,8 +1,7 @@
 Feature: Allow user to log in
  
 Scenario: User finds login page
- 
-  When I am on the home screen 
+  Given I am on the Fantasy-Track home page 
   And I press the login button
   Then I should see the view where I am able to login
  
