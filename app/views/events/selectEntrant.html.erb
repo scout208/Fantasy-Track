@@ -3,7 +3,8 @@
     $('#example').DataTable();
     } );
 </script>
-<div class="container"
+<div class="container">
+<% provide(:title,'Add Entrants') %>
 <h2>Select an athlete to add to event: <%= @event.event_name %> for meet: <%= @meet.meet_name %>.</h2>
 <div>
     <table id="example" class="display" cellspacing="0" width="100%">

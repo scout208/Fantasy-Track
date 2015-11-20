@@ -57,11 +57,13 @@
                 </li>
                 <% if logged_in? %>
                   <% if @current_user.role == "admin" %>
-                    <li><%= link_to "Meets", meets_path, method: "get" %></li>
+                    <li id = "admin"><%= link_to "Meets", meets_path, method: "get" %></li>
                     <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
                   <% else %>
                     <li><%= link_to "My Leagues", leagues_path, method: "get" %></li>
-                    <li><%= link_to "Join An Existing League", leagues_path, method: "get" %></li>
+                    <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
+                    <li><%= link_to "Join League", searchLeague_league_path(1) %></li>
+                    <li><%= link_to 'Upcomming Meets', meets_path%></li>
                   <% end %>
                 <% end %>
                 
@@ -69,13 +71,20 @@
             </div>
           </div>
         </nav>
-
+     
       </div>
     </header>
     </br>
     </br>
     </br>
     </br>
+    <div class = "container">
+      <div class = "centre">
+        <strong><%= flash[:notice] if flash[:notice] %></strong>
+        <strong><%= flash[:warning] if flash[:warning] %></strong>
+      </div>
+    </div>
+      
   <%= yield %>  
   
   <!-- FOOTER -->

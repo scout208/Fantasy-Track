@@ -1,7 +1,8 @@
 <div class = "container" id = "newleague">  
+   <% provide(:title, 'Create new leagues') %>
   <h2>Create A New League</h2>
 
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3" id = "createleague">
       <br/>
       <%= form_for(:league, url: leagues_path) do |f| %>
       

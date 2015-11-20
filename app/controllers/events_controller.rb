@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   helper_method :selectEntrant
   helper_method :addEntrant
+  helper_method :removeEntrant
+  
   def show
     @event = Event.find(params[:id])
     @entrants = @event.entrants
@@ -45,6 +47,15 @@ class EventsController < ApplicationController
     session[:current_event] = @event.id
     @meet = Meet.find(@event.meet_id)
     @athletes = Athlete.all()
+  end
+  
+  def removeEntrant
+    entryId = params[:id]
+    @event = Event.find(session[:current_event])
+    @entry = EventEntrant.find_by(:event_id => @event.id, :athlete_id => entryId)
+    @entry.destroy
+    
+    redirect_to event_path(@event)
   end
   
   private

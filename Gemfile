@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-gem 'nokogiri'
 
+#ruby '2.0.0'
 gem 'bootstrap-sass',    '3.2.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -13,8 +13,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
+gem 'therubyracer', platforms: :ruby
+gem 'rspec'
+gem 'rspec-rails'
 #for socail API login
 gem 'omniauth-twitter'
 gem 'omniauth-github'
@@ -32,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'nokogiri'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,9 +46,14 @@ gem 'nokogiri'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :development do
+  
+  gem 'youtube_it', '~> 2.4.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   
@@ -60,6 +67,8 @@ group :development do
 end
 
 group :production do
+  
+  gem 'youtube_it', '~> 2.4.0'
   
   gem 'rails_12factor', '0.0.2'
   

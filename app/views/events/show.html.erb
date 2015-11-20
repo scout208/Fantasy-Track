@@ -4,7 +4,8 @@
     } );
 </script>
 <div class = "container" id = "eventdetail">
-  <h4>Event Detail</h4>
+   <% provide(:title, 'Event Info') %>
+  <h2>Event Detail</h2>
   <h5>Event: <%= @event.event_name %></h5> 
   <h5>Event type:
     <% if(@event.event_type == 0) %>
@@ -29,6 +30,7 @@
             <td>Country</td>
             <td>Birth Date</td>
             <td>Comments</td>
+            <td>Remove</td>
         </thead>
         <tbody>
            <% @entrants.each do |p| %>
@@ -37,6 +39,7 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
+                <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
             </tr>
           <% end %>
         </tbody>
