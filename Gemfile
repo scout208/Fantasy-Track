@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'rspec'
 gem 'rspec-rails'
+gem 'simplecov', :require =>false, :group =>:test
 #for socail API login
 gem 'omniauth-twitter'
 gem 'omniauth-github'
@@ -49,6 +50,7 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'rspec-rails'
 end
 
 group :development do
