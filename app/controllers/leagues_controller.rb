@@ -1,5 +1,8 @@
 class LeaguesController < ApplicationController
-
+  helper_method :searchLeague
+  helper_method :joinLeague
+  helper_method :addMember
+  
   def show
     #@league = Meet.find(params[:id])
     #I'm not sure if you meant to use Meet here so I'll keep this line in comment
@@ -17,6 +20,18 @@ class LeaguesController < ApplicationController
    # @leagues = League.all() #will do @thisUser = User.find_by_session_token(session[:session_token])
                             # @leagues = @thisUser.leagues
     @allLeagues = League.all()
+  end
+  
+  def searchLeague
+    @leagues = League.all()
+  end
+  
+  def joinLeague
+    @league = League.find(params[:id])
+  end
+  
+  def addMember
+    
   end
   
   def create

@@ -62,7 +62,7 @@
                   <% else %>
                     <li><%= link_to "My Leagues", leagues_path, method: "get" %></li>
                     <li><%= link_to "Athletes", athletes_path, method: "get" %></li>
-                    <li><%= link_to "Join League", leagues_path, method: "get" %></li>
+                    <li><%= link_to "Join League", searchLeague_league_path(1) %></li>
                     <li><%= link_to 'Upcomming Meets', meets_path%></li>
                   <% end %>
                 <% end %>

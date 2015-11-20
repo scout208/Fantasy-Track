@@ -1,0 +1,15 @@
+<h2>League: <%=@league.league_name %></h2>
+<p>This is the page for League Information in detail</p>
+<p>The information will be dispalyed differently depending on roles of user</p>
+
+<h3>The buttons don't work yet</h3>
+
+<%= form_for(:league, url: addMember_league_path) do |f| %>
+      
+        <%= f.label :pass_code, "Enter Code: " %>
+        <%= f.text_field :pass_code, :required => true %>
+        
+        </br>
+        </br>
+        <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
