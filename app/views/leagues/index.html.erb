@@ -11,7 +11,7 @@
        <% @allLeagues.each do |league| %>
        <tr>
            <td><%=link_to league.league_name, league_path(league) %></td>
-           <td><%=league.creator_id %></td>
+           <td><%= User.find(league.creator_id).user_id %></td>
            <td>0</td>
        </tr>
        <% end %>
