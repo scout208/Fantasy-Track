@@ -9,7 +9,9 @@
         </br>
         <h4> Comments: <%= @athlete.notes %></h4>
         </br>
-        <h4><%= link_to "Edit Athlete", edit_athlete_path(@athlete), method: 'get' %></h4>
+        <% if @current_user.role == "admin" %>
+            <h4><%= link_to "Edit Athlete", edit_athlete_path(@athlete), method: 'get' %></h4>
+        <% end %>
     </div>
 </div>
 

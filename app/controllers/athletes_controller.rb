@@ -2,6 +2,7 @@ class AthletesController < ApplicationController
 
   def show
     @athlete = Athlete.find(params[:id])
+    @current_user ||=	session[:session_token] && User.find_by_session_token(session[:session_token])
   end
 
   def new
@@ -10,6 +11,7 @@ class AthletesController < ApplicationController
   
   def index
     @athletes = Athlete.all()
+    @current_user ||=	session[:session_token] && User.find_by_session_token(session[:session_token])
   end
   
   def edit

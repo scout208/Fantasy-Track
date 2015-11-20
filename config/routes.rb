@@ -19,8 +19,15 @@ Rails.application.routes.draw do
     member do
       get :selectEntrant
       get :addEntrant
+      get :removeEntrant
     end
   end
   resources :athletes
-  resources :leagues
+  resources :leagues do
+    member do
+      get :searchLeague
+      get :joinLeague
+      post :addMember
+    end
+  end
 end
