@@ -9,6 +9,7 @@ Background: The following users have been added to user table
   |   test2    | test2@testing.com  |  user  |    tester   |
   
   Given the following leagues have been added to FantasyTrack:
+    |userID | leagueName | password |
     | 2 | MyLeague | passcode |
   
 And I am on the Fantasy-Track home page
