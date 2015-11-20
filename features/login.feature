@@ -14,7 +14,7 @@ Background: the users have been added to user table
  
 Scenario: User finds login page
   When I see the "Home" "About" and "Login" options on menu
-  And I press the login button
+  And I press "Login"
   Then I should see the view where I am able to login
 
  

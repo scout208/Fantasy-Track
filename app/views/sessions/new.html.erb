@@ -19,7 +19,7 @@
             <% if flash[:danger] %>
               <div class="notice", style="color:white"><%= flash[:danger] %></div>
             <% end %>
-            <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+            <p>New user? <%= link_to "Sign up now!", '/signup' %></p>
           <% end %>
         </div>
         

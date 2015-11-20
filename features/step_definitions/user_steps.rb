@@ -1,9 +1,10 @@
+#user login feature
 Given (/^I am on the Fantasy\-Track home page$/) do
   visit root_url # express the regexp above with the code you wish you had
 end
   
-  When(/^I press the login button$/) do
-    click_on 'Login'
+  When(/^I press "(.*?)"$/) do |arg1|
+    click_on arg1
   end
 
   When(/^I see the "(.*?)" "(.*?)" and "(.*?)" options on menu$/) do |arg1, arg2, arg3|
@@ -45,10 +46,6 @@ end
     fill_in('session_email', :with =>  arg1)
     fill_in('session_password', :with => arg2)
   end
-   
-  When (/^I press "(.*?)"$/) do |arg1|
-     click_on 'Log in'
-  end
   
   Then(/^I should be redirected to homepage without seeing "(.*?)" Button$/) do |arg1|
     current_path.should == "/"
@@ -85,4 +82,16 @@ end
        should have_content(arg4)
        should have_content(arg5)
     end
+  end
+  
+  
+#user sign up feature
+
+  Then(/^I should see the view where I am able to sign up$/) do
+    current_path.should == "/signup"
+    page.has_field?('user_id', :type => 'text_field')
+    page.has_field?('email', :type => 'email_field')
+    page.has_field?('password', :type => 'password_field')
+    page.has_field?('password_confirmation', :type => 'password_field')
+    page.has_button?('Sign up')
   end
