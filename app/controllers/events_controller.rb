@@ -50,7 +50,12 @@ class EventsController < ApplicationController
   end
   
   def removeEntrant
+    entryId = params[:id]
+    @event = Event.find(session[:current_event])
+    @entry = EventEntrant.find_by(:event_id => @event.id, :athlete_id => entryId)
+    @entry.destroy
     
+    redirect_to event_path(@event)
   end
   
   private
