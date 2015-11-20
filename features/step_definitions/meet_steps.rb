@@ -27,4 +27,16 @@ Given /^I am on the Meets page$/ do
    end  
    expect(result).to be_truthy
  end
-
+ 
+ When /^I have visited the "(.*?)" meet details page$/ do  |name|
+   visit '/meets'
+   all("tr").each do |tr|
+     if tr.has_content? (name)
+       click_on "#{name}"
+     end
+   end
+ end
+ 
+ When /^I have clicked the "(.*?)" button$/ do |button|
+   # Delete the meet
+ end
