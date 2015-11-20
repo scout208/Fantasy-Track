@@ -1,0 +1,17 @@
+<div class = "container" id = "newleague">  
+   <% provide(:title, 'Create new leagues') %>
+  <h2>Invite A Friend</h2>
+
+  <div class="col-md-6 col-md-offset-3" id = "createleague">
+      <br/>
+      <%= form_for(:user, url: requestFriend_league_path) do |f| %>
+      
+        <%= f.label :email, "Friend Email: " %>
+        <%= f.text_field :email, :value => "" %>
+        
+        </br>
+        </br>
+        <%= f.submit "Send Invite", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>

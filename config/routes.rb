@@ -29,6 +29,8 @@ Rails.application.routes.draw do
       get :searchLeague
       get :joinLeague
       post :addMember
+      post :requestFriend
+      get :inviteFriend
     end
   end
   resources :singleleague
