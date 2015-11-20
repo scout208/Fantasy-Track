@@ -32,7 +32,7 @@ Scenario: Regular User logs in
   And I press "Log in"
   Then I should be redirected to homepage without seeing "Sign up Today !" Button
   And I should be signed in as a user who is not the administrator
-  And I should have "tester" "My Leagues" "Athletes" "Join League" and "Upcomming Meets" on the menu
+  And I should have "tester" "My Leagues" "Athletes" "Join League" and "Upcoming Meets" on the menu
   
 Scenario: unactivated User try to log in
   When I am on the login screen
