@@ -2,12 +2,16 @@ class LeaguesController < ApplicationController
   helper_method :searchLeague
   helper_method :joinLeague
   helper_method :addMember
+  helper_method :inviteFriend
+  helper_method :requestFriend
   
   def show
     #@league = Meet.find(params[:id])
     #I'm not sure if you meant to use Meet here so I'll keep this line in comment
     #For now I'll use League.find --Xi
     @league = League.find(params[:id])
+    session[:current_league] = @league.id
+    @thisUser = User.find_by_session_token(session[:session_token])
   end
 
   def new
@@ -35,6 +39,18 @@ class LeaguesController < ApplicationController
   
   def searchLeague
     @leagues = League.all()
+  end
+  
+  def inviteFriend
+    #view for entering friend's email address
+  end
+  
+  def requestFriend
+    @friend = User.new(friend_params)
+    @league = League.find(session[:current_league])
+    UserMailer.invite_friend(@friend, @league).deliver
+    
+    redirect_to league_path(@league)
   end
   
   def joinLeague
@@ -71,5 +87,9 @@ class LeaguesController < ApplicationController
 
     def league_params
       params.require(:league).permit(:league_name, :pass_code, :id)
+    end
+    
+    def friend_params
+      params.require(:user).permit(:email, :user_id)
     end
 end

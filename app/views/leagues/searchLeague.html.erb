@@ -1,27 +1,20 @@
-
 <script>
     $(document).ready(function() {
     $('#example').DataTable();
     } );
 </script>
-<div class = "container" id = "leagues">
-       <% provide(:title, 'Athlete List') %>
-  <h2>Search For A League To Join</h2>
-  <div>
-      <table id="example" class="display" cellspacing="0" width="100%">
-            <thead>
-                <td>League Name</td>
-                <td>Join</td>
-            </thead>
-            <tbody>
-               <% @leagues.each do |p| %>
-                <tr>
-                    <td><%= p.league_name %></td>
-                    <td><%= link_to 'Join', joinLeague_league_path(p), :method => :get%></td>
-                    
-                </tr>
-              <% end %>
-            </tbody>
-        </table>
-    </div>
-    </div>
+<br/>
+<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+        <td>League Name</td>
+        <td>Join</td>
+    </thead>
+    <tbody>
+        <% @leagues.each do |p| %>
+        <tr>
+            <td><%= p.league_name %></td>
+            <td><%= link_to 'Join', joinLeague_league_path(p) %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
