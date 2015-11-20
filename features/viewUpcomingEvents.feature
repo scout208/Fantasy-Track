@@ -13,6 +13,7 @@ Background: The following users have been added to user table
   | Doha Diamond League |  Doha  | QAT | 06/05/2016  | 06/05/2016 |
   | Shanghai Diamond League | Shanghai | CHN | 14/05/2016 | 14/05/2016 |
   | Eugene Diamond League | Eugene | USA | 28/05/2016 | 28/05/2016 |
+  | Monaco Diamond League | Monaco | MON | 15/07/2016 | 15/07/2016 |
   | Rome Diamond League | Rome | ITA | 02/06/2016 | 02/06/2016 |
   | Lausanne Diamond League | Lausanne | SUI | 25/08/2016 | 25/08/2016 |
   | Zurich Diamond League | Zurich | SUI | 01/09/2016 | 01/09/2016 |
@@ -22,14 +23,28 @@ And I am on the Fantasy-Track home page
 
 Scenario: User Views the upcoming meets
   
-Given: I am logged in with email of "tester@testing.com" and a password "tester"
+Given I am logged in with email of "tester@testing.com" and a password "tester"
 When I click "Upcoming Meets"
 Then I should see "Birmingham Diamond League" located first in the table
 And I should see "Oslo Diamond League" located last in the table
 
 Scenario: User filters meets by location
   
-Given: I am on the Upcoming Meets screen
-And: I click "Location"
-Then: I should see "Zurich Diamond League" located first in the table
+Given I am on the Upcoming Meets screen
+And I click "Location"
+Then I should see "Zurich Diamond League" located first in the table
 And I should see "Lausanne Diamond League" lcoated last in the table
+
+Scenario: User filters meets by start date
+
+Given I am on the Upcoming Meets screen
+And I click "Start Date"
+Then I should see "Doha Diamond League" located first in the table
+And I shoud see "Monaco Diamond League" located last in the table
+
+Scenario: User filters meets by end date
+  
+Given: I am on the Upcoming Meets screen
+And: I click "End Date"
+Then I should see "Doha Diamond League" located first in the table
+And I shoud see "Monaco Diamond League" located last in the table
