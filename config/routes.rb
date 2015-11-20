@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     end
   end
   resources :athletes
+  
   resources :leagues do
     member do
       get :searchLeague
@@ -30,4 +31,5 @@ Rails.application.routes.draw do
       post :addMember
     end
   end
+  resources :singleleague
 end
