@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root                'static_pages#home'
   get    'about'   => 'static_pages#about'
+  get   'show_all' => 'leagues#show_all'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     end
   end
   resources :athletes
+  
   resources :leagues do
     member do
       get :searchLeague
@@ -29,4 +31,5 @@ Rails.application.routes.draw do
       post :addMember
     end
   end
+  resources :singleleague
 end
