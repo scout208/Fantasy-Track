@@ -228,3 +228,8 @@ end
 Then(/^log out currnet user$/) do
    @current_user = nil
 end
+
+#viewAboutPage 
+Given(/^I am not logged in$/) do
+  visit root_url
+end
