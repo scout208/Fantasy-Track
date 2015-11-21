@@ -132,7 +132,7 @@ Then(/^I should see all of the meets$/) do
   end
 end
 
-Given(/^I am on the Upcoming Meets screen$/) do
+Given(/^I am on the Meets screen$/) do
   visit '/meets'
 end
 
@@ -187,4 +187,24 @@ Then(/^I should see all the entrants attending this event$/) do
      page.should have_content(entrant.first_name)
      page.should have_content(entrant.last_name)
   end
+end
+
+Then(/^I should not see "(.*?)" Link$/) do |arg1|
+  page.should_not have_link(arg1)
+end
+
+Then(/^I should not see "(.*?)" Button$/) do |arg1|
+  page.should_not have_button(arg1)
+end
+
+Then(/^I should see "(.*?)" Link$/) do |arg1|
+  page.should have_link(arg1)
+end
+
+Then(/^I should see "(.*?)" Button$/) do |arg1|
+  page.should have_button(arg1)
+end
+
+Then(/^log out currnet user$/) do
+   @current_user = nil
 end

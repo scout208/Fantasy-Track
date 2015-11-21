@@ -42,16 +42,38 @@ Scenario: User Views the upcoming meets
 Given I am logged in with email of "tester@testing.com" and a password "tester"
 When I click "Upcoming Meets"
 Then I should see all of the meets
+And I should not see "Create New Meet" Link
 
 Scenario: User select meet to view related events
 
-Given I am on the Upcoming Meets screen
+Given I am on the Meets screen
 When I click "Doha Diamond League"
 Then I should see all events for "Doha Diamond League" Meet
+And I should not see "Create New Event" Link
+And I should not see "Delete" Button
 
 Scenario: User select event to view attending entrants 
 
 Given I am on the event screen of "Doha Diamond League"
 When I click "800M MEN"
 Then I should see all the entrants attending this event
+And I should not see "Add Entrant" Link
+And I should not see "Delete Event" Button
+And I should not see "Remove Entrant" Link
+Then log out currnet user
 
+Scenario: Admin Views the meets
+  
+Given I am logged in with email of "admin@gmail.com" and a password "password"
+When I click "Meets"
+Then I should see "Create New Meet" Link
+
+
+When I click "Doha Diamond League"
+Then I should see "Create New Event" Link
+And I should see "Delete" Button
+
+When I click "800M MEN"
+Then I should see "Add Entrant" Link
+And I should see "Delete Event" Button
+And I should see "Remove Entrant" Link
