@@ -3,6 +3,11 @@ class EventsController < ApplicationController
   helper_method :addEntrant
   helper_method :removeEntrant
   
+  def set_current_user
+    @current_user ||=	session[:session_token] && User.find_by_session_token(session[:session_token])
+  end
+  include SessionsHelper
+  
   def show
     @event = Event.find(params[:id])
     @entrants = @event.entrants

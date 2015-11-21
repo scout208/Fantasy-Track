@@ -21,7 +21,11 @@
         Jumps
     <% end %>
   </h5>
-  <h4><%= link_to "Add Entrant", selectEntrant_event_path(@event) %></h4>
+    <% if logged_in? %>
+      <% if @current_user.role == "admin" %>
+        <h4><%= link_to "Add Entrant", selectEntrant_event_path(@event) %></h4>
+      <%end%>
+    <%end%>
   <div>
     <h3>Entrants</h3>
     <table id="example" class="display" cellspacing="0" width="100%">
@@ -39,7 +43,11 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
-                <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
+                <% if logged_in? %>
+                  <% if @current_user.role == "admin" %>
+                     <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
+                  <%end%>
+                <%end%>
             </tr>
           <% end %>
         </tbody>

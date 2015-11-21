@@ -95,3 +95,53 @@ end
     page.has_field?('password_confirmation', :type => 'password_field')
     page.has_button?('Sign up')
   end
+  
+  
+  
+  
+  
+#view Upcomming Events
+Given(/^the following Meets have been added to FantasyTrack:$/) do |meets_table|
+  meets_table.hashes.each do |meet|
+    
+    m = Meet.new(meet)
+    m.meet_name = meet['meet_name']
+    m.location_city = meet['location_city']
+    m.location_country = meet['location_country']
+    m.start_date = meet['start_date']
+    m.end_date = meet['end_date']
+    m.save()
+  end
+end
+
+Given(/^I am logged in with email of "(.*?)" and a password "(.*?)"$/) do |arg1, arg2|
+   visit '/login'
+   fill_in('session_email', :with =>  arg1)
+   fill_in('session_password', :with => arg2)
+   click_on "Log in"
+end
+
+When(/^I click "(.*?)"$/) do |arg1|
+  find_link(arg1).click
+end
+
+Then(/^I should see all of the meets$/) do
+  @meet = Meet.all
+  @meet.each do |meet|
+     page.should have_content(meet.meet_name)
+  end
+end
+
+Given(/^I am on the Upcoming Meets screen$/) do
+  visit '/meets'
+  page.should have_link("Doha Diamond League")
+end
+
+
+Then(/^I should see "(.*?)" lcoated last in the table$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I shoud see "(.*?)" located last in the table$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end

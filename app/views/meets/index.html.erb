@@ -7,8 +7,12 @@
 <div class = "container" id = "meets">
    <% provide(:title, 'Meet List') %>
   <div>
-     <h2>Meet List</h2> 
-    <h3><a href="/meets/new">Create New Meet</a></h3>
+     <h2>Meet List</h2>
+    <% if logged_in? %>
+      <% if @current_user.role == "admin" %>
+        <h3><a href="/meets/new">Create New Meet</a></h3>
+      <%end%>
+    <%end%>
   </div>
   <div>
     <table id="example" class="display" cellspacing="0" width="100%">
