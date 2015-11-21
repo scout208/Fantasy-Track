@@ -21,6 +21,10 @@ gem 'simplecov', :require =>false, :group =>:test
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 
+gem 'capybara-email'
+
+gem 'letter_opener'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -34,6 +38,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'nokogiri'
+
+gem 'youtube_it', '~> 2.4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -50,12 +56,9 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
-  gem 'rspec-rails'
 end
 
 group :development do
-  
-  gem 'youtube_it', '~> 2.4.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   
@@ -69,8 +72,6 @@ group :development do
 end
 
 group :production do
-  
-  gem 'youtube_it', '~> 2.4.0'
   
   gem 'rails_12factor', '0.0.2'
   

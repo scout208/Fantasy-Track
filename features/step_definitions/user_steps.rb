@@ -96,7 +96,27 @@ end
     page.has_button?('Sign up')
   end
   
+  When(/^I am on the signup page$/) do
+    visit '/signup'
+  end
+
+  When(/^I am fill the fields with username of "(.*?)"  email of "(.*?)" password of "(.*?)" confirmation password of "(.*?)"$/) do |arg1, arg2, arg3, arg4|
+    fill_in('user_user_id', :with =>  arg1)
+    fill_in('user_email', :with => arg2)
+    fill_in('user_password', :with =>  arg3)
+    fill_in('user_password_confirmation', :with => arg4)
+  end
   
+  When(/^I click on "(.*?)" in the email to "(.*?)"$/) do |arg1, email|
+     open_email(email)
+     current_email.has_link?(arg1).should be_truthy
+     current_email.click_on arg1
+  end
+
+  Then(/^"(.*?)" receives an email with "(.*?)"$/) do |email, subject|
+     open_email(email)
+     expect(current_email.subject).to eq subject
+  end
   
   
   
