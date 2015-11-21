@@ -150,7 +150,7 @@
                     
     meets = [{meet_name: 'Doha Diamond League', location_city: 'Doha', location_country: 'QAT', start_date: '15/05/2015', end_date: '15/05/2015'},
             {meet_name: 'Doha Diamond League', location_city: 'Doha', location_country: 'QAT', start_date: '06/05/2016', end_date: '06/05/2016'},
-           {meet_name: 'Shanghai Diamond League', location_city: 'Shanghai', location_country: 'CHN', start_date: '14/05/2016', end_date: '14/05/2016'},
+            {meet_name: 'Shanghai Diamond League', location_city: 'Shanghai', location_country: 'CHN', start_date: '14/05/2016', end_date: '14/05/2016'},
             {meet_name: 'Eugene Diamond League', location_city: 'Eugene', location_country: 'USA', start_date: '28/05/2016', end_date: '28/05/2016'},
             {meet_name: 'Rome Diamond League', location_city: 'Rome', location_country: 'ITA', start_date: '02/06/2016', end_date: '02/06/2016'},
             {meet_name: 'Birmingham Diamond League', location_city: 'Birmingham', location_country: 'GBR', start_date: '05/06/2016', end_date: '05/06/2016'},

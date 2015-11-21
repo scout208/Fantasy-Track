@@ -137,11 +137,49 @@ Given(/^I am on the Upcoming Meets screen$/) do
   page.should have_link("Doha Diamond League")
 end
 
+  
+Given(/^the following Events have been added to Doha Diamond League Meet:$/) do |events_table|
+  events_table.hashes.each do |event|
+    
+    e = Event.new(event)
+    e.event_name = event['event_name']
+    e.event_type = event['event_type']
+    e.meet_id = event['meet_id']
+    e.save()
+  end
+end
 
-Then(/^I should see "(.*?)" lcoated last in the table$/) do |arg1|
+Given(/^the following athletes have been added to FantasyTrack and thus this event:$/) do |athlete_table|
+  dohaMeet = Meet.find(1)
+  m800 = dohaMeet.events.find_by(:event_name => "800M MEN")
+  athlete_table.hashes.each do |athlete|
+    
+    a = Athlete.new(athlete)
+    a.first_name = athlete['first_name']
+    a.last_name = athlete['last_name']
+    a.birth_date = athlete['birth_date']
+    a.country = athlete['country']
+    a.notes =athlete['notes']
+    a.save()
+    
+    curAthlete = Athlete.find_by(:first_name => a.first_name, :last_name => a.last_name)
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id)
+  end
+  
+end
+
+Then(/^I should see all events for "(.*?)"$/) do |arg1|
+  id = Meet.find_by(:meet_name => arg1)
+  @event = Event.find_by(:meet_id => id)
+  @event.each do |event|
+     page.should have_content(event.event_name)
+  end
+end
+
+Given(/^I am on the event screen of Doha Diamond League$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^I shoud see "(.*?)" located last in the table$/) do |arg1|
+Then(/^I should see all the entrant attending this event$/) do
   pending # express the regexp above with the code you wish you had
 end
