@@ -28,23 +28,21 @@ Feature: Add Events to Meet
   And I am logged in with email of "admin@gmail.com" and a password "password" 
 
 Scenario: delete event in meets table
-  Given I am on the Meets screen
-  And I click "Eugene Diamond League"
-  And I click "Delete"
-  And I should not see "Eugene Diamond League"
+  When I am on the Meets screen
+  And I click "Doha Diamond League"
+  And I click "800M MEN"
+  And I press "Delete"
+  Then I am on the event screen of "Doha Diamond League"
+  And I should not see "800M MEN"
   
 Scenario: create a new event
-  Given I am on the meets page
-  And I click "Eugene Diamond League"
-  Then I click "Create New Event"
-  Then I should be directed to enter a new event page
+  When I am on the event screen of "Eugene Diamond League"
+  And I click "Create New Event"
+  Then I should be directed for new event page
 
-Scenario: Create new Event
-  Given I am on the create new event page for the "Eugene Diamond Meet"
-  And I fill in event name with "SHOT PUT MEN"
-  And I fill Event type with "2"
-  And I click "Save"
-  Then I should be redirected back to the screen for the "Eugene Diamond Meet"
+  When I fill in event name with "SHOT PUT MEN" and Event type with "2"
+  And I press "Save"
+  Then I am on the event screen of "Eugene Diamond League"
   And I shoud see "SHOT PUT MEN"
   
    

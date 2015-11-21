@@ -12,7 +12,7 @@ Feature: Delete Meet
   |   tester   | tester@testing.com |  user  |    tester   |
    
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date | end_date    |
+  |  meet_name             | location_city| location_country | start_date| end_date   |
   | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
   | Aoha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
   | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
