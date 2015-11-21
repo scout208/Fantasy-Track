@@ -66,14 +66,20 @@ Scenario: Admin Views the meets
   
 Given I am logged in with email of "admin@gmail.com" and a password "password"
 When I click "Meets"
-Then I should see "Create New Meet" Link
+Then I should see "Meet List"
+And I should see "Create New Meet" Link
 
 
 When I click "Doha Diamond League"
-Then I should see "Create New Event" Link
+Then I should see "Meet Detail"
+And I should see "Create New Event" Link
 And I should see "Delete" Button
 
 When I click "800M MEN"
-Then I should see "Add Entrant" Link
+Then I should see "Event Detail"
+And  I should see "Add Entrant" Link
 And I should see "Delete Event" Button
 And I should see "Remove Entrant" Link
+
+When I click "Charlie Chaplin"
+And I should see "Edit Athlete" Link

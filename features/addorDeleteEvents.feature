@@ -5,7 +5,6 @@ Feature: Add Events to Meet
   Given the following users have been added to FantasyTrack:
   |  user_id   |     email          | role   |  password   |  
   |   Admin    | admin@gmail.com    | admin  |   password  |     
-  |   tester   | tester@testing.com |  user  |    tester   |
 
   
   Given the following Meets have been added to FantasyTrack:
@@ -31,8 +30,8 @@ Scenario: delete event in meets table
   When I am on the Meets screen
   And I click "Doha Diamond League"
   And I click "800M MEN"
-  And I press "Delete"
-  Then I am on the event screen of "Doha Diamond League"
+  And I press "Delete Event"
+  Then I am on the event screen of "Doha Diamond League" 
   And I should not see "800M MEN"
   
 Scenario: create a new event
