@@ -134,7 +134,6 @@ end
 
 Given(/^I am on the Upcoming Meets screen$/) do
   visit '/meets'
-  page.should have_link("Doha Diamond League")
 end
 
   
@@ -144,7 +143,7 @@ Given(/^the following Events have been added to Doha Diamond League Meet:$/) do 
     e = Event.new(event)
     e.event_name = event['event_name']
     e.event_type = event['event_type']
-    e.meet_id = event['meet_id']
+    e.meet_id = 1
     e.save()
   end
 end
@@ -168,18 +167,24 @@ Given(/^the following athletes have been added to FantasyTrack and thus this eve
   
 end
 
-Then(/^I should see all events for "(.*?)"$/) do |arg1|
-  id = Meet.find_by(:meet_name => arg1)
-  @event = Event.find_by(:meet_id => id)
-  @event.each do |event|
+Then(/^I should see all events for "(.*?)" Meet$/) do |arg1|
+  dohaMeet = Meet.find_by(:meet_name => arg1)
+  @events = dohaMeet.events
+  @events.each do |event|
      page.should have_content(event.event_name)
   end
 end
 
-Given(/^I am on the event screen of Doha Diamond League$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I am on the event screen of "(.*?)"$/) do |arg1|
+  visit '/meets'
+  click_on arg1
 end
 
-Then(/^I should see all the entrant attending this event$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see all the entrants attending this event$/) do
+  event = Event.find_by(:event_name => "800M MEN")
+  @entrants = event.entrants
+  @entrants.each do |entrant|
+     page.should have_content(entrant.first_name)
+     page.should have_content(entrant.last_name)
+  end
 end

@@ -18,12 +18,12 @@ Background: The following users have been added to user table
    
   
   Given the following Events have been added to Doha Diamond League Meet:
-  |     event_name         |   event_type |     meet_id      | 
-  |      800M MEN          |       0      |       1          | 
-  |  400M HURDLES MEN      |       1      |       1          | 
-  |    TRIPLE JUMP MEN     |       0      |       1          | 
-  |      SHOT PUT MEN      |       3      |       1          | 
-  |    JAVELIN THROW MEN   |       2      |       1          | 
+  |     event_name         |   event_type |   
+  |      800M MEN          |       0      |  
+  |  400M HURDLES MEN      |       1      |  
+  |    TRIPLE JUMP MEN     |       0      | 
+  |      SHOT PUT MEN      |       3      |  
+  |    JAVELIN THROW MEN   |       2      | 
   
   Given the following athletes have been added to FantasyTrack and thus this event:
    
@@ -47,11 +47,11 @@ Scenario: User select meet to view related events
 
 Given I am on the Upcoming Meets screen
 When I click "Doha Diamond League"
-Then I should see all events for "Doha Diamond League"
+Then I should see all events for "Doha Diamond League" Meet
 
 Scenario: User select event to view attending entrants 
 
-Given I am on the event screen of Doha Diamond League
+Given I am on the event screen of "Doha Diamond League"
 When I click "800M MEN"
-Then I should see all the entrant attending this event
+Then I should see all the entrants attending this event
 
