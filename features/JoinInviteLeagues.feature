@@ -32,7 +32,7 @@ Scenario: user Join a league
   And I should see "cheetah"
   
   
-Scenario: user invit friend
+Scenario: user invite friend
   Given I am logged in with email of "tester@testing.com" and a password "tester"
   And I created a league with name of "lighting" and passcode of "rose2"
   And I created a league with name of "dasher" and passcode of "rose3"
