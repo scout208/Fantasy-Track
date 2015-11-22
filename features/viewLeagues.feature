@@ -1,6 +1,6 @@
 Feature: View Leagues
 
-Background: The following users have been added to user table
+Background: The following data have been added to FantasyTrack
   
   Given the following users have been added to FantasyTrack:
   |  user_id   |     email          | role   |  password   |  

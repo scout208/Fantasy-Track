@@ -200,8 +200,8 @@ Given(/^I am on the event screen of "(.*?)"$/) do |arg1|
   click_on arg1
 end
 
-Then(/^I should see all the entrants attending this event$/) do
-  event = Event.find_by(:event_name => "800M MEN")
+Then(/^I should see all the entrants attending "(.*?)"$/) do |arg1|
+  event = Event.find_by(:event_name => arg1)
   @entrants = event.entrants
   @entrants.each do |entrant|
      page.should have_content(entrant.first_name)
@@ -227,6 +227,14 @@ end
 
 Then(/^log out currnet user$/) do
    @current_user = nil
+end
+
+Then(/^I should see all the athletes$/) do
+  @athletes = Athlete.all
+  @athletes.each do |athlete|
+     page.should have_content(athlete.first_name)
+     page.should have_content(athlete.last_name)
+  end
 end
 
 #viewAboutPage 
