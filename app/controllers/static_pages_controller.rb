@@ -22,6 +22,9 @@ class StaticPagesController < ApplicationController
     
   end
   
+  def scoring_rules
+  
+  end
   
 end
   
