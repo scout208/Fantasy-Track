@@ -17,9 +17,9 @@ end
 
   Then(/^I should see the view where I am able to login$/) do
     current_path.should == "/login"
-    page.has_field?('email', :type => 'email_field')
-    page.has_field?('password', :type => 'password_field')
-    page.has_button?('Log in')
+    page.should have_field('session_email')
+    page.should have_field('session_password')
+    page.should have_button('Log in')
   end
   
 
@@ -89,11 +89,11 @@ end
 
   Then(/^I should see the view where I am able to sign up$/) do
     current_path.should == "/signup"
-    page.has_field?('user_id', :type => 'text_field')
-    page.has_field?('email', :type => 'email_field')
-    page.has_field?('password', :type => 'password_field')
-    page.has_field?('password_confirmation', :type => 'password_field')
-    page.has_button?('Sign up')
+    page.should have_field("user_user_id")
+    page.should have_field('user_email')
+    page.should have_field('user_password')
+    page.should have_field('user_password_confirmation')
+    page.should have_button('Sign Up')
   end
   
   When(/^I am on the signup page$/) do

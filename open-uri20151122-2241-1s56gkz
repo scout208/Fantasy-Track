@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="//cdn.optimizely.com/js/2908541267.js"></script>
+    <title>Running Videos, Running Races and Track and Field Videos : Flotrack - Track is Back - Flotrack</title>
+    <meta charset="utf-8"/>
+    <meta name="language" content="en"/>
+    <meta name="keywords" content="running videos, running, track and field, running, ncaa track and field, running track, running videos, track and field videos"/>
+    <meta name="description" content="See the latest running videos on track and field events around the US and the world.  Watch running videos and interviews with the greatest coaches and athletes." />
+
+    <meta property="fb:app_id" content="119215858156983"/>
+    <meta property="og:site_name" content="flotrack"/>
+    
+
+	<script>
+		//document.domain ='flotrack.org';
+		var START_TIME = _sf_startpt = (new Date()).getTime();
+	</script>
+
+    <link rel="stylesheet" type="text/css" href="http://flocasts-cms-media.s3.amazonaws.com/core/css/core.gz.css"/>
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/sites/flotrack/flotrack.css" />
+	<link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/sites/flotrack/custom.css" />
+
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="http://flocasts-cms-media.s3.amazonaws.com/core/css/ie.css" /><![endif]-->
+    <link rel="dns-prefetch" href="//c0205112.cdn.cloudfiles.rackspacecloud.com">
+    <link rel="dns-prefetch" href="//c0179261.cdn.cloudfiles.rackspacecloud.com">
+    <link rel="dns-prefetch" href="//ak.c.ooyala.com">
+    <link rel="dns-prefetch" href="//static.fmpub.net">
+    <link rel="dns-prefetch" href="//www.googleadservices.com">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//flo-static-assets.s3.amazonaws.com/drivefaze/js/global.js"></script>
+
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/default.css" />
+    <link rel="shortcut icon" href="https://flosports.s3.amazonaws.com/favicons/FloTrack_vdl2id.ico" />
+
+</head>
+<body class="core flotrack">
+
+<div id="wrapper-outer">
+
+    <header>
+		
+<div id="toolbar" class="integrated-tool-bar">
+		<script>IS_ADMIN = false;</script>
+	<ul class="secondary-nav" id="toolbar-nav"></ul>
+		<ul class="secondary-nav" id="user-actions">
+					<li>
+				<a href="/premiumvideos/signup?source=Nav%20Bar%20-%20FloPro&ref=toolbar-front" class="pro-button">
+					Join FloPro				</a>
+			</li>
+			<li>
+				<a href="/site/login" class="btn-login">Log In</a>
+			</li>
+				<li>
+			<form id="search-form" action="/search">
+				<input type="hidden" name="cx" value="016405253375880695266:3vcagslg-wm"/>
+				<input type="hidden" name="cof" value="FORID:11"/>
+				<input type="hidden" name="ie" value="UTF-8"/>
+				<input value="" type="text" name="q" class="auto-input search-input" default="Enter search term" autocomplete="off"/>
+				<button type="submit" class="action-submit"><span>Search</span></button>
+			</form>
+		</li>
+	</ul>
+</div>
+
+
+        <div id="header">
+            <div class="container_12 two-col">
+                <div class="grid_12 standalone">
+                    <div class="sitelogo">
+						<a href="/">
+							<img src="https://flosports.s3.amazonaws.com/logos/FloTrack_vdl2id.png" alt="Track is Back"/>
+						</a>
+					</div>
+				</div>
+				<div class="social-site-bar">
+					<ul class="socialcount socialcount-small">
+						<li class="facebook-sc">
+							<a href="" target="_blank" title="Like Flotrack">
+								<span class="social-icon icon-facebook"></span>
+								<span class="count"></span>
+							</a>
+						</li>
+						<li class="twitter-sc">
+							<a href="https://twitter.com/flotrack" target="_blank" title="Follow flotrack">
+								<span class="social-icon icon-twitter"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <nav id="nav-bar">
+            <div class="container_12 three-col">
+                <div class="grid_12 paddable">
+                    <ul class="main-nav" id="navigation">
+	                    <li class=" menu-home" id="menu-home" style="margin-right:16px">
+		                    <a href="/">Home</a>
+	                    </li>
+	                    <li class=" menu-flopro" style="margin-right:16px">
+		                    <a href="/ext/track_live_schedule/">FloPro</a>
+	                    </li>
+
+	                    <li class=" menu-events" style="margin-right:16px">
+		                    <a href="/coverages">Events</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-flotrack-throwdown">
+				                    <a href="/coverage/252141-Flotrack-Throwdown-Rip-City-2015">Flotrack Throwdown</a>
+			                    </li>
+			                    <li id="menu-beer-mile-world-championships">
+				                    <a href="/coverage/252235-FloTrack-Beer-Mile-World-Championships-2015">Beer Mile World Championships</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class=" menu-results" id="menu-results" style="margin-right:16px">
+		                    <a href="/results">Results</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-ncaa-xc-history">
+				                    <a href="http://results.flotrack.org/">Live Results</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+
+	                    <li class=" menu-rankings" style="margin-right:16px">
+		                    <a href="/rankings/">Rankings</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-high-school-xc-rankings">
+				                    <a href="http://www.milesplit.com/rankings/flo50">High School</a>
+			                    </li>
+			                    <li id="menu-college-xc-rankings">
+				                    <a href="/rankings/college">College</a>
+			                    </li>
+			                    <li id="menu-high-school-xc-rankings">
+				                    <a href="/rankings/world">World</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class="menu-shows" style="margin-right:16px">
+		                    <a href="/video">Shows</a>
+		                    <ul class="sub-nav">
+			                    <li id="workouts">
+				                    <a href="/coverage/252500/video?sort=newest">Workout Wednesday</a>
+			                    </li>
+			                    <li id="menu-run-junkie">
+				                    <a href="/coverage/240120-Run-Junkie/video?sort=newest">Run Junkie</a>
+			                    </li>
+			                    <li id="menu-who's-#1">
+				                    <a href="/coverage/251665/video?sort=newest">Who's #1</a>
+			                    </li>
+			                    <li id="menu-track-after-dark">
+				                    <a href="/coverage/251947/article">Podcast</a>
+			                    </li>
+			                    <li id="menu-kick-of-the-week">
+				                    <a href="/coverage/251943-Kick-of-the-Week/video?sort=newest">Kick Of The Week</a>
+			                    </li>
+			                    <li id="menu-tasty-race">
+				                    <a href="/coverage/251944-Tasty-Race-of-the-Week/video?sort=newest">Tasty Race</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class=" menu-news" id="menu-news" style="margin-right:16px">
+		                    <a href="/article">News</a>
+	                    </li>
+	                    <li class=" menu-flotrackr" style="margin-right:16px">
+		                    <a href="/page/Flotrackr">Flotrackr</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-running-logs">
+				                    <a href="/running_logs">Running Logs</a>
+			                    </li>
+			                    <li id="menu-team-pages">
+				                    <a href="/group">Team Pages</a>
+			                    </li>
+			                    <li id="menu-flostopwatch">
+				                    <a href="/page/FloStopwatch">Flostopwatch</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class="last menu-support" id="menu-support">
+		                    <a href="/page/Flotrack-Contact-Form">Support</a>
+	                    </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="leaderboard">
+        
+
+    
+    
+
+<div class="leaderboard placement" id="placement_flotrack_728x90_atf">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_728x90_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_728x90_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" border="0" width="728" height="90" />
+        </a>
+    </noscript>
+</div>
+
+<div class="small placement " id="placement_flotrack_200x90_atf">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_200x90_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_200x90_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" border="0" width="200" height="90" />
+        </a>
+    </noscript>
+</div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 728, height: 90, position: "atf", module: "homepage", id: "1" });
+	_FLO_.adTech.placements.push({ width: 200, height: 90, position: "atf", module: "homepage", id: "1" });
+</script>
+
+    
+    
+    
+<div id="placement_flotrack_1x1">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_1x1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_1x1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" border="0" width="1" height="1" />
+        </a>
+    </noscript>
+</div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 1, height: 1, module: "homepage", id: "1" });
+</script>
+
+    
+
+    </section>
+
+    <main id="wrapper">
+
+        <div class="container_12">
+            
+        </div>
+
+        <div class="container_12 two-col" id="content">
+
+            <div class="grid_12 alpha" id="title">
+                <h1></h1>
+            </div>
+
+            <div class="grid_8 alpha" id="main">
+                
+
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/front.css" />
+
+        <article class="double" id="topStory">
+        <a
+							href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806244-2015-NCAA-Mens-Cross-Country-Championships-Full-Race"
+					>
+            <h1>WATCH! NCAA Men's Cross Country Championships</h1>
+            <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924593_8VKGe1nTRbxNdlMaoWh1_o.jpg" /></figure>
+        </a>
+    </article>
+    
+        <section class="single" id="recentBanners">
+        <h1><a href="/archive">Headlines</a></h1>
+        <ul>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806247-2015-NCAA-Womens-Cross-Country-Championships-Full-Race"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924594_HVklULr60QwudFPwiwq6_l.jpg" /></figure>
+                        <strong>WATCH! NCAA Women's Cross Country Championships</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37620-49-Points-to-History-How-the-New-Mexico-Lobos-Won-the-NCAA-Championship"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924603_KTiur3XC8jPytBSX1iKQ_l.jpg" /></figure>
+                        <strong>49 Points to History: How New Mexico Won The NCAA Title</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37621-Syracuse-Grinds-Out-Upset-Win-Over-Defending-NCAA-Champions-Colorado"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924606_ccwBzkmbvCxI0h5Uxyaw_l.jpg" /></figure>
+                        <strong>Syracuse Grinds Out Upset Win Over Colorado </strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37610-Syracuse-Dethrones-Colorado-Edward-Cheserek-Wins-3rd-Straight-Individual-Title"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924595_hTV9FzavXjyJpQT1rSYQ_l.jpg" /></figure>
+                        <strong>Edward Cheserek 3-Peats As NCAA XC Champion</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37557-Curse-Breaker-Molly-Seidel-Wins-NCAA-XC-Title-New-Mexico-Lobos-Dominate"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924596_VSAqgPPs3AS9iexDK0sc_l.jpg" /></figure>
+                        <strong>Molly Seidel Breaks The Foot Locker Curse! Lobos Dominate!</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37530-RESULTS-D1-NCAA-Mens-Cross-Country-Championships"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924577_SzpnC59oHEoa0XF4XFCQ_l.jpg" /></figure>
+                        <strong>RESULTS: Syracuse Dethrones Colorado!</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37531-RESULTS-D1-NCAA-Womens-Cross-Country-Championships"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924576_H4Xr1orBPmJgBKKpU1m6_l.jpg" /></figure>
+                        <strong>RESULTS: Lobos Put On A Show In Louisville!</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806169-NCAA-Pre-Race-Highlight"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924561_BEQEvcmQsq0PGECT3tRk_l.jpg" /></figure>
+                        <strong>NCAA Pre-Race Ultimate Highlight</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252579-D2-NCAA-XC-Championships-2015/article/37554-RESULTS-D2-NCAA-Cross-Country-Championships"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924565_OHEMuEfQ9bfRCvCGFEU3_l.jpg" /></figure>
+                        <strong>NCAA D2, D3 LIVE Results!</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806164-FloTracks-2015-NCAA-Pre-Show"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924557_B4Qwo2SIakw5jaXzQZ2J_l.jpg" /></figure>
+                        <strong>FloTrack's 2015 NCAA Pre-Show</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37600-International-Recruiting-Raises-Questions-at-NCAA-Press-Conference"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924548_G9yynPzGarGpL8j6fXTq_l.jpg" /></figure>
+                        <strong>International Recruiting Raises Questions At NCAA XC</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+        <section class="single" id="recentVideos">
+        <h1><a href="/videos">Videos</a></h1>
+        <ul>
+                            <li>
+                    <a href="/videos/806244">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924582_Ujk78M5oY3ubistIVoHc_xl.jpg" /></figure>
+                        <strong>2015 NCAA Men's Cross Country Championships: Full Race</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806247">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924583_DQ6DPn2a81K582RwM6EJ_xl.jpg" /></figure>
+                        <strong>2015 NCAA Women's Cross Country Championships: Full Race</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806218">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/dndjkxeTo62y_Q46n-lVxVp0F1oIdC_n/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Syracuse men react to winning title and shake hands with Colorado</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806240">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/oyZWExeTrxxaC8wk6CZAUK9jae4_SUhu/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Molly Seidel reacts to winning the NCAA Cross Country title</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806233">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/04Y2ExeTrcxXTZZlFSe5eSYtcWUYBpm8/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Edward Cheserek wins third NCAA XC title, talks about making history</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806226">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/40Z2ExeTrfWrnBblBS6ViLVs83-iIKl0/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>New Mexico ladies make history, Mustve been the turquoise</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806231">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/N1ZWExeTqSEtkWArRzbebY31ZmcjgTfe/3Gduepif0T1UGY8H4xMDoxOjA4MTsiGN" /></figure>
+                        <strong>Allie Ostrander 2nd, Brenna Peloquin 9th Boise State freshman superstars</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806234">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/12YmExeTr2ZJijkAhtOvNLQGl5bPX_fu/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Grant Fisher after finishing 17th at NCAA Championships</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/806217">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/twdzkxeToPyIDfKOfOO4JfGhyfNwgJR0/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Colorado Head Coach Mark Wetmore after men and women take 2nd</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+	<section class="single">
+		<div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_content-1">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_content-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_content-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "content-1", module: "homepage", id: "2" });
+</script>
+
+	</section>
+
+        <section class="single" id="recentCoverages">
+        <h1><a href="/coverages">Events</a></h1>
+        <ul>
+            <li>
+                <a href="/coverage/252580">
+                    <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/920665_emtCDSz99A7RzkwvzZjD_xl.png" /></figure>
+                    <strong>D3 NCAA XC Championships 2015</strong>
+                </a>
+            </li>
+                            <li>
+                    <a href="/coverage/252579">
+                        <strong>D2 NCAA XC Championships 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252578">
+                        <strong>D1 NCAA XC Championships 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252574">
+                        <strong>D1 NJCAA XC Championships 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252573">
+                        <strong>D1 NCAA West XC Regional 2015</strong>
+                    </a>
+                </li>
+                    </ul>
+
+    </section>
+    
+        <section class="single" id="topComments">
+        <h1><a href="/activity">Comments</a></h1>
+        <ul>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806211-Colorado-freshman-John-Dressel-on-his-first-season-as-a-Buff">Colorado freshman John Dressel on his first season as a Buff</a></strong>
+                    <span class="count">2</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/251077-News-from-the-Track-and-Field-World/article/37552-WADA-Declares-Russia-Anti-Doping-Operation-Noncompliant">WADA Declares Russia Anti-Doping Operation Noncompliant</a></strong>
+                    <span class="count">3</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37531-RESULTS-D1-NCAA-Womens-Cross-Country-Championships">RESULTS: D1 NCAA Women's Cross Country Championships</a></strong>
+                    <span class="count">12</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806213-Oregons-Robert-Johnson-and-Maurica-Powell-on-Oregons-podium-finishes-and-Chesereks-legacy">Oregon's Robert Johnson and Maurica Powell on Oregon's podium finishes and Cheserek's legacy</a></strong>
+                    <span class="count">1</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/251077-News-from-the-Track-and-Field-World/article/37594-Rita-Jeptoo-Blames-Unnamed-Doctor-For-Giving-Her-EPO">Rita Jeptoo Blames Unnamed Doctor For Giving Her EPO</a></strong>
+                    <span class="count">39</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806208-New-Mexicos-Courtney-Frerichs-gets-engaged-after-winning-national-title">New Mexico's Courtney Frerichs gets engaged after winning national title</a></strong>
+                    <span class="count">20</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806218-Syracuse-men-react-to-winning-title-and-shake-hands-with-Colorado">Syracuse men react to winning title and shake hands with Colorado</a></strong>
+                    <span class="count">12</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/article/37610-Edward-Cheserek-Wins-3rd-Straight-Individual-Title-Syracuse-Dethrones-Colorado">Edward Cheserek Wins 3rd Straight Individual Title, Syracuse Dethrones Colorado</a></strong>
+                    <span class="count">17</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806225-Patrick-Tiernan-made-Cheserek-work-today-has-no-regrets">Patrick Tiernan made Cheserek work today, has no regrets</a></strong>
+                    <span class="count">2</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252578-D1-NCAA-XC-Championships-2015/video/806244-2015-NCAA-Mens-Cross-Country-Championships-Full-Race">2015 NCAA Men's Cross Country Championships: Full Race</a></strong>
+                    <span class="count">1</span>
+                </li>
+                    </ul>
+    </section>
+    
+<section class="single">
+
+	<div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_btf-1">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_btf-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_btf-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "btf-1", module: "homepage", id: "2" });
+</script>
+
+
+</section>
+
+
+            </div>
+
+            <div class="grid_4 alpha" id="side">
+                
+
+            <section class="single" id="recentArticles">
+            <h1><a href="/article">Recent News</a></h1>
+            <ul>
+                                    <li>
+                        <a href="/articles/37621">
+                            <strong>Syracuse Grinds Out Upset Win Over Defending NCAA Champions Colorado</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/37620">
+                            <strong>49 Points to History: How the New Mexico Lobos Won the NCAA Championship</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/37610">
+                            <strong>Edward Cheserek Wins 3rd Straight Individual Title, Syracuse Dethrones Colorado</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/37530">
+                            <strong>RESULTS: D1 NCAA Men's Cross Country Championships</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/37557">
+                            <strong>Curse-Breaker: Molly Seidel Wins NCAA XC Title, New Mexico Lobos Dominate</strong>
+                        </a>
+                    </li>
+                            </ul>
+        </section>
+    
+    <div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_atf">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "atf", module: "homepage", id: "3" });
+</script>
+
+
+    
+            <iframe src="http://www.milesplit.com/rankings/flo50cw" style="width: 300px; height: 425px; margin-bottom: -20px;"></iframe>
+    
+        <section class="single" id="workoutVideos">
+        <h1>Workout Wednesday Season 10</h1>
+        <ul>
+            <li>
+                <a href="/videos/806094">
+                    <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924450_JFFx8Ejt9LaiHLxOMGTP_xl.jpg" /></figure>
+                    <strong>Workout Wednesday: Fartlek with No. 1 Grand Valley State</strong>
+                </a>
+            </li>
+                            <li>
+                    <a href="/videos/805579">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924199_lOX0r92PJy0KBvCz8CjI_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Lake Repeats with the Notre Dame Women</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/802970">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/923788_eNqhYNLOxX1L1HCv14ru_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Fartlek with the #15 Iowa State Women</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/799137">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/922944_8zK9Y0OkrnGCrOIQb4DU_l.jpg" /></figure>
+                        <strong>Workout Wednesday: #5 Michigan Men Alternating Pace Track Work</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/798557">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/922153_EQxmJGOojCfZim3LxJ6x_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Minnesota Long Run</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+            <iframe src="/drivefaze/front/custom/2" width="100%" height="400" scrolling="no" style="overflow: hidden"></iframe>
+    
+    <div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_content-2">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_content-2;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_content-2;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "content-2", module: "homepage", id: "3" });
+</script>
+
+
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/Flotrack" data-widget-id="419656561984679936">Tweets by @Flotrack</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+			<section class="single" id="recentAlbums">
+			<h1><a href="/photo/gallery">Photos</a></h1>
+			<ul>
+				<li>
+					<a href="/photo/449722">
+						<figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/891001_GETEXPfKUpnKtUsUBBeu_xl.jpg" /></figure>
+						<strong>2014 IAAF World Junior Champs Day 6</strong>
+					</a>
+				</li>
+									<li>
+						<a href="/photo/449721">
+							<strong>2014 IAAF World Junior Champs Day 5</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449716">
+							<strong>2014 IAAF World Junior Champs Day 4</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449715">
+							<strong>2014 IAAF World Junior Champs Day 3</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449714">
+							<strong>2014 IAAF World Junior Champs Day 2</strong>
+						</a>
+					</li>
+							</ul>
+		</section>
+	
+
+            </div>
+
+        </div>
+    </main>
+
+    <section id="global_footer_ad">
+        
+
+<div class="placement" id="placement_flotrack_728x90_btf">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_728x90_btf;loc=300;kvmodule%3D%3Bkvmoduleid%3D%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_728x90_btf;loc=300;kvmodule%3D%3Bkvmoduleid%3D%3B" border="0" width="728" height="90" />
+        </a>
+    </noscript>
+</div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 728, height: 90, position: "btf", module: "", id: "" });
+</script>
+    </section>
+
+    <footer id="footer">
+        <div id="fb-root"></div>
+        <div class="footer-content">
+            <div class="info-links">
+                <a href="//www.flosports.tv/terms-and-conditions/">Terms of Use</a> | <a href="/site/privacy">Privacy Policy</a> | <a href="http://www.flosports.tv/faq/" target="_blank">FAQ</a>
+            </div>
+            <p id="powered-by"><a href="http://www.flosports.tv">Powered by FloSports</a></p>
+            <p id="server-speed">
+                Served in 0.0214 seconds.
+                Fresh.
+            </p>
+                    </div>
+    </footer>
+
+</div>
+
+
+
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5M883N');
+</script>
+
+<script src="/adtech/adtech_asyncif.js"></script>
+<script>_FLO_.adTech.load("flotrack");</script>
+
+</body>
+</html>
+
+

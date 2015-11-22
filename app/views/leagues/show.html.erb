@@ -1,7 +1,12 @@
-<h2>Welcome to <%=@league.league_name %></h2>
-<p>This is the page for League Information in detail</p>
-<p>The information will be dispalyed differently depending on roles of user</p>
+<div class = "container" id = "invite">  
+   <h2>Welcome to <%=@league.league_name %></h2>
+   <div id = "description">
+       <p>This is the page for League Information in detail</p>
+       <p>The information will be dispalyed differently depending on roles of user</p>
+   </div>
+   
 
-<% if (@league.creator_id == @thisUser.id) %>
-    <h2><%= link_to 'Invite Friends', inviteFriend_league_path(@league) %></h2>
-<% end %>
+   <% if (@league.creator_id == @thisUser.id) %>
+      <h4><%= link_to 'Invite Friends', inviteFriend_league_path(@league) %></h4>
+   <% end %>
+</div>
