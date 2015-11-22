@@ -25,7 +25,7 @@ Background: The following data have been added to FantasyTrack
   |      SHOT PUT MEN      |       3      |  
   |    JAVELIN THROW MEN   |       2      | 
   
-  Given the following athletes have been added to FantasyTrack and thus this event:
+  Given the following athletes have been added to FantasyTrack:
    
   |    first_name    |    last_name |   birth_date     |  country  |   notes  |
   |      Barry       |       Bonds  |    02/02/1992    |   Brazil  |  Player B|
@@ -33,6 +33,12 @@ Background: The following data have been added to FantasyTrack
   |       Danny      |     DeVito   |   04/04/1994     |  Denmark  | Player D |
   |       Emilio     |      Eugene  |   05/05/1995     |   Egypt   | Player E |
   |        Fred      |      Monaco  |   06/06/1996     |   France  | Player F |
+  
+  Given the following athletes are added to event "800M MEN" under "Doha Diamond League":
+  |    first_name    |    last_name |   birth_date     |  country  |   notes  |
+  |      Barry       |       Bonds  |    02/02/1992    |   Brazil  |  Player B|
+  |     Charlie      |     Chaplin  |   03/03/1993     |   China   | Player C |
+  |       Danny      |     DeVito   |   04/04/1994     |  Denmark  | Player D |
   
 
  And I am on the Fantasy-Track home page

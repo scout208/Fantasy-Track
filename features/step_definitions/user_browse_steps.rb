@@ -168,9 +168,8 @@ Given(/^the following Events have been added to Doha Diamond League Meet:$/) do 
   end
 end
 
-Given(/^the following athletes have been added to FantasyTrack and thus this event:$/) do |athlete_table|
-  dohaMeet = Meet.find(1)
-  m800 = dohaMeet.events.find_by(:event_name => "800M MEN")
+Given(/^the following athletes have been added to FantasyTrack:$/) do |athlete_table|
+  
   athlete_table.hashes.each do |athlete|
     
     a = Athlete.new(athlete)
@@ -180,8 +179,19 @@ Given(/^the following athletes have been added to FantasyTrack and thus this eve
     a.country = athlete['country']
     a.notes =athlete['notes']
     a.save()
+  end
+  
+end
+
+
+Given(/^the following athletes are added to event "(.*?)" under "(.*?)":$/) do |eventname,meetname,entrants_table|
+  dohaMeet = Meet.find_by(:meet_name => meetname)
+  m800 = dohaMeet.events.find_by(:event_name => eventname)
+  entrants_table.hashes.each do |entrant|
     
-    curAthlete = Athlete.find_by(:first_name => a.first_name, :last_name => a.last_name)
+    e = Athlete.find_by(:first_name => entrant['first_name'],:last_name => entrant['last_name'] )
+  
+    curAthlete = Athlete.find_by(:first_name => e.first_name, :last_name => e.last_name)
     m800.active_event_entrants.create(:athlete_id => curAthlete.id)
   end
   

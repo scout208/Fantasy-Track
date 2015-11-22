@@ -8,8 +8,10 @@
     users = [{user_id: 'Admin', email: 'admin@gmail.com', password: 'password', password_confirmation: 'password', role: 'admin',email_confirmed: true},
              {user_id: 'tester', email: 'tester@testing.com', password: 'tester', password_confirmation: 'tester', role: 'user',email_confirmed: true},
              {user_id: 'tester0', email: 'tester0@testing.com', password: 'tester0', password_confirmation: 'tester0', role: 'user',email_confirmed: true},
-             {user_id: 'Kevin', email: 'kevin@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true}
-             ]
+             {user_id: 'Kevin', email: 'kevin@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true},
+             {user_id: 'yujhuang', email: 'yujun-huang@uiowa.edu', password: 'myrose', password_confirmation: 'myrose', role: 'user', email_confirmed: true}]
+             
+    leagues = [{creator_id: 2,league_name: 'Cheetah', pass_code: 'rose0'},{creator_id: 3,league_name: 'Flying Angel', pass_code: 'rose1'},{creator_id: 5,league_name: 'Eagles', pass_code: 'rose2'}]
              
     athletes = [{first_name: 'Aaron', last_name:'Andrews', birth_date: '01/01/1991',country:'Argentina',notes:'Player A'},
                    {first_name: 'Barry', last_name:'Bonds', birth_date: '02/02/1992',country:'Brazil',notes:'Player B'},
@@ -184,6 +186,10 @@
     
     users.each do |user|
         User.create!(user)
+    end
+    
+    leagues.each do |league|
+        League.create!(league)
     end
     
     meets.each do |meet|

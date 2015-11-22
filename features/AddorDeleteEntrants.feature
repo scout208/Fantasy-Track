@@ -25,7 +25,7 @@ Feature: Add or remove entrants in Events
   |      SHOT PUT MEN      |       3      |  
   |    JAVELIN THROW MEN   |       2      | 
   
-  Given the following athletes have been added to FantasyTrack and thus this event:
+  Given the following athletes have been added to FantasyTrack:
   |    first_name    |    last_name |   birth_date     |  country  |   notes  |
   |      Barry       |      Bonds   |    02/02/1992    |   Brazil  | Player B |
   |     Charlie      |     Chaplin  |   03/03/1993     |   China   | Player C |
@@ -33,17 +33,28 @@ Feature: Add or remove entrants in Events
   |       Emilio     |      Eugene  |   05/05/1995     |   Egypt   | Player E |
   |        Fred      |      Monaco  |   06/06/1996     |   France  | Player F |
    
+  Given the following athletes are added to event "800M MEN" under "Doha Diamond League":
+  |    first_name    |    last_name |   birth_date     |  country  |   notes  |
+  |      Barry       |       Bonds  |    02/02/1992    |   Brazil  |  Player B|
+  |     Charlie      |     Chaplin  |   03/03/1993     |   China   | Player C |
+  |       Danny      |     DeVito   |   04/04/1994     |  Denmark  | Player D |
   
   And I am logged in with email of "admin@gmail.com" and a password "password" 
-  And I am on the Entrants screen of "800M MEN" under "Doha Diamond League" 
-  
-Scenario: Admin delete entrants
-When I clicked "Remove Entrant" on the row with name of "Barry Bonds"
-And I clicked "Remove Entrant" on the row with name of " Charlie Chaplin"
-Then I should not see "Barry Bonds"
 
-Scenario: Admin add entrants
+Scenario: Admin add and delete entrants
+Given I am on the Entrants screen of "800M MEN" under "Doha Diamond League" 
+Then I should not see "Fred Monaco"
+
 When I click "Add Entrant"
-And I clicked "Add" on the row with name of "Barry Bonds"
+And I clicked "Add" on the row with name of "Fred Monaco"
 Then I am on the Entrants screen of "800M MEN" under "Doha Diamond League" 
-And I should see "Barry Bonds"
+And I should see "Fred Monaco"
+  
+Scenario: Admin delete entrants 
+Given I am on the Entrants screen of "800M MEN" under "Doha Diamond League" 
+When I clicked "Remove Entrant" on the row with name of "Barry Bonds"
+And I clicked "Remove Entrant" on the row with name of "Charlie Chaplin"
+Then I should not see "Barry Bonds"
+And I should not see "Charlie Chaplin"
+
+

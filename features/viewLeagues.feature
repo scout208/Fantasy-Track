@@ -6,25 +6,25 @@ Background: The following data have been added to FantasyTrack
   |  user_id   |     email          | role   |  password   |  
   |   Admin    | admin@gmail.com    | admin  |   password  |     
   |   tester   | tester@testing.com |  user  |    tester   |
-  |   test2    | test2@testing.com  |  user  |    tester   |
+
   
   Given the following leagues have been added to FantasyTrack:
-    | id | leagueName | password |
-    | 2 | MyLeague | passcode |
-    | 3 | otherLeague | password |
-    | 2 | newLeague1 | newpassword |
+  |  meet_name             | location_city| location_country | start_date | end_date    |
+  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
+  | Doha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
+  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
+  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |
+  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |
+   
   
-And I am on the Fantasy-Track home page
 
 Scenario: View Current Leagues
-  Given I am on the FantasyTrack homepage
-  And That I am logged into account "tester" with password 
-  And I click "My Leagues"
-  Then I should see "MyLeague"
-  But I should not see "otherLeague" or "newLeague1"
+  Given I am logged in with email of "admin@gmail.com" and a password "password"
+  Then I should not see "My Leagues"
+  And I should not see "Join League"
   
 Scenario: User views all available leagues
-  Given I am on the FantasyTrack homepage
+  Given I am logged in with email of "tester@testing.com" and a password "tester"
   And I click "Join League"
   Then I should see "MyLeague"
   And I should see "otherLeague"
