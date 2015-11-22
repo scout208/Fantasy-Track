@@ -4,17 +4,21 @@
     } );
 </script>
 <br/>
-<table id="example" class="display" cellspacing="0" width="100%">
-    <thead>
-        <td>League Name</td>
-        <td>Join</td>
-    </thead>
-    <tbody>
-        <% @leagues.each do |p| %>
-        <tr>
-            <td><%= p.league_name %></td>
-            <td><%= link_to 'Join', joinLeague_league_path(p) %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class = "container">
+  <h2>League List</h2>
+     <table id="example" class="display" cellspacing="0" width="100%">
+       <thead>
+         <td>League Name</td>
+         <td>Join</td>
+       </thead>
+       <tbody>
+          <h5><% @leagues.each do |p| %></h5>
+          <tr>
+              <td><%= p.league_name %></td>
+              <td><%= link_to 'Join', joinLeague_league_path(p) %></td>
+           </tr>
+          <% end %>
+       </tbody>
+     </table>
+  
+</div>
