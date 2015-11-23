@@ -4,6 +4,43 @@
     page.should_not have_content(arg1)
  end
 
+ Then(/^I should be on the view to create new meet$/) do
+    current_path.should == "/meets/new"
+    page.should have_content("Create A New Meet")
+    page.should have_field('meet_meet_name')
+    page.should have_field('meet_location_city')
+    page.should have_field('meet_location_country')
+    page.should have_field('meet_start_date')
+    page.should have_field('meet_end_date')
+    page.should have_button('Save')
+ end
+
+When(/^I am on the view to create new meet$/) do
+   visit "/meets/new"
+end
+
+When(/^I fill in the name of "(.*?)" location_city "(.*?)" location_country "(.*?)" start_date "(.*?)" and end_date "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5|
+   fill_in('meet_meet_name', :with =>  arg1)
+   fill_in('meet_location_city', :with => arg2)
+   fill_in('meet_location_country', :with =>  arg3)
+   fill_in('meet_start_date', :with => arg4)
+   fill_in('meet_end_date', :with =>  arg5)
+end
+
+Then(/^I should be on the Meets screen$/) do
+   current_path.should == "/meets"
+end
+
+Then(/^I should see a meet entry with name "(.*?)" location_city "(.*?)" location_country "(.*?)" start_date "(.*?)" and end_date "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5|
+  within('tr', text: arg1) do
+     should have_content(arg2)
+     should have_content(arg3)
+     should have_content(arg4)
+     should have_content(arg5)
+  end
+end
+
+
 #add or delete events 
  Then(/^I should be directed for new event page$/) do
     current_path.should == "/events/new"
@@ -17,9 +54,14 @@
     fill_in('event_event_type', :with => arg2)
  end
 
-  Then(/^I shoud see "(.*?)"$/) do |arg1|
-    page.should have_content(arg1)
-  end
+Then(/^I shoud see "(.*?)"$/) do |arg1|
+   page.should have_content(arg1)
+end
+  
+Then(/^I should be on the event screen of "(.*?)"$/) do |arg1|
+  page.should have_content(arg1)
+  page.should have_content("Meet Detail")
+end
   
 #add or delete entrants
 Given(/^I am on the Entrants screen of "(.*?)" under "(.*?)"$/) do |arg1, arg2|

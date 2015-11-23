@@ -120,7 +120,7 @@ end
   
   
   
-#view Upcomming Events
+#view Meets events entrants
 Given(/^the following Meets have been added to FantasyTrack:$/) do |meets_table|
   meets_table.hashes.each do |meet|
     
@@ -237,6 +237,12 @@ end
 
 Then(/^log out currnet user$/) do
    @current_user = nil
+end
+
+Then(/^I will see "(.*?)" with Event type of "(.*?)"$/) do |arg1, arg2|
+   within('tr', text: arg1) do
+     should have_content(arg2)
+  end
 end
 
 Then(/^I should see all the athletes$/) do

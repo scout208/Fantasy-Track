@@ -10,10 +10,8 @@ Feature: Add Events to Meet
   Given the following Meets have been added to FantasyTrack:
   |  meet_name             | location_city| location_country | start_date | end_date  |
   | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
-  | Doha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
   | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
   | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |
-  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |
    
   
   Given the following Events have been added to Doha Diamond League Meet:
@@ -21,8 +19,6 @@ Feature: Add Events to Meet
   |      800M MEN          |       0      |  
   |  400M HURDLES MEN      |       1      |  
   |    TRIPLE JUMP MEN     |       0      | 
-  |      SHOT PUT MEN      |       3      |  
-  |    JAVELIN THROW MEN   |       2      | 
 
   And I am logged in with email of "admin@gmail.com" and a password "password" 
 
@@ -34,14 +30,17 @@ Scenario: delete event in meets table
   Then I am on the event screen of "Doha Diamond League" 
   And I should not see "800M MEN"
   
-Scenario: create a new event
+Scenario: go to create event page
   When I am on the event screen of "Eugene Diamond League"
   And I click "Create New Event"
   Then I should be directed for new event page
 
-  When I fill in event name with "SHOT PUT MEN" and Event type with "2"
+Scenario: create a new event
+  Given I am on the event screen of "Shanghai Diamond League"
+  And I click "Create New Event"
+  And I fill in event name with "SHOT PUT MEN" and Event type with "2"
   And I press "Save"
-  Then I am on the event screen of "Eugene Diamond League"
-  And I shoud see "SHOT PUT MEN"
+  Then I should be on the event screen of "Shanghai Diamond League"
+  And I will see "SHOT PUT MEN" with Event type of "Throws"
   
    

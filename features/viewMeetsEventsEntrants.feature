@@ -9,7 +9,7 @@ Background: The following data have been added to FantasyTrack
 
   
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date | end_date    |
+  |  meet_name             | location_city| location_country | start_date | end_date  |
   | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
   | Doha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
   | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
@@ -68,7 +68,7 @@ And I should not see "Delete Event" Button
 And I should not see "Remove Entrant" Link
 Then log out currnet user
 
-Scenario: Admin Views the tables
+Scenario: Admin Views meet table
   
 Given I am logged in with email of "admin@gmail.com" and a password "password"
 When I click "Meets"
@@ -76,13 +76,18 @@ Then I should see all of the meets
 And I should see "Meet List"
 And I should see "Create New Meet" Link
 
-
+Scenario: Admin Views Event table
+Given I am logged in with email of "admin@gmail.com" and a password "password"
+And I am on the Meets screen
 When I click "Doha Diamond League"
 Then I should see "Meet Detail"
 And I should see all events for "Doha Diamond League" Meet
 And I should see "Create New Event" Link
 And I should see "Delete" Button
 
+Scenario: Admin Views Entarnt table
+Given I am logged in with email of "admin@gmail.com" and a password "password"
+And I am on the event screen of "Doha Diamond League"  
 When I click "800M MEN"
 Then I should see "Event Detail"
 And I should see all the entrants attending "800M MEN"
