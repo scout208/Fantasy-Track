@@ -1,6 +1,6 @@
 Feature: Add Events to Meet
   
- Background: The following meets have been added to the meets table
+ Background: The following data have been added to the meets table
   
   Given the following users have been added to FantasyTrack:
   |  user_id   |     email          | role   |  password   |  

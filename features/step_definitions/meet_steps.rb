@@ -142,3 +142,97 @@ Then(/^in the mail to "(.*?)" it says "(.*?)"$/) do |email, arg1|
   open_email(email)
   expect(current_email).to have_content arg1
 end
+
+#adminEditCreatesAthlete
+Then(/^I should be directed to the Athletes Page$/) do
+  page.should have_content("Athlete List")
+  current_path.should == "/athletes"
+end
+
+Then(/^I should be on the view to Create New Athlete$/) do
+  current_path.should == "/athletes/new"
+  page.should have_content("Enter Athlete Details")
+  page.should have_field("athlete_first_name")
+  page.should have_field("athlete_last_name")
+  page.should have_field("athlete_country")
+  page.should have_field("athlete_birth_date")
+  page.should have_field("athlete_notes")
+  page.should have_button("Save")
+end
+
+When(/^I fill in first name with "(.*?)" last name with "(.*?)" country with "(.*?)" birthdate with "(.*?)" and notes with "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5|
+   fill_in("athlete_first_name", :with =>  arg1)
+   fill_in('athlete_last_name', :with => arg2)
+   fill_in('athlete_country', :with =>  arg3)
+   fill_in('athlete_birth_date', :with => arg4)
+   fill_in('athlete_notes', :with =>  arg5)
+end
+
+Given(/^I am on the view to create athlete$/) do
+  visit "/athletes/new"
+end
+
+Given(/^I am on the athlete page$/) do
+  visit "/athletes"
+end
+
+Then(/^I should see the search box$/) do
+   page.should have_css(type: "search")
+end
+
+When(/^I click on "(.*?)" for athlete "(.*?)"$/) do |arg1, arg2|
+  within('tr', text: arg2) do
+      click_on arg1
+  end
+end
+
+Then(/^I should be on the detail page of "(.*?)"$/) do |arg1|
+  page.should have_content("Athlete Detail")
+  page.should have_content(arg1)
+end
+
+Given(/^I am on the athlete detail page of "(.*?)"$/) do |arg1|
+  visit "/athletes"
+  click_on arg1
+end
+
+Then(/^I should be on the view to edit detail with "(.*?)" "(.*?)" "(.*?)" "(.*?)" "(.*?)"$/) do |arg1, arg2, arg3, arg4, arg5|
+  find_field('athlete_first_name').value.should eq arg1
+  find_field('athlete_last_name').value.should eq arg2
+  find_field('athlete_country').value.should eq arg3
+  find_field('athlete_birth_date').value.should eq arg4
+  find_field('athlete_notes').value.should eq arg5
+end
+
+When(/^I change birthdate into "(.*?)"  and notes with "(.*?)"$/) do |arg1, arg2|
+   fill_in('athlete_birth_date', :with => arg1)
+   fill_in('athlete_notes', :with =>  arg2)
+end
+
+# filter for athletes
+When(/^I fill the search box with "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^the current view should be rendered to only see athlete "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I will see "(.*?)" with country "(.*?)" and birthdate with "(.*?)"$/) do |arg1, arg2, arg3|
+   within('tr', text: arg1) do
+       should have_content(arg2)
+       should have_content(arg3)
+   end
+end
+
+Then(/^I should see "(.*?)" located first in the table$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see "(.*?)" located last in the table$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should not see "(.*?)" in the table$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
