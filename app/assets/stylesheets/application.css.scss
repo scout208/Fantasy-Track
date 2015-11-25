@@ -54,6 +54,9 @@ input {
   z-index: 20;
   padding:5px;
 }
+.navbar-brand {
+  font-size: 20px;
+}
 
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
@@ -66,6 +69,21 @@ input {
 }
 .navbar-wrapper .navbar .container {
   width: auto;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  font-size: 20px;
+
+}
+.navbar-nav > li{
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 footer {
