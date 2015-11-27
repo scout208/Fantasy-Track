@@ -26,5 +26,9 @@ class StaticPagesController < ApplicationController
   
   end
   
+  def recent_meet
+    
+  end
+  
 end
   
