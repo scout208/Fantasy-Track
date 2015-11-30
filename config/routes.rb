@@ -22,9 +22,15 @@ Rails.application.routes.draw do
       get :selectEntrant
       get :addEntrant
       get :removeEntrant
+      get :enterResult
     end
   end
   resources :athletes
+  
+  resources :sprint_results
+  resources :mid_results
+  resources :jump_results
+  resources :throw_results
   
   resources :leagues do
     member do

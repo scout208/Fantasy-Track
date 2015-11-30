@@ -10,15 +10,23 @@
   <h5>Event type:
     <% if(@event.event_type == 0) %>
         Sprint/Hurdle
+        </br>
+        <h3><%= link_to "Results", sprint_result_path(@event), method: "get" %></h3>
     <% end %>
     <% if(@event.event_type == 1) %>
         Mid Distance
+        </br>
+        <h3><%= link_to "Results", mid_result_path(@event), method: "get" %></h3>
     <% end %>
     <% if(@event.event_type == 2) %>
         Throws
+        </br>
+        <h3><%= link_to "Results", throw_result_path(@event), method: "get" %></h3>
     <% end %>
     <% if(@event.event_type == 3) %>
         Jumps
+        </br>
+        <h3><%= link_to "Results", jump_result_path(@event), method: "get" %></h3>
     <% end %>
   </h5>
     <% if logged_in? %>
@@ -34,7 +42,10 @@
             <td>Country</td>
             <td>Birth Date</td>
             <td>Comments</td>
-            <td>Remove</td>
+            <% if @current_user.role == "admin" %>
+                <td>Remove</td>
+                <td>Enter Result</td>
+            <% end %>
         </thead>
         <tbody>
            <% @entrants.each do |p| %>
@@ -46,6 +57,7 @@
                 <% if logged_in? %>
                   <% if @current_user.role == "admin" %>
                      <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
+                     <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
                   <%end%>
                 <%end%>
             </tr>
