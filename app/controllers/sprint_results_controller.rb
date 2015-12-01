@@ -1,7 +1,8 @@
 class SprintResultsController < ApplicationController
     
   def show
-    
+    currentID = session[:current_event]
+    @results = SprintResult.find(:all, :event_id => currentID)
   end
 
   def new

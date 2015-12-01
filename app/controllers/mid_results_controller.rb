@@ -1,7 +1,8 @@
 class MidResultsController < ApplicationController
   
   def show
-    
+    @event = Event.find(session[:current_event])
+    @results = MidResult.find(:all, :event_id => @event.id)
   end
 
   def new
