@@ -9,7 +9,6 @@ Feature: Administrator creates new Athlete
     
   Given the following athletes have been added to FantasyTrack:
   | first_name | last_name | birth_date | country   | notes    |
-  | Aaron      | Andrews   | 01/01/1991 | Argentina | Player A |
   | Barry      | Bonds     | 02/02/1992 | Brazil    | Player B |
 
   And I am logged in with email of "admin@gmail.com" and a password "password"
