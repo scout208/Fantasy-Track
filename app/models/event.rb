@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
                                   foreign_key: "event_id",
                                   dependent:   :destroy
                                   
-    has_many :active_sprint_results, class_name: "SpringResult",
+    has_many :active_sprint_results, class_name: "SprintResult",
                                     foreign_key: "event_id",
                                     dependent: :destroy
                                     
