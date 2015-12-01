@@ -1,1 +1,48 @@
-<h2>Create New Jump Result</h2>
+<div class = "container" id = "newmeet">
+   <% provide(:title, 'Create New Meets') %>
+  <h2>Enter Result for <%= @athlete.first_name %> <%= @athlete.last_name %> for <%= @event.event_name %></h2>
+  <div class="col-md-6 col-md-offset-3">
+      <br/>
+      <%= form_for(:jump_result, url: jump_results_path) do |f| %>
+      
+        <%= f.label :best_jump, "Best Jump (meters): " %>
+        <%= f.number_field :best_jump, :step => 'any', :required => true %>
+
+        <%= f.label :place, "Place: " %>
+        <%= f.number_field :place, :required => true%>
+
+        <%= f.label :jump_1, "Round 1: " %>
+        <%= f.number_field :jump_1, :step => 'any', :required => false %>
+  
+        <%= f.label :jump_2, "Round 2: " %>
+        <%= f.number_field :jump_2, :step => 'any', :required => false%>
+        
+        <%= f.label :jump_3, "Round 3: " %>
+        <%= f.number_field :jump_3, :step => 'any', :required => false %>
+        
+        <%= f.label :jump_4, "Round 4: " %>
+        <%= f.number_field :jump_4, :step => 'any', :required => false %>
+        
+        <%= f.label :jump_5, "Round 5: " %>
+        <%= f.number_field :jump_5, :step => 'any', :required => false %>
+        
+        <%= f.label :jump_6, "Round 6: " %>
+        <%= f.number_field :jump_6, :step => 'any', :required => false %>
+        
+        <%= f.label :pr, "Personal Record: " %>
+        <%= f.check_box :pr %>
+        
+        <%= f.label :nr, "National Record: " %>
+        <%= f.check_box :nr %>
+        
+        <%= f.label :wr, "World Record: " %>
+        <%= f.check_box :wr %>
+        
+        <%= f.label :best_of_round, "Instances of Round Leader: " %>
+        <%= f.number_field :best_of_round, :value => "0" %>
+        </br>
+        </br>
+        <%= f.submit "Save Result", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>  

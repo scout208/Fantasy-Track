@@ -5,11 +5,13 @@ class MidResultsController < ApplicationController
   end
 
   def new
-    
+    @athlete = Athlete.find(session[:current_athlete])
+    @event = Event.find(session[:current_event])
   end
   
   def create
-    
+    @event = Event.find(session[:current_event])
+    redirect_to event_path(@event)
   end
   
   def index
@@ -23,6 +25,6 @@ class MidResultsController < ApplicationController
   private
 
     def result_params
-      params.require(:jump_result).permit(:event_id, :athlete_id, :pr, :nr, :wr, :split_leader, :place, :time_seconds)
+      params.require(:jump_result).permit(:event_id, :minutes, :seconds, :athlete_id, :pr, :nr, :wr, :split_leader, :place, :time_seconds)
     end
 end

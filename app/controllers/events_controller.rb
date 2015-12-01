@@ -67,18 +67,17 @@ class EventsController < ApplicationController
   end
   
   def enterResult
-    entryId = params[:id]
+    @athlete = Athlete.find(params[:id])
     @event = Event.find(session[:current_event])
-    @entry = EventEntrant.find_by(:event_id => @event.id, :athlete_id => entryId)
-    
+    session[:current_athlete] = @athlete.id
     if(@event.event_type == 0)
-      redirect_to new_sprint_result_path(@event)
+      redirect_to new_sprint_result_path(@athlete)
     elsif(@event.event_type == 1)
-      redirect_to new_mid_result_path(@event)
+      redirect_to new_mid_result_path(@athlete)
     elsif(@event.event_type == 2)
-      redirect_to new_throw_result_path(@event)
+      redirect_to new_throw_result_path(@athlete)
     else
-      redirect_to new_jump_result_path(@event)
+      redirect_to new_jump_result_path(@athlete)
     end
       
   end

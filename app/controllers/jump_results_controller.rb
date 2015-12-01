@@ -5,11 +5,13 @@ class JumpResultsController < ApplicationController
   end
 
   def new
-    
+    @athlete = Athlete.find(session[:current_athlete])
+    @event = Event.find(session[:current_event])
   end
   
   def create
-    
+    @event = Event.find(session[:current_event])
+    redirect_to event_path(@event)
   end
   
   def index
