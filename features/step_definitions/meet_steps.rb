@@ -8,6 +8,7 @@ Given /^I am on the Meets page$/ do
   visit '/login'
   fill_in('session_email', :with =>  'admin@gmail.com')
   fill_in('session_password', :with => 'password')
+  click_on('Log in')
   visit '/meets/new'
   fill_in('meet_meet_name', :with => name)
   fill_in('meet_location_city', :with => location_city)
@@ -28,6 +29,13 @@ Given /^I am on the Meets page$/ do
    expect(result).to be_truthy
  end
  
+ When /^I have logged in as admin$/ do
+    visit '/login' 
+    fill_in('session_email', :with =>  'admin@gmail.com')
+    fill_in('session_password', :with => 'password')
+    click_on('Log in')
+ end
+ 
  When /^I have visited the "(.*?)" meet details page$/ do  |name|
    visit '/meets'
    all("tr").each do |tr|
@@ -38,5 +46,5 @@ Given /^I am on the Meets page$/ do
  end
  
  When /^I have clicked the "(.*?)" button$/ do |button|
-   # Delete the meet
+   click_on "#{button}"
  end
