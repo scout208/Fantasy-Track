@@ -1,9 +1,10 @@
 
-    Hello,
+    Hello, <%= @user.user_id %>:
     
     </br>
     You have been invited to the Fantasy Track & Field league: <%= @league.league_name %>
     </br>
+    The league leader: 
     The league pass code is: <%= @league.pass_code %>
     </br>
     To join the league, visit <a href='https://secret-gorge-8997.herokuapp.com'></a> and log in to Join the League.

@@ -26,7 +26,7 @@ class AthletesController < ApplicationController
   def update
     @athlete = Athlete.find(params[:id])
     @athlete.update_attributes!(athlete_params)
-    flash[:notice] = "#{@athlete.first_name} was successfully updated."
+    flash[:notice] = "#{@athlete.first_name} #{@athlete.last_name} was successfully updated."
     redirect_to athlete_path(@athlete)
   end
 
@@ -34,7 +34,7 @@ class AthletesController < ApplicationController
   def create
     @athlete = Athlete.new(athlete_params)    # Not the final implementation!
     if @athlete.save
-      flash[:success] = "#{@athlete.first_name} successcully created."
+      flash[:notice] = "#{@athlete.first_name} #{@athlete.last_name} successcully created."
       redirect_to athletes_path
     else
       render 'new'

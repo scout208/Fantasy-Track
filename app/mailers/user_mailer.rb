@@ -11,6 +11,6 @@ class UserMailer < ActionMailer::Base
     def invite_friend(user, league)
         @user = user
         @league = league
-        mail(:to => "#{user.email} <#{user.email}>", :subject => "You are invited to a Fantasy Track League")
+        mail(:to => "#{user.user_id} <#{user.email}>", :subject => "You are invited to a Fantasy Track League")
     end
 end

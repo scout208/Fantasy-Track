@@ -1,0 +1,42 @@
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+<div class = "container" id = "results">
+   <% provide(:title, 'Results') %>
+  <h2>Event Detail</h2>
+  <h5>Event: <%= @event.event_name %></h5> 
+  <h5>Event type: Throws</h5>
+  <div>
+    <h3>Results</h3>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <td>Place</td>
+            <td>Name</td>
+            <td>Meters</td>
+            <td>Round 1</td>
+            <td>Round 2</td>
+            <td>Round 3</td>
+            <td>Round 4</td>
+            <td>Round 5</td>
+            <td>Round 6</td>
+        </thead>
+        <tbody>
+           <% @results.each do |p| %>
+            <tr>
+                <td><%= p.place %></td>
+                <td>Name</td>
+                <td><%= p.best_jump %></td>
+                <td><%= p.jump_1 %></td>
+                <td><%= p.jump_2 %></td>
+                <td><%= p.jump_3 %></td>
+                <td><%= p.jump_4 %></td>
+                <td><%= p.jump_5 %></td>
+                <td><%= p.jump_6 %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>

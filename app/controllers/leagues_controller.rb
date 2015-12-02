@@ -43,13 +43,13 @@ class LeaguesController < ApplicationController
   
   def inviteFriend
     #view for entering friend's email address
+    @league = League.find(session[:current_league])
   end
   
   def requestFriend
     @friend = User.new(friend_params)
     @league = League.find(session[:current_league])
     UserMailer.invite_friend(@friend, @league).deliver
-    
     redirect_to league_path(@league)
   end
   
@@ -63,8 +63,10 @@ class LeaguesController < ApplicationController
     if(@leagueInfo.pass_code == @existingLeague.pass_code)
       @thisUser = User.find_by_session_token(session[:session_token])
       @thisUser.active_league_memberships.create(league_id: @existingLeague.id, user_id: @thisUser.id)
+      flash[:notice] = "You have successcully joined #{@existingLeague.league_name}!"
       redirect_to leagues_path
     else
+      flash[:warning] = "Wrong passcode please re-enter!"
       redirect_to joinLeague_league_path(@existingLeague)
     end
   end
@@ -76,11 +78,27 @@ class LeaguesController < ApplicationController
     if @league.save
       @savedLeague = League.find_by(:league_name => @league.league_name)
       @creator.active_league_memberships.create(league_id: @savedLeague.id, user_id: @creator.id)
-      flash[:success] = "#{@league.league_name} successcully created."
+      flash[:notice] = "#{@league.league_name} successcully created."
       redirect_to leagues_path
     else
       render 'new'
     end
+  end
+  
+  def standings
+    
+  end
+  
+  def scoreboard
+  
+  end
+  
+  def myteam
+    
+  end
+  
+  def settings
+  
   end
   
   private

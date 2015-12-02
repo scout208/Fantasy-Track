@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root            'static_pages#home'
   get    'about'   => 'static_pages#about'
+  post    'recent_meet' => 'static_pages#recent_meet'
   get   'show_all' => 'leagues#show_all'
+  get   'scoring_rules' => 'static_pages#scoring_rules'
+  get    'standings' => 'leagues#standings'
+  get    'scoreboard'=> 'leagues#scoreboard'
+  get    'myteam'  => 'leagues#myteam'
+  get    'settings'=> 'leagues#settings'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -20,9 +26,15 @@ Rails.application.routes.draw do
       get :selectEntrant
       get :addEntrant
       get :removeEntrant
+      get :enterResult
     end
   end
   resources :athletes
+  
+  resources :sprint_results
+  resources :mid_results
+  resources :jump_results
+  resources :throw_results
   
   resources :leagues do
     member do

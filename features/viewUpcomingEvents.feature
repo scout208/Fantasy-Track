@@ -8,17 +8,17 @@ Background: The following users have been added to user table
   |   tester   | tester@testing.com |  user  |    tester   |
   |   test2    | test2@testing.com  |  user  |    tester   |
   
-  Given the following leagues have been added to FantasyTrack:
-  | leagueName             | city    | country | startDate | endDate    |
-  | Doha Diamond League    |  Doha   |   QAT   | 15/05/2015| 15/05/2015 |
-  | Doha Diamond League    |  Doha   |   QAT   | 06/05/2016| 06/05/2016 |
-  | Shanghai Diamond League| Shanghai|   CHN   | 14/05/2016| 14/05/2016 |
-  | Eugene Diamond League  | Eugene  |   USA   | 28/05/2016| 28/05/2016 |
-  | Monaco Diamond League  | Monaco  |   MON   | 15/07/2016| 15/07/2016 |
-  | Rome Diamond League    | Rome    |   ITA   | 02/06/2016| 02/06/2016 |
-  | Lausanne Diamond League| Lausanne|   SUI   | 25/08/2016| 25/08/2016 |
-  | Zurich Diamond League  | Zurich  |   SUI   | 01/09/2016| 01/09/2016 |
-  | Brussels Diamond League| Brussels|   BEL   | 09/09/2016| 09/09/2016 |
+  Given the following meets have been added to FantasyTrack:
+  | leagueName | city | country | startDate | endDate |
+  | Doha Diamond League |  Doha  | QAT | 15/05/2015  | 15/05/2015 |
+  | Doha Diamond League |  Doha  | QAT | 06/05/2016  | 06/05/2016 |
+  | Shanghai Diamond League | Shanghai | CHN | 14/05/2016 | 14/05/2016 |
+  | Eugene Diamond League | Eugene | USA | 28/05/2016 | 28/05/2016 |
+  | Monaco Diamond League | Monaco | MON | 15/07/2016 | 15/07/2016 |
+  | Rome Diamond League | Rome | ITA | 02/06/2016 | 02/06/2016 |
+  | Lausanne Diamond League | Lausanne | SUI | 25/08/2016 | 25/08/2016 |
+  | Zurich Diamond League | Zurich | SUI | 01/09/2016 | 01/09/2016 |
+  | Brussels Diamond League | Brussels | BEL | 09/09/2016 | 09/09/2016 |
   
 And I am on the Fantasy-Track home page
 

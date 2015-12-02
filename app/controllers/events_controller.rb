@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   helper_method :selectEntrant
   helper_method :addEntrant
   helper_method :removeEntrant
+  helper_method :enterResult
   
   def set_current_user
     @current_user ||=	session[:session_token] && User.find_by_session_token(session[:session_token])
@@ -10,6 +11,8 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
+    session[:current_event] = @event.id
+    
     @entrants = @event.entrants
   end
 
@@ -61,6 +64,22 @@ class EventsController < ApplicationController
     @entry.destroy
     
     redirect_to event_path(@event)
+  end
+  
+  def enterResult
+    @athlete = Athlete.find(params[:id])
+    @event = Event.find(session[:current_event])
+    session[:current_athlete] = @athlete.id
+    if(@event.event_type == 0)
+      redirect_to new_sprint_result_path(@athlete)
+    elsif(@event.event_type == 1)
+      redirect_to new_mid_result_path(@athlete)
+    elsif(@event.event_type == 2)
+      redirect_to new_throw_result_path(@athlete)
+    else
+      redirect_to new_jump_result_path(@athlete)
+    end
+      
   end
   
   private

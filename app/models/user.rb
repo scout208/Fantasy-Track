@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 	before_create :confirmation_token
 	
 	
-	
 	before_validation :prep_email
 	     
 	    def email_activate

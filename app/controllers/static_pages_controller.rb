@@ -22,6 +22,13 @@ class StaticPagesController < ApplicationController
     
   end
   
+  def scoring_rules
+  
+  end
+  
+  def recent_meet
+    
+  end
   
 end
   

@@ -62,24 +62,39 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <h2><%= link_to image_tag('twitter.jpg',size:'140x140',alt:"Generic placeholder image"), 'http://www.twitter.com', class:"img-circle" %></h2>
+          <h2>Twitter <%= link_to image_tag('twitter.jpg',size:'140x140',alt:"Generic placeholder image"), 'http://www.twitter.com', class:"img-circle" %></h2>
           <p>test Twitter Link</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Test</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>Rules</h2>
+          <p>How to Play Fantasy Track</p>
+          <p><%= button_to "Scoring Rules", scoring_rules_path, :class => "btn btn-default" %></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Test</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>Results</h2>
+          <p>View Results from the last meet</p>
+          <p><%= button_to "Results", recent_meet_path, :class => "btn btn-default" %></p>
+
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
     </div><!-- /.container -->
+    
+    <div class= "container users">
+      <div class = "row">
+        <br></br>
+        <br></br>
+        <center><h1> <%= User.count %> Users </h1> </center>
+        <center> <h1> Already Signed up! </h1> </center>
+        <br></br>
+        <br></br>
+      </div>
+    </div>
+    
+    
     
 

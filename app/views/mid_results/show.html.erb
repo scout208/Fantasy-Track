@@ -1,0 +1,32 @@
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+<div class = "container" id = "results">
+   <% provide(:title, 'Results') %>
+  <h2>Event Detail</h2>
+  <h5>Event: <%= @event.event_name %></h5> 
+  <h5>Event type: Mid-Distance</h5>
+  <div>
+    <h3>Results</h3>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <td>Place</td>
+            <td>Name</td>
+            <td>Time</td>
+            <td>Split Leader</td>
+        </thead>
+        <tbody>
+           <% @results.each do |p| %>
+            <tr>
+                <td><%= p.place %></td>
+                <td>Name</td>
+                <td><%= p.time_seconds %></td>
+                <td><%= p.split_leader %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
