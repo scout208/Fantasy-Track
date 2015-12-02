@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get    'about'   => 'static_pages#about'
   post    'recent_meet' => 'static_pages#recent_meet'
   get   'show_all' => 'leagues#show_all'
-  get   'scoring_rules' => 'static_pages#scoring_rules'
+  post  'scoring_rules' => 'static_pages#scoring_rules'
   get    'standings' => 'leagues#standings'
   get    'scoreboard'=> 'leagues#scoreboard'
   get    'myteam'  => 'leagues#myteam'
