@@ -85,6 +85,22 @@ class LeaguesController < ApplicationController
     end
   end
   
+  def standings
+    
+  end
+  
+  def scoreboard
+  
+  end
+  
+  def myteam
+    
+  end
+  
+  def settings
+  
+  end
+  
   private
 
     def league_params
