@@ -30,7 +30,7 @@ class MeetsController < ApplicationController
     end
   end
   
-   def destroy
+  def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
     flash[:notice] = "Meet '#{@meet.meet_name}' deleted."
