@@ -11,6 +11,7 @@ class LeaguesController < ApplicationController
     #For now I'll use League.find --Xi
     @league = League.find(params[:id])
     session[:current_league] = @league.id
+    @leaguefromSessions = session[:current_league]
     @thisUser = User.find_by_session_token(session[:session_token])
   end
 

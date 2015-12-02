@@ -78,6 +78,7 @@
     
   .navbar .navbar-collapse {
       text-align: left;
+      padding-right: 480px;
     }
     
     .navbar-wrapper > .container {
@@ -101,3 +102,15 @@
     }
 }
 
+div.boxed{
+    box-sizing: border-box;
+    width: 50%;
+    border: 1px solid white;
+    float: left;
+}
+
+div.region{
+    width: 30em;
+    border: 1em solid;
+    padding-left: 200px;
+}
