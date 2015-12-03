@@ -37,6 +37,12 @@ class MeetsController < ApplicationController
     redirect_to meets_path
   end
   
+  def releaseMeet
+    @meet = Meet.find(session[:current_meet])
+    @meet.update_attribute(:released, true)
+    redirect_to meets_path
+  end
+  
   private
 
     def meet_params

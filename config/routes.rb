@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post    'recent_meet' => 'static_pages#recent_meet'
   get   'show_all' => 'leagues#show_all'
   post  'scoring_rules' => 'static_pages#scoring_rules'
+  post  'releaseMeet' => 'meets#releaseMeet'
   get    'standings' => 'leagues#standings'
   get    'scoreboard'=> 'leagues#scoreboard'
   get    'myteam'  => 'leagues#myteam'
