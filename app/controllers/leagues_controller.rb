@@ -95,7 +95,12 @@ class LeaguesController < ApplicationController
   end
   
   def myteam
-    
+    @availablemeets = Meet.all()
+    @availablemeets.each do |p| 
+      if p.released == false
+          delete(p)
+      end
+    end
   end
   
   def settings
