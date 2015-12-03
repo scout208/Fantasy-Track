@@ -14,6 +14,44 @@
             </div>
           </div>
         </nav>
+        </br>
+  <div>
+    <h2>League Settings</h2>
+    <% if(@league.creator_id == @thisUser.id) %>
+      <h3><%= link_to "Change Settings", edit_league_setting_path(@settings), method: "get" %></h3>
+    <% end %>
+    </br>
+    <div id="currentSettings">
+      <h1>Points</h1>
+      <h4>Default Points: <%= @settings.standard_scoring %></h4>
+      </br>
+      <h4>Correct Place Bonus: <%= @settings.exact_place_bonus %></h4>
+      </br>
+      <h4>PR Bonus: <%= @settings.pr_bonus %></h4>
+      </br>
+      <h4>NR Bonus: <%= @settings.nr_bonus %></h4>
+      </b4>
+      <h4>WR Bonus: <%= @settings.wr_bonus %></h4>
+      </b4>
+      <h4>Best Of Round Bonus: <%= @settings.best_of_round_bonus %></h4>
+      </br>
+      <h4>Split Leader Bonus: <%= @settings.split_leader_bonus %></h4>
+      </br>
+      <h4>Fastest Start Bonus: <%= @settings.fastest_start_bonus %></h4>
+      </br>
+      <h1>Athlete Selection</h1>
+      </br>
+      <% if(@settings.athlete_select_option == 1) %>
+        <h4>Select 3 athletes for every event</h4>
+      <% elsif(@settings.athlete_select_option == 2) %>
+        <h4>Select 1 event per event type, and select 3 athletes for each event selected</h4>
+      <% elsif(@settings.athlete_select_option == 3) %>
+        <h4>Pick order of every athlete in every event</h4>
+      <% else %>
+        <h4>Select 1 event per event type, and select the order for every athlete in those events</h4>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div id="border">
     <div>
