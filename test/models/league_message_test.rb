@@ -3,7 +3,7 @@ require 'test_helper'
 class LeagueMessageTest < ActiveSupport::TestCase
 
   def setup
-    @user = users(:michael)
+    @league = users(:michael)
     @league_message = @user.league_messages.build(content: "Lorem ipsum")
   end
 
