@@ -6,10 +6,12 @@
     <h4>Location: <%= @meet.location_city %>, <%= @meet.location_country %></h4>
     <h4>Start Date: <%= @meet.start_date %> </h4>
     <h4>End Date: <%= @meet.end_date %></h4>
+    <h4>Released: <%= @meet.released %> </h4>
     <% if logged_in? %>
       <% if @current_user.role == "admin" %>
         <h5><a href="/events/new">Create New Event</a></h5>
         <label><%= button_to 'Delete', meet_path(@meet), :method => :delete, :confirm => 'Are you sure?'%></label>
+        <label><%= button_to 'Release', releaseMeet_path, :method => :post %></label>
       <%end%>
     <%end%>
 <div>

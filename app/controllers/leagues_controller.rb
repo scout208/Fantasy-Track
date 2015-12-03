@@ -11,6 +11,7 @@ class LeaguesController < ApplicationController
     #For now I'll use League.find --Xi
     @league = League.find(params[:id])
     session[:current_league] = @league.id
+    @leaguefromSessions = session[:current_league]
     @thisUser = User.find_by_session_token(session[:session_token])
   end
 
@@ -78,6 +79,8 @@ class LeaguesController < ApplicationController
     if @league.save
       @savedLeague = League.find_by(:league_name => @league.league_name)
       @creator.active_league_memberships.create(league_id: @savedLeague.id, user_id: @creator.id)
+      @settings = @savedLeague.league_settings.build(league_id: @league_id, standard_scoring: true, athlete_select_option: "1")
+      @settings.save
       flash[:notice] = "#{@league.league_name} successcully created."
       redirect_to leagues_path
     else
@@ -95,10 +98,17 @@ class LeaguesController < ApplicationController
   
   def myteam
     
+   @availablemeets = []
+   @meets = Meet.all()
+   @meets.each do |meet|
+     @availablemeets << meet if meet.released == true
+    end
   end
   
   def settings
-  
+    @thisUser = User.find_by_session_token(session[:session_token])
+    @league = League.find(session[:current_league])
+    @settings = @league.league_settings.first
   end
   
   private

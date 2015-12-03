@@ -30,10 +30,16 @@ class MeetsController < ApplicationController
     end
   end
   
-   def destroy
+  def destroy
     @meet = Meet.find(params[:id])
     @meet.destroy
     flash[:notice] = "Meet '#{@meet.meet_name}' deleted."
+    redirect_to meets_path
+  end
+  
+  def releaseMeet
+    @meet = Meet.find(session[:current_meet])
+    @meet.update_attribute(:released, true)
     redirect_to meets_path
   end
   

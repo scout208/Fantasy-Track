@@ -1,11 +1,16 @@
-
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+<center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
 <br></br>
  <div class="container" id = "leagueNavBar">
         <nav class="navbar navbar-inverse navbar-static-top navbar-backgrnd">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><%= link_to 'League Home'%></li>
+                <li><%= link_to 'League Home', league_path(League.find(session[:current_league]))%></li>
                 <li><%= link_to 'My Team', myteam_path %></li>
                 <li><%= link_to 'Standings', standings_path %></li>
                 <li><%= link_to 'Scoreboard', scoreboard_path %></li>
@@ -14,4 +19,32 @@
             </div>
           </div>
         </nav>
+</div>
+<div id = "divider">
+    <div class = "container" id = "meets">
+      <div>
+         <h3>Set Your Team For The Following Upcoming Meets!</h3>
+         <br></br>
+      </div>
+      <div>
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <td>Meet</td>
+                <td>Location</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+            </thead>
+            <tbody>
+               <% @availablemeets.each do |p| %>
+                <tr>
+                    <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
+                    <td><%= p.location_city %>, <%= p.location_country %></td>
+                    <td><%= p.start_date %></td>
+                    <td><%= p.end_date %></td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div>
 </div>
