@@ -20,29 +20,31 @@
           </div>
         </nav>
 </div>
-<div class = "container" id = "meets">
-  <div>
-     <h3>Set Your Team For The Following Meets</h3>
-     <br></br>
-  </div>
-  <div>
-    <table id="example" class="display" cellspacing="0" width="100%">
-        <thead>
-            <td>Meet</td>
-            <td>Location</td>
-            <td>Start Date</td>
-            <td>End Date</td>
-        </thead>
-        <tbody>
-           <% @availablemeets.each do |p| %>
-            <tr>
-                <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
-                <td><%= p.location_city %>, <%= p.location_country %></td>
-                <td><%= p.start_date %></td>
-                <td><%= p.end_date %></td>
-            </tr>
-          <% end %>
-        </tbody>
-    </table>
-  </div>
+<div id = "divider">
+    <div class = "container" id = "meets">
+      <div>
+         <h3>Set Your Team For The Following Upcoming Meets!</h3>
+         <br></br>
+      </div>
+      <div>
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <td>Meet</td>
+                <td>Location</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+            </thead>
+            <tbody>
+               <% @availablemeets.each do |p| %>
+                <tr>
+                    <td><%= link_to "#{p.meet_name}", meet_path(p), method: "get" %></td>
+                    <td><%= p.location_city %>, <%= p.location_country %></td>
+                    <td><%= p.start_date %></td>
+                    <td><%= p.end_date %></td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div>
 </div>
