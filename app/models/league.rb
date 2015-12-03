@@ -3,6 +3,9 @@ class League < ActiveRecord::Base
                                   foreign_key: "league_id",
                                   dependent:   :destroy
                                   
+    has_many :league_settings, dependent: :destroy
+    
+                                  
     has_many :members, through: :active_league_memberships, source: :user
     
     validates :league_name, presence: true, length: {maximum: 64},
