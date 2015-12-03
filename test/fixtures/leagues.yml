@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cheetah:
+  league_name: Cheetah
+  pass_code: rose0
+  
+flying_angel:
+  league_name: Flying Angel
+  pass_code: rose1
+  
+eagles:
+  league_name: Eagles
+  pass_code: rose2
+
+<% 30.times do |n| %>
+league_<%= n %>:
+  league_name: Eagles
+  pass_code: rose2
+<% end %>
