@@ -27,7 +27,11 @@ class StaticPagesController < ApplicationController
   end
   
   def recent_meet
-    
+    @availablemeets = []
+     @meets = Meet.all()
+     @meets.each do |meet|
+     @availablemeets << meet if meet.released == true
+    end
   end
   
 end
