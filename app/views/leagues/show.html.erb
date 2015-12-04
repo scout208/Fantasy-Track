@@ -21,12 +21,13 @@
           </div>
         </nav>
 </div>
-
+<div class="container">
   <% if @league.league_messages.any? %>
       <h3>League Messages (<%= @league.league_messages.count %>)</h3>
-      <ol class="league_message">
+      <ol class="league_messages">
         <%= render @league_messages %>
       </ol>
       <%= will_paginate @league_messages %>
   <% end %>
+</div>
 

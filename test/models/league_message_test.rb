@@ -4,7 +4,8 @@ class LeagueMessageTest < ActiveSupport::TestCase
 
   def setup
     @league = leagues(:cheetah)
-    @league_message = @league.league_messages.build(content: "Lorem ipsum")
+    @user = users(:michael)
+    @league_message = @league.league_messages.build(user_id: @user.id, content: "Lorem ipsum")
   end
 
   test "should be valid" do
@@ -13,6 +14,11 @@ class LeagueMessageTest < ActiveSupport::TestCase
 
   test "league id should be present" do
     @league_message.league_id = nil
+    assert_not @league_message.valid?
+  end
+  
+  test "user id should be present" do
+    @league_message.user_id = nil
     assert_not @league_message.valid?
   end
 

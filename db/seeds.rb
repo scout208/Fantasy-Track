@@ -479,5 +479,5 @@
     leagues = League.order(:id).take(6)
     50.times do
         content = Faker::Lorem.sentence(5)
-        leagues.each { |league| league.league_messages.create!(content: content) }
+        leagues.each { |league| league.league_messages.create!(user_id: 1, content: content) }
     end

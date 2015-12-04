@@ -1,8 +1,6 @@
 <li id="league_message-<%= league_message.id %>">
   <%#= link_to gravatar_for(league_message.user, size: 50), league_message.user %>
-  <span class="league"><%= link_to league_message.league.league_name, league_message.name %></span>
+  <span class="user"><%= link_to league_message.user.user_id, league_message.user %></span>
   <span class="content"><%= league_message.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-  </span>
+  <span class="timestamp"><%= league_message.created_at %></span>
 </li>

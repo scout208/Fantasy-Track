@@ -1,3 +1,58 @@
 // Place all the styles related to the LeagueMessages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* microposts */
+
+$gray-medium-light: #eaeaea;
+
+.league_messages {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    margin-left: 60px;
+    padding-top: 0;
+  }
+  .content {
+    margin-left: 10px;
+    //Uncomment these lines if we choose to add an image with the message
+    /*img {
+      display: block;
+      padding: 5px 0;
+    }*/
+  }
+  .timestamp {
+    color: $gray-light;
+    float: right;
+    //margin-left: 60px;
+  }
+  /* Uncomment these lines if we choose to show the user gravatar next to the message
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  } */
+}
+/* We don't use an aside for now
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+} */
+
+/* Uncomment these if we choose to add an image
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}*/

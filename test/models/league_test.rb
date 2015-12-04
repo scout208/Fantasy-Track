@@ -8,7 +8,8 @@ class LeagueTest < ActiveSupport::TestCase
   
   test "associated league_messages should be destroyed" do
     @league.save
-    @league.league_messages.create!(content: "Lorem ipsum")
+    @user = users(:michael)
+    @league.league_messages.create!(user_id: @user.id, content: "Lorem ipsum")
     assert_difference 'LeagueMessage.count', -1 do
       @league.destroy
     end
