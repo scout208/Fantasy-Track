@@ -3,16 +3,16 @@ require 'test_helper'
 class LeagueMessageTest < ActiveSupport::TestCase
 
   def setup
-    @league = users(:michael)
-    @league_message = @user.league_messages.build(content: "Lorem ipsum")
+    @league = leagues(:cheetah)
+    @league_message = @league.league_messages.build(content: "Lorem ipsum")
   end
 
   test "should be valid" do
     assert @league_message.valid?
   end
 
-  test "user id should be present" do
-    @league_message.user_id = nil
+  test "league id should be present" do
+    @league_message.league_id = nil
     assert_not @league_message.valid?
   end
 

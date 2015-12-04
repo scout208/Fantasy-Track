@@ -475,3 +475,9 @@
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id)
                 
             
+            
+    leagues = League.order(:id).take(6)
+    50.times do
+        content = Faker::Lorem.sentence(5)
+        leagues.each { |league| league.league_messages.create!(content: content) }
+    end

@@ -8,6 +8,8 @@ class League < ActiveRecord::Base
                                   
     has_many :members, through: :active_league_memberships, source: :user
     
+    has_many :league_messages, dependent: :destroy
+    
     validates :league_name, presence: true, length: {maximum: 64},
 											uniqueness: true
 											

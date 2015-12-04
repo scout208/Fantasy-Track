@@ -85,11 +85,6 @@ ActiveRecord::Schema.define(version: 20151203172019) do
     t.integer "athlete_select_option"
   end
 
-  create_table "leaguemembers", force: :cascade do |t|
-    t.integer "league_id"
-    t.integer "user_id"
-  end
-
   create_table "leagues", force: :cascade do |t|
     t.integer "creator_id"
     t.string  "league_name"
@@ -118,9 +113,6 @@ ActiveRecord::Schema.define(version: 20151203172019) do
     t.decimal  "time_seconds"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
   end
 
   create_table "sprint_results", force: :cascade do |t|
@@ -158,9 +150,8 @@ ActiveRecord::Schema.define(version: 20151203172019) do
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
-    t.string   "session_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "role"
     t.string   "password_digest"
     t.string   "remember_digest"

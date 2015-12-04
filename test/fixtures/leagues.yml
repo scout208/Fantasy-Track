@@ -14,6 +14,6 @@ eagles:
 
 <% 30.times do |n| %>
 league_<%= n %>:
-  league_name: Eagles
-  pass_code: rose2
+  league_name:  <%= "League #{n}" %>
+  pass_code: rose
 <% end %>
