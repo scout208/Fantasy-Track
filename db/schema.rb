@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202155345) do
+ActiveRecord::Schema.define(version: 20151204202740) do
 
   create_table "athletes", force: :cascade do |t|
     t.string "first_name"
@@ -62,6 +62,18 @@ ActiveRecord::Schema.define(version: 20151202155345) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "league_messages", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "league_messages", ["league_id", "created_at"], name: "index_league_messages_on_league_id_and_created_at"
+  add_index "league_messages", ["league_id"], name: "index_league_messages_on_league_id"
+  add_index "league_messages", ["user_id"], name: "index_league_messages_on_user_id"
+
   create_table "league_settings", force: :cascade do |t|
     t.integer "league_id"
     t.boolean "standard_scoring"
@@ -73,11 +85,6 @@ ActiveRecord::Schema.define(version: 20151202155345) do
     t.boolean "split_leader_bonus"
     t.boolean "exact_place_bonus"
     t.integer "athlete_select_option"
-  end
-
-  create_table "leaguemembers", force: :cascade do |t|
-    t.integer "league_id"
-    t.integer "user_id"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -108,9 +115,6 @@ ActiveRecord::Schema.define(version: 20151202155345) do
     t.decimal  "time_seconds"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
   end
 
   create_table "sprint_results", force: :cascade do |t|
@@ -148,14 +152,14 @@ ActiveRecord::Schema.define(version: 20151202155345) do
   create_table "users", force: :cascade do |t|
     t.string   "user_id"
     t.string   "email"
-    t.string   "session_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "role"
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
+    t.string   "session_token"
   end
 
 end

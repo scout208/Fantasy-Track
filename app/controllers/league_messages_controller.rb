@@ -1,0 +1,2 @@
+class LeagueMessagesController < ApplicationController
+end

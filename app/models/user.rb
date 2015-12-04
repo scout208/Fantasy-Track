@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessor :remember_toke
+  attr_accessor :remember_token
   has_many :active_league_memberships, class_name:  "LeagueMember",
                                   foreign_key: "user_id",
                                   dependent:   :destroy
   has_many :leagues, through: :active_league_memberships, source: :league
+  has_many :league_messages
   attr_accessor :remember_token
   
 	
