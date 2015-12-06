@@ -1,17 +1,22 @@
-<center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
-<br></br>
- <div class="container" id = "leagueNavBar">
-        <nav class="navbar navbar-inverse navbar-static-top navbar-backgrnd">
+
+ <center><div class="container" id = "leagueNavBar">
+   <br></br>
+        <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><%= link_to 'League Home',league_path(League.find(session[:current_league]))%></li>
+                <li><%= link_to 'League Home', league_path(League.find(session[:current_league])) %></li>
                 <li><%= link_to 'My Team', myteam_path %></li>
                 <li><%= link_to 'Standings', standings_path %></li>
                 <li><%= link_to 'Scoreboard', scoreboard_path %></li>
                 <li><%= link_to 'League Settings', settings_path %></li>
+                <% if (@league.creator_id == @thisUser.id) %>
+                   <li><%= link_to 'Invite Friends', inviteFriend_league_path(@league) %></h4>
+                <% end %>
               </ul>
             </div>
           </div>
         </nav>
-</div>
+        <center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
+   </div></center>
+  
