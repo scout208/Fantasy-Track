@@ -21,7 +21,7 @@
       <h3><%= link_to "Change Settings", edit_league_setting_path(@settings), method: "get" %></h3>
     <% end %>
     </br>
-    <div id="currentSettings">
+    <div class="jumbotron">
       <h1>Points</h1>
       <h4>Default Points: <%= @settings.standard_scoring %></h4>
       </br>
@@ -39,6 +39,8 @@
       </br>
       <h4>Fastest Start Bonus: <%= @settings.fastest_start_bonus %></h4>
       </br>
+    </div>
+    <div class="jumbotron">
       <h1>Athlete Selection</h1>
       </br>
       <% if(@settings.athlete_select_option == 1) %>

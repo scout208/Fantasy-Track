@@ -3,6 +3,10 @@ class MidResultsController < ApplicationController
   def show
     @event = Event.find(session[:current_event])
     @results = MidResult.where(:event_id => @event.id)
+    @results.each do |r|
+        athlete = Athlete.find(r.athlete_id)
+        r.name= athlete.first_name + " " + athlete.last_name
+    end
   end
 
   def new
