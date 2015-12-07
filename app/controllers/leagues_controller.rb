@@ -80,7 +80,9 @@ class LeaguesController < ApplicationController
     if @league.save
       @savedLeague = League.find_by(:league_name => @league.league_name)
       @creator.active_league_memberships.create(league_id: @savedLeague.id, user_id: @creator.id)
-      @settings = @savedLeague.league_settings.build(league_id: @league_id, standard_scoring: true, athlete_select_option: "1")
+      @settings = @savedLeague.league_settings.build(league_id: @league_id, standard_scoring: true, 
+            pr_bonus: true, nr_bonus: true, wr_bonus: true, fastest_start_bonus: true,
+            best_of_round_bonus: true, split_leader_bonus: true, exact_place_bonus: false, athlete_select_option: "1")
       @settings.save
       flash[:notice] = "#{@league.league_name} successcully created."
       redirect_to leagues_path
@@ -94,7 +96,7 @@ class LeaguesController < ApplicationController
   end
   
   def scoreboard
-  
+    @league = League.find(session[:current_league])
   end
   
   def myteam
