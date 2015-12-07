@@ -12,7 +12,6 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     session[:current_event] = @event.id
-    
     @entrants = @event.entrants
   end
 
