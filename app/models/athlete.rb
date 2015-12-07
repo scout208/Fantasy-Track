@@ -22,4 +22,14 @@ class Athlete < ActiveRecord::Base
     has_many :events, through: :active_event_entrants, source: :event
     
     validates_uniqueness_of :last_name, scope: :first_name
+    
+    def selected 
+        
+        @selected
+    end
+    
+    def selected= val
+        
+        @selected = val
+    end
 end
