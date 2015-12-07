@@ -95,7 +95,8 @@ class LeaguesController < ApplicationController
   end
   
   def scoreboard
-  
+    @league = League.find(session[:current_league])
+    @thisUser = User.find_by_session_token(session[:session_token])
   end
   
   def myteam
