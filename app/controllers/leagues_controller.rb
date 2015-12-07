@@ -12,7 +12,6 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     session[:current_league] = @league.id
     @leaguefromSessions = session[:current_league]
-    @league_message = @league.league_messages.build
     @league_messages = @league.league_messages.paginate(page: params[:page])
     @thisUser = User.find_by_session_token(session[:session_token])
   end
@@ -47,8 +46,6 @@ class LeaguesController < ApplicationController
   def inviteFriend
     #view for entering friend's email address
     @league = League.find(session[:current_league])
-    session[:current_league] = @league.id
-    @thisUser = User.find_by_session_token(session[:session_token])
   end
   
   def requestFriend
@@ -93,21 +90,15 @@ class LeaguesController < ApplicationController
   end
   
   def standings
-    @league = League.find(session[:current_league])
-    @thisUser = User.find_by_session_token(session[:session_token])
-     session[:current_league] = @league.id
+    
   end
   
   def scoreboard
-     @league = League.find(session[:current_league])
-    @thisUser = User.find_by_session_token(session[:session_token])
-     session[:current_league] = @league.id
+  
   end
   
   def myteam
-    @league = League.find(session[:current_league])
-    @thisUser = User.find_by_session_token(session[:session_token])
-     session[:current_league] = @league.id
+    
    @availablemeets = []
    @meets = Meet.all()
    @meets.each do |meet|
@@ -116,10 +107,13 @@ class LeaguesController < ApplicationController
   end
   
   def settings
+    @thisUser = User.find_by_session_token(session[:session_token])
     @league = League.find(session[:current_league])
-     session[:current_league] = @league.id
-     @thisUser = User.find_by_session_token(session[:session_token])
     @settings = @league.league_settings.first
+  end
+  
+  def edit_league_setting
+    
   end
   
   private
