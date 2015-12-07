@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   resources :jump_results
   resources :throw_results
   resources :league_settings
+  resources :athlete_selections
   
   resources :leagues do
     member do

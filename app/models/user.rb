@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
                                   dependent:   :destroy
   has_many :leagues, through: :active_league_memberships, source: :league
   has_many :league_messages
+  has_many :active_athlete_selections, class_name: "AthleteSelection",
+                                    foreign_key: "user_id",
+                                    dependent: :destroy
+  
   attr_accessor :remember_token
   
 	

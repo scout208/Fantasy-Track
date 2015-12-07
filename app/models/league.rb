@@ -2,7 +2,11 @@ class League < ActiveRecord::Base
     has_many :active_league_memberships, class_name:  "LeagueMember",
                                   foreign_key: "league_id",
                                   dependent:   :destroy
-                                  
+                             
+    has_many :active_athlete_selections, class_name: "AthleteSelection",
+                                        foreign_key: "league_id",
+                                        dependent: :destroy
+                                        
     has_many :league_settings, dependent: :destroy
     
                                   
