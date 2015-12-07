@@ -39,6 +39,7 @@
     
 }
 
+
 #newleague {
    //#margin-top: 100px;
    h2{
@@ -74,11 +75,10 @@
 
 #leagueNavBar{
     
-    padding-right: 480px;
+    width: 830px;
     
   .navbar .navbar-collapse {
       text-align: left;
-      padding-right: 480px;
     }
     
     .navbar-wrapper > .container {
@@ -87,8 +87,8 @@
     }
     
     .navbar-wrapper .navbar {
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 5px;
+      padding-left: 5px;
     }
     .navbar-wrapper .navbar .container {
       width: auto;

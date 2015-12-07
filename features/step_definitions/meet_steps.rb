@@ -15,8 +15,7 @@
     page.should have_button('Save')
  end
 
-<<<<<<< HEAD
- When /^An admin has created a meet with name "(.*?)" and location_city "(.*?)" and location_country "(.*?)" and start_date "(.*?)" and end_date "(.*?)"$/ do |name, location_city, location_country, start_date, end_date|
+When /^An admin has created a meet with name "(.*?)" and location_city "(.*?)" and location_country "(.*?)" and start_date "(.*?)" and end_date "(.*?)"$/ do |name, location_city, location_country, start_date, end_date|
   visit '/login'
   fill_in('session_email', :with =>  'admin@gmail.com')
   fill_in('session_password', :with => 'password')
@@ -28,7 +27,7 @@
   fill_in('meet_start_date', :with => start_date)
   fill_in('meet_end_date', :with => end_date)
   click_button 'Save'
-=======
+end
 When(/^I am on the view to create new meet$/) do
    visit "/meets/new"
 end
@@ -61,14 +60,12 @@ end
     page.should have_field('event_event_name')
     page.should have_field('event_event_type')
     page.should have_button('Save')
->>>>>>> b8442ddd0ca986f640f3bcce82f2c4a9294c556a
  end
 
  When(/^I fill in event name with "(.*?)" and Event type with "(.*?)"$/) do |arg1, arg2|
     fill_in('event_event_name', :with =>  arg1)
     fill_in('event_event_type', :with => arg2)
  end
-<<<<<<< HEAD
  
  When /^I have logged in as admin$/ do
     visit '/login' 
@@ -76,14 +73,8 @@ end
     fill_in('session_password', :with => 'password')
     click_on('Log in')
  end
- 
- When /^I have visited the "(.*?)" meet details page$/ do  |name|
-=======
 
-Then(/^I shoud see "(.*?)"$/) do |arg1|
-   page.should have_content(arg1)
-end
-  
+
 Then(/^I should be on the event screen of "(.*?)"$/) do |arg1|
   page.should have_content(arg1)
   page.should have_content("Meet Detail")
@@ -91,7 +82,6 @@ end
   
 #add or delete entrants
 Given(/^I am on the Entrants screen of "(.*?)" under "(.*?)"$/) do |arg1, arg2|
->>>>>>> b8442ddd0ca986f640f3bcce82f2c4a9294c556a
    visit '/meets'
    click_on arg2
    click_on arg1
@@ -236,38 +226,12 @@ When(/^I change birthdate into "(.*?)"  and notes with "(.*?)"$/) do |arg1, arg2
    fill_in('athlete_notes', :with =>  arg2)
 end
 
-# filter for athletes
-When(/^I fill the search box with "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
 
-Then(/^the current view should be rendered to only see athlete "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
 
 Then(/^I will see "(.*?)" with country "(.*?)" and birthdate with "(.*?)"$/) do |arg1, arg2, arg3|
    within('tr', text: arg1) do
        should have_content(arg2)
        should have_content(arg3)
    end
-<<<<<<< HEAD
  end
  
- When /^I have clicked the "(.*?)" button$/ do |button|
-   click_on "#{button}"
- end
-=======
-end
-
-Then(/^I should see "(.*?)" located first in the table$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see "(.*?)" located last in the table$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should not see "(.*?)" in the table$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
->>>>>>> b8442ddd0ca986f640f3bcce82f2c4a9294c556a
