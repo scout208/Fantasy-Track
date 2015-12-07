@@ -103,6 +103,8 @@ class LeaguesController < ApplicationController
     
    @availablemeets = []
    @meets = Meet.all()
+   @thisUser = User.find_by_session_token(session[:session_token])
+   @league = League.find(session[:current_league])
    @meets.each do |meet|
      @availablemeets << meet if meet.released == true
     end
