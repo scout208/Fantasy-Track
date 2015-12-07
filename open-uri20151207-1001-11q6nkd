@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="//cdn.optimizely.com/js/2908541267.js"></script>
+    <title>Running Videos, Running Races and Track and Field Videos : Flotrack - Track is Back - Flotrack</title>
+    <meta charset="utf-8"/>
+    <meta name="language" content="en"/>
+    <meta name="keywords" content="running videos, running, track and field, running, ncaa track and field, running track, running videos, track and field videos"/>
+    <meta name="description" content="See the latest running videos on track and field events around the US and the world.  Watch running videos and interviews with the greatest coaches and athletes." />
+
+    <meta property="fb:app_id" content="119215858156983"/>
+    <meta property="og:site_name" content="flotrack"/>
+    
+
+	<script>
+		//document.domain ='flotrack.org';
+		var START_TIME = _sf_startpt = (new Date()).getTime();
+	</script>
+
+    <link rel="stylesheet" type="text/css" href="http://flocasts-cms-media.s3.amazonaws.com/core/css/core.gz.css"/>
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/sites/flotrack/flotrack.css" />
+	<link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/sites/flotrack/custom.css" />
+
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="http://flocasts-cms-media.s3.amazonaws.com/core/css/ie.css" /><![endif]-->
+    <link rel="dns-prefetch" href="//c0205112.cdn.cloudfiles.rackspacecloud.com">
+    <link rel="dns-prefetch" href="//c0179261.cdn.cloudfiles.rackspacecloud.com">
+    <link rel="dns-prefetch" href="//ak.c.ooyala.com">
+    <link rel="dns-prefetch" href="//static.fmpub.net">
+    <link rel="dns-prefetch" href="//www.googleadservices.com">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//flo-static-assets.s3.amazonaws.com/drivefaze/js/global.js"></script>
+
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/default.css" />
+    <link rel="shortcut icon" href="https://flosports.s3.amazonaws.com/favicons/FloTrack_vdl2id.ico" />
+
+</head>
+<body class="core flotrack">
+
+<div id="wrapper-outer">
+
+    <header>
+		
+<div id="toolbar" class="integrated-tool-bar">
+		<script>IS_ADMIN = false;</script>
+	<ul class="secondary-nav" id="toolbar-nav"></ul>
+		<ul class="secondary-nav" id="user-actions">
+					<li>
+				<a href="/premiumvideos/signup?source=Nav%20Bar%20-%20FloPro&ref=toolbar-front" class="pro-button">
+					Join FloPro				</a>
+			</li>
+			<li>
+				<a href="/site/login" class="btn-login">Log In</a>
+			</li>
+				<li>
+			<form id="search-form" action="/search">
+				<input type="hidden" name="cx" value="016405253375880695266:3vcagslg-wm"/>
+				<input type="hidden" name="cof" value="FORID:11"/>
+				<input type="hidden" name="ie" value="UTF-8"/>
+				<input value="" type="text" name="q" class="auto-input search-input" default="Enter search term" autocomplete="off"/>
+				<button type="submit" class="action-submit"><span>Search</span></button>
+			</form>
+		</li>
+	</ul>
+</div>
+
+
+        <div id="header">
+            <div class="container_12 two-col">
+                <div class="grid_12 standalone">
+                    <div class="sitelogo">
+						<a href="/">
+							<img src="https://flosports.s3.amazonaws.com/logos/FloTrack_vdl2id.png" alt="Track is Back"/>
+						</a>
+					</div>
+				</div>
+				<div class="social-site-bar">
+					<ul class="socialcount socialcount-small">
+						<li class="facebook-sc">
+							<a href="" target="_blank" title="Like Flotrack">
+								<span class="social-icon icon-facebook"></span>
+								<span class="count"></span>
+							</a>
+						</li>
+						<li class="twitter-sc">
+							<a href="https://twitter.com/flotrack" target="_blank" title="Follow flotrack">
+								<span class="social-icon icon-twitter"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <nav id="nav-bar">
+            <div class="container_12 three-col">
+                <div class="grid_12 paddable">
+                    <ul class="main-nav" id="navigation">
+	                    <li class=" menu-home" id="menu-home" style="margin-right:16px">
+		                    <a href="/">Home</a>
+	                    </li>
+	                    <li class=" menu-flopro" style="margin-right:16px">
+		                    <a href="/ext/track_live_schedule/">FloPro</a>
+	                    </li>
+
+	                    <li class=" menu-events" style="margin-right:16px">
+		                    <a href="/coverages">Events</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-flotrack-throwdown">
+				                    <a href="/coverage/252141-Flotrack-Throwdown-Rip-City-2015">Flotrack Throwdown</a>
+			                    </li>
+			                    <li id="menu-beer-mile-world-championships">
+				                    <a href="/coverage/252235-FloTrack-Beer-Mile-World-Championships-2015">Beer Mile World Championships</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class=" menu-results" id="menu-results" style="margin-right:16px">
+		                    <a href="/results">Results</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-ncaa-xc-history">
+				                    <a href="http://results.flotrack.org/">Live Results</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+
+	                    <li class=" menu-rankings" style="margin-right:16px">
+		                    <a href="/rankings/">Rankings</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-high-school-xc-rankings">
+				                    <a href="http://www.milesplit.com/rankings/flo50">High School</a>
+			                    </li>
+			                    <li id="menu-college-xc-rankings">
+				                    <a href="/rankings/college">College</a>
+			                    </li>
+			                    <li id="menu-high-school-xc-rankings">
+				                    <a href="/rankings/world">World</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class="menu-shows" style="margin-right:16px">
+		                    <a href="/video">Shows</a>
+		                    <ul class="sub-nav">
+			                    <li id="workouts">
+				                    <a href="/coverage/252500/video?sort=newest">Workout Wednesday</a>
+			                    </li>
+			                    <li id="menu-run-junkie">
+				                    <a href="/coverage/240120-Run-Junkie/video?sort=newest">Run Junkie</a>
+			                    </li>
+			                    <li id="menu-who's-#1">
+				                    <a href="/coverage/251665/video?sort=newest">Who's #1</a>
+			                    </li>
+			                    <li id="menu-track-after-dark">
+				                    <a href="/coverage/251947/article">Podcast</a>
+			                    </li>
+			                    <li id="menu-kick-of-the-week">
+				                    <a href="/coverage/251943-Kick-of-the-Week/video?sort=newest">Kick Of The Week</a>
+			                    </li>
+			                    <li id="menu-tasty-race">
+				                    <a href="/coverage/251944-Tasty-Race-of-the-Week/video?sort=newest">Tasty Race</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class=" menu-news" id="menu-news" style="margin-right:16px">
+		                    <a href="/article">News</a>
+	                    </li>
+	                    <li class=" menu-flotrackr" style="margin-right:16px">
+		                    <a href="/page/Flotrackr">Flotrackr</a>
+		                    <ul class="sub-nav">
+			                    <li id="menu-running-logs">
+				                    <a href="/running_logs">Running Logs</a>
+			                    </li>
+			                    <li id="menu-team-pages">
+				                    <a href="/group">Team Pages</a>
+			                    </li>
+			                    <li id="menu-flostopwatch">
+				                    <a href="/page/FloStopwatch">Flostopwatch</a>
+			                    </li>
+		                    </ul>
+	                    </li>
+	                    <li class="last menu-support" id="menu-support">
+		                    <a href="/page/Flotrack-Contact-Form">Support</a>
+	                    </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="leaderboard">
+        
+
+    
+        
+
+<div class="dropdown placement" id="placement_flotrack_940x60_atf">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_940x60_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_940x60_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" border="0" width="940" height="60" />
+        </a>
+    </noscript>
+</div>
+
+
+<script>
+	_FLO_.adTech.placements.push({ width: 940, height: 60, position: "atf", module: "homepage", id: "1" });
+</script>
+
+    
+    
+    
+<div id="placement_flotrack_1x1">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_1x1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_1x1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D1%3B" border="0" width="1" height="1" />
+        </a>
+    </noscript>
+</div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 1, height: 1, module: "homepage", id: "1" });
+</script>
+
+    
+
+    </section>
+
+    <main id="wrapper">
+
+        <div class="container_12">
+            
+        </div>
+
+        <div class="container_12 two-col" id="content">
+
+            <div class="grid_12 alpha" id="title">
+                <h1></h1>
+            </div>
+
+            <div class="grid_8 alpha" id="main">
+                
+
+    <link rel="stylesheet" href="//flo-static-assets.s3.amazonaws.com/drivefaze/css/front.css" />
+
+        <article class="double" id="topStory">
+        <a
+							href="http://www.flotrack.org/coverage/252627-Pacific-10000m-Pursuit-2015/article/37763-4-Storylines-to-Watch-at-Inaugural-Pacific-10000m-Pursuit"
+					>
+            <h1>Kim Conley, Jordan Hasay To Rematch At Pacific 10K Pursuit</h1>
+            <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924908_CMid4MnWwN7SiTNXrQsW_o.jpg" /></figure>
+        </a>
+    </article>
+    
+        <section class="single" id="recentBanners">
+        <h1><a href="/archive">Headlines</a></h1>
+        <ul>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252627-Pacific-10000m-Pursuit-2015/article/38350-Jordan-Hasay-Overcomes-Injury-to-Chase-Olympic-Standard-at-Pacific-Pursuit"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/925027_u5qLmYvZyAjESge3gZ2Z_l.jpg" /></figure>
+                        <strong>Jordan Hasay Will Make Her Return At Pacific 10K Pursuit</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252627-Pacific-10000m-Pursuit-2015/video/807920-Kim-Conley-on-returning-from-injury-and-her-goal-to-PR-at-Pacific-Pursuit"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/925019_r4OvOgHTAxjUoPLa39P0_l.jpg" /></figure>
+                        <strong>Kim Conley Ready To Chase Olympic Mark At Pacific Pursuit</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252788-Rock-n-Roll-San-Antonio-Half-Marathon-2015/article/38355-Kara-Goucher-Wins-San-Antonio-Half-Marathon-in-Impressive-Solo-Effort"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/925017_Hs708YWg2TtnUNfl9ixp_l.jpg" /></figure>
+                        <strong>Kara Goucher Bests Deep Women's Field In A Solo Effort</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252788-Rock-n-Roll-San-Antonio-Half-Marathon-2015/video/807919-Shalane-Flanagan-feels-great-after-following-her-plan-in-San-Antonio"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/925022_llMVFFRN5x8neBAGrtkN_l.jpg" /></figure>
+                        <strong>Shalane Flanagan Pleased With Race Execution In San Antonio</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/250737-DRIVEN/video/752192-DRIVEN-Kara-Goucher-Motherhood-and-the-Marathon-Ep-2"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924919_y6aJmrY2EHIOQ8PhT1AK_l.jpg" /></figure>
+                        <strong>Kara Goucher: Motherhood And The Marathon</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252581-Nike-Cross-Nationals-2015/article/38347-Casey-Clinger-Kicks-To-NXN-Glory-Great-Oak-Boys-Grab-Team-Title"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924984_Ec8jtKlHZgr2Y1fzxj6S_l.jpg" /></figure>
+                        <strong>Casey Clinger Becomes First Non-Senior Since '09 To Win NXN</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252581-Nike-Cross-Nationals-2015/article/38345-Katie-Rainsberger-Wins-NXN-Fayetteville-Manlius-Takes-Ninth-Team-Title"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924979_pyoAOW5JinNdM8udincn_l.jpg" /></figure>
+                        <strong>Katie Rainsberger Dominates NXN, FM Does It Again!</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252788-Rock-n-Roll-San-Antonio-Half-Marathon-2015/article/38330-Kara-Goucher-Shalane-Flanagan-to-Clash-at-Rock-n-Roll-San-Antonio"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924968_ZgR0XiehZGcPBbe1kuL3_l.jpg" /></figure>
+                        <strong>Shalane Flanagan, Kara Goucher To Clash In San Antonio</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/251077-News-from-the-Track-and-Field-World/article/38337-QA-With-IAAF-Athlete-of-the-Year-World-Champion-Ashton-Eaton"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924967_gLMZRO8P5QPBQjONHuy7_l.jpg" /></figure>
+                        <strong>Q&A With IAAF Athlete Of The Year Ashton Eaton </strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/251077-News-from-the-Track-and-Field-World/article/38328-Andre-De-Grasse-Turns-Pro-Signs-With-Puma"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924938_ljFftlBQjnTd4jTcoxI1_l.jpg" /></figure>
+                        <strong>Andre De Grasse Turns Pro, Reportedly Signs For $11+ Million</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a
+                                                href="http://www.flotrack.org/coverage/252540-Future-Stars-of-Cross-Country-2015/article/38340-ASICS-Future-Stars-Freshman-Boys-Final-Release"
+                                            >
+                        <figure><img src="//c0205112.cdn.cloudfiles.rackspacecloud.com/924974_dUVPhtvQfICQ19924pLK_l.jpg" /></figure>
+                        <strong>Future Stars: The 2015 All-Freshman Team</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+        <section class="single" id="recentVideos">
+        <h1><a href="/videos">Videos</a></h1>
+        <ul>
+                            <li>
+                    <a href="/videos/807916">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/hhbXRjeTovuu4xzK0IfCDM2rlUXnJC8A/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Kara Goucher after solo effort win in San Antonio Half Marathon</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807920">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/EybnVjeTr90gc21mE5NY4G42urCnoL10/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Kim Conley on returning from injury and her goal to PR at Pacific Pursuit</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807919">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/V5eXRjeTpbceDh9IxjDpxoZ-Or2InwqH/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Shalane Flanagan feels great after following her plan in San Antonio</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807918">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/4xOHVjeTpIUCqX7vm0F7bogxV6ofPEzj/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Kara Goucher Slow Mo Win at San Antonio Half Marathon</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807889">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/80c2hjeTrIQnI6iwaCPFGv-_OuBPIoBC/3Gduepif0T1UGY8H4xMDoxOjA4MTsiGN" /></figure>
+                        <strong>Kara Goucher isn't going anywhere! Feels fit and strong heading into San Antonio half marathon</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807854">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924982_OvLLJ1DYS53vlNClCiZR_xl.jpg" /></figure>
+                        <strong>Shalane Flanagan on Olympic Marathon Trials build-up, training with Amy Cragg and running away from bears</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807613">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/1ycnVieTq9LegkKs7jg9FUcfJTNAl0vg/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>IAAF Athlete of the Year Ashton Eaton reacts to honor</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807067">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/docjJieTpgGrEdCbcYY-EPquoiwVkzeR/3Gduepif0T1UGY8H4xMDoxOjA4MTsiGN" /></figure>
+                        <strong>Matt Llano on new marathon PB in Berlin and training for LA 2016</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/807042">
+                        <figure><img src="http://32598.cdx.c.ooyala.com/owMW45eTq3gEVf3_W5ITULO3yFRiLFow/3Gduepif0T1UGY8H4xMDoxOjBzMTt2bJ" /></figure>
+                        <strong>Erin O'Mara after breaking the beer mile world record!</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+	<section class="single">
+		<div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_content-1">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_content-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_content-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "content-1", module: "homepage", id: "2" });
+</script>
+
+	</section>
+
+        <section class="single" id="recentCoverages">
+        <h1><a href="/coverages">Events</a></h1>
+        <ul>
+            <li>
+                <a href="/coverage/252788">
+                    <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924891_EEGUdJslXFJSVKSpOMiq_xl.jpg" /></figure>
+                    <strong>Rock n Roll San Antonio Half Marathon 2015</strong>
+                </a>
+            </li>
+                            <li>
+                    <a href="/coverage/252627">
+                        <strong>Pacific 10000m Pursuit 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252582">
+                        <strong>Foot Locker West XC Regional 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252581">
+                        <strong>Nike Cross Nationals 2015</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/coverage/252235">
+                        <strong>FloTrack Beer Mile World Championships 2015</strong>
+                    </a>
+                </li>
+                    </ul>
+
+    </section>
+    
+        <section class="single" id="topComments">
+        <h1><a href="/activity">Comments</a></h1>
+        <ul>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252235-FloTrack-Beer-Mile-World-Championships-2015/video/807025-2015-FloTrack-Beer-Mile-Womens-World-Championship-New-World-Record">2015 FloTrack Beer Mile Women's World Championship (New World Record!)</a></strong>
+                    <span class="count">306</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252235-FloTrack-Beer-Mile-World-Championships-2015/video/807024-2015-FloTrack-Beer-Mile-Mens-World-Championship-Lewis-Kent-Runs-World-Record-447">2015 FloTrack Beer Mile Men's World Championship (Lewis Kent Runs World Record 4:47!)</a></strong>
+                    <span class="count">2527</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252627-Pacific-10000m-Pursuit-2015/article/37763-4-Storylines-to-Watch-at-Inaugural-Pacific-10000m-Pursuit">4 Storylines to Watch at Inaugural Pacific 10000m Pursuit</a></strong>
+                    <span class="count">5</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252788-Rock-n-Roll-San-Antonio-Half-Marathon-2015/article/38355-Kara-Goucher-Wins-San-Antonio-Half-Marathon-in-Impressive-Solo-Effort">Kara Goucher Wins San Antonio Half Marathon in Impressive Solo Effort</a></strong>
+                    <span class="count">20</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/251077-News-from-the-Track-and-Field-World/article/38328-Andre-De-Grasse-Turns-Pro-Signs-With-Puma">Andre De Grasse Turns Pro, Signs With Puma </a></strong>
+                    <span class="count">23</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252788-Rock-n-Roll-San-Antonio-Half-Marathon-2015/article/38330-Kara-Goucher-Shalane-Flanagan-to-Clash-at-Rock-n-Roll-San-Antonio">Kara Goucher, Shalane Flanagan to Clash at Rock 'n' Roll San Antonio</a></strong>
+                    <span class="count">18</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/group/11201-Rockbridge-HS">Rockbridge H.S.</a></strong>
+                    <span class="count">28</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/250737-DRIVEN/video/752192-DRIVEN-Kara-Goucher-Motherhood-and-the-Marathon-Ep-2">DRIVEN: Kara Goucher | Motherhood and the Marathon (Ep. 2)</a></strong>
+                    <span class="count">10</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252540-Future-Stars-of-Cross-Country-2015/article/38340-ASICS-Future-Stars-Freshman-Boys-Final-Release">ASICS Future Stars: Freshman Boys Final Release</a></strong>
+                    <span class="count">3</span>
+                </li>
+                            <li>
+                    <strong><a href="http://www.flotrack.org/coverage/252581-Nike-Cross-Nationals-2015/article/38336-NXN-Boys-Individual-Preview">NXN Boys Individual Preview</a></strong>
+                    <span class="count">5</span>
+                </li>
+                    </ul>
+    </section>
+    
+<section class="single">
+
+	<div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_btf-1">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_btf-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_btf-1;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D2%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "btf-1", module: "homepage", id: "2" });
+</script>
+
+
+</section>
+
+
+            </div>
+
+            <div class="grid_4 alpha" id="side">
+                
+
+            <section class="single" id="recentArticles">
+            <h1><a href="/article">Recent News</a></h1>
+            <ul>
+                                    <li>
+                        <a href="/articles/38356">
+                            <strong>RESULTS: Pacific 10,000m Pursuit</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/38355">
+                            <strong>Kara Goucher Wins San Antonio Half Marathon in Impressive Solo Effort</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/38350">
+                            <strong>Jordan Hasay Overcomes Injury to Chase Olympic Standard at Pacific Pursuit</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/38347">
+                            <strong>Casey Clinger Kicks To NXN Glory, Great Oak Boys Grab Team Title</strong>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="/articles/38345">
+                            <strong>Katie Rainsberger Wins NXN, Fayetteville-Manlius Takes Ninth Team Title</strong>
+                        </a>
+                    </li>
+                            </ul>
+        </section>
+    
+    <div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_atf">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_atf;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "atf", module: "homepage", id: "3" });
+</script>
+
+
+    
+            <iframe src="http://www.milesplit.com/rankings/flo50cw" style="width: 300px; height: 425px; margin-bottom: -20px;"></iframe>
+    
+        <section class="single" id="workoutVideos">
+        <h1>Workout Wednesday Season 10</h1>
+        <ul>
+            <li>
+                <a href="/videos/806094">
+                    <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924450_JFFx8Ejt9LaiHLxOMGTP_xl.jpg" /></figure>
+                    <strong>Workout Wednesday: Fartlek with No. 1 Grand Valley State</strong>
+                </a>
+            </li>
+                            <li>
+                    <a href="/videos/805579">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/924199_lOX0r92PJy0KBvCz8CjI_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Lake Repeats with the Notre Dame Women</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/802970">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/923788_eNqhYNLOxX1L1HCv14ru_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Fartlek with the #15 Iowa State Women</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/799137">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/922944_8zK9Y0OkrnGCrOIQb4DU_l.jpg" /></figure>
+                        <strong>Workout Wednesday: #5 Michigan Men Alternating Pace Track Work</strong>
+                    </a>
+                </li>
+                            <li>
+                    <a href="/videos/798557">
+                        <figure><img src="//c0179261.cdn.cloudfiles.rackspacecloud.com/922153_EQxmJGOojCfZim3LxJ6x_l.jpg" /></figure>
+                        <strong>Workout Wednesday: Minnesota Long Run</strong>
+                    </a>
+                </li>
+                    </ul>
+    </section>
+    
+            <iframe src="/drivefaze/front/custom/2" width="100%" height="400" scrolling="no" style="overflow: hidden"></iframe>
+    
+    <div class="widget-item adtech-ad-widget" style="width:300px; height:250px;"><div class="content">
+    <div id="placement_flotrack_300x250_content-2">
+        <noscript>
+            <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_300x250_content-2;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" target="_blank">
+                <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_300x250_content-2;loc=300;kvmodule%3Dhomepage%3Bkvmoduleid%3D3%3B" border="0" width="300" height="250" />
+            </a>
+        </noscript>
+    </div>
+</div></div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 300, height: 250, position: "content-2", module: "homepage", id: "3" });
+</script>
+
+
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/Flotrack" data-widget-id="419656561984679936">Tweets by @Flotrack</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+			<section class="single" id="recentAlbums">
+			<h1><a href="/photo/gallery">Photos</a></h1>
+			<ul>
+				<li>
+					<a href="/photo/450001">
+						<figure><img src="//dyfb4wahkziyr.cloudfront.net/core/images/empty_photo_m.gif" /></figure>
+						<strong>test</strong>
+					</a>
+				</li>
+									<li>
+						<a href="/photo/449722">
+							<strong>2014 IAAF World Junior Champs Day 6</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449721">
+							<strong>2014 IAAF World Junior Champs Day 5</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449716">
+							<strong>2014 IAAF World Junior Champs Day 4</strong>
+						</a>
+					</li>
+									<li>
+						<a href="/photo/449715">
+							<strong>2014 IAAF World Junior Champs Day 3</strong>
+						</a>
+					</li>
+							</ul>
+		</section>
+	
+
+            </div>
+
+        </div>
+    </main>
+
+    <section id="global_footer_ad">
+        
+
+<div class="placement" id="placement_flotrack_728x90_btf">
+    <noscript>
+        <a href="http://adserver.adtechus.com/adlink|3.0|5414.1||0|-1|alias=flotrack_728x90_btf;loc=300;kvmodule%3D%3Bkvmoduleid%3D%3B" target="_blank">
+            <img src="http://adserver.adtechus.com/adserv|3.0|5414.1||0|-1|alias=flotrack_728x90_btf;loc=300;kvmodule%3D%3Bkvmoduleid%3D%3B" border="0" width="728" height="90" />
+        </a>
+    </noscript>
+</div>
+
+<script>
+	_FLO_.adTech.placements.push({ width: 728, height: 90, position: "btf", module: "", id: "" });
+</script>
+    </section>
+
+    <footer id="footer">
+        <div id="fb-root"></div>
+        <div class="footer-content">
+            <div class="info-links">
+                <a href="//www.flosports.tv/terms-and-conditions/">Terms of Use</a> | <a href="/site/privacy">Privacy Policy</a> | <a href="http://www.flosports.tv/faq/" target="_blank">FAQ</a>
+            </div>
+            <p id="powered-by"><a href="http://www.flosports.tv">Powered by FloSports</a></p>
+            <p id="server-speed">
+                Served in 0.0234 seconds.
+                Fresh.
+            </p>
+                    </div>
+    </footer>
+
+</div>
+
+
+
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5M883N');
+</script>
+
+<script src="/adtech/adtech_asyncif.js"></script>
+<script>_FLO_.adTech.load("flotrack");</script>
+
+</body>
+</html>
+
+

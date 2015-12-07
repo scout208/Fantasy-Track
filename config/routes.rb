@@ -48,4 +48,5 @@ Rails.application.routes.draw do
     end
   end
   resources :singleleague
+  resources :league_messages,          only: [:create, :destroy]
 end
