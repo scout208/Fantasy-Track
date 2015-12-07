@@ -21,6 +21,6 @@ class LeagueMessagesController < ApplicationController
   private
 
     def league_message_params
-      params.require(:league_message).permit(:content).permit(:user_id)
+      params.require(:league_message).permit(:content)
     end
 end
