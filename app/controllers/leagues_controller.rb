@@ -13,7 +13,7 @@ class LeaguesController < ApplicationController
     session[:current_league] = @league.id
     @leaguefromSessions = session[:current_league]
     @league_messages = @league.league_messages.paginate(page: params[:page])
-    @league_message = @league.league_messages.create
+    @league_message = @league.league_messages.build
     @thisUser = User.find_by_session_token(session[:session_token])
   end
 
