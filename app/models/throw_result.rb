@@ -9,4 +9,8 @@ class ThrowResult < ActiveRecord::Base
     def name= val
         @name = val
     end
+    
+    def selected
+        @selected = val
+    end
 end
