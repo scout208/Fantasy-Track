@@ -3,8 +3,7 @@
     $('#example').DataTable();
     } );
 </script>
-
-<br></br>
+<center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
  <center><div class="container" id = "leagueNavBar">
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
@@ -22,7 +21,6 @@
             </div>
           </div>
         </nav>
-        <center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
    </div></center>
 <div id = "divider">
     <div class = "container" id = "meets">

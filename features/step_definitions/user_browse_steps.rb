@@ -219,6 +219,18 @@ Then(/^I should see all the entrants attending "(.*?)"$/) do |arg1|
   end
 end
 
+Then(/^I should be seeing "(.*?)" Link on each row$/) do |arg1|
+  page.all(:css, 'tr').each do |el|
+    should have_link(arg1)
+  end
+end
+
+Then(/^I should not be seeing "(.*?)" Link on each row$/) do |arg1|
+  page.all(:css, 'tr').each do |el|
+    should_not have_link(arg1)
+  end
+end
+
 Then(/^I should not see "(.*?)" Link$/) do |arg1|
   page.should_not have_link(arg1)
 end
