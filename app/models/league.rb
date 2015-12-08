@@ -7,6 +7,10 @@ class League < ActiveRecord::Base
                                         foreign_key: "league_id",
                                         dependent: :destroy
                                         
+    has_many :active_meet_scores, class_name: "MeetScore",
+                                foreign_key: "league_id",
+                                dependent: :destroy
+                                        
     has_many :league_settings, dependent: :destroy
     
                                   
