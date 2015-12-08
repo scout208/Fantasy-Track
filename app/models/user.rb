@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :active_athlete_selections, class_name: "AthleteSelection",
                                     foreign_key: "user_id",
                                     dependent: :destroy
+                                    
+  has_many :active_meet_scores, class_name: "MeetScore",
+                                foreign_key: "user_id",
+                                dependent: :destroy
   
   attr_accessor :remember_token
   
