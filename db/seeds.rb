@@ -225,6 +225,27 @@
     curAthlete = Athlete.find_by(:first_name => "James", :last_name => "Dasaolu")
     m100.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrants100 = m100.active_event_entrants
+    
+    place = 1
+    time = 10.12
+    
+    entrants100.each do |r|
+        if(place == 3)
+            m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.07
+    end
+    
     m800 = dohaMeet.events.find_by(:event_name => "800M MEN")
     curAthlete = Athlete.find_by(:first_name => "Ayanleh", :last_name => "Souleiman")
     m800.active_event_entrants.create(:athlete_id => curAthlete.id)
