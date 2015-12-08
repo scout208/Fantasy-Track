@@ -82,7 +82,9 @@ class LeaguesController < ApplicationController
     if @league.save
       @savedLeague = League.find_by(:league_name => @league.league_name)
       @creator.active_league_memberships.create(league_id: @savedLeague.id, user_id: @creator.id)
-      @settings = @savedLeague.league_settings.build(league_id: @league_id, standard_scoring: true, athlete_select_option: "1")
+      @settings = @savedLeague.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
       @settings.save
       flash[:notice] = "#{@league.league_name} successcully created."
       redirect_to leagues_path

@@ -9,10 +9,15 @@
              {user_id: 'tester', email: 'tester@testing.com', password: 'tester', password_confirmation: 'tester', role: 'user',email_confirmed: true},
              {user_id: 'tester0', email: 'tester0@testing.com', password: 'tester0', password_confirmation: 'tester0', role: 'user',email_confirmed: true},
              {user_id: 'Kevin', email: 'kevin@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true},
-             {user_id: 'yujhuang', email: 'yujun-huang@uiowa.edu', password: 'myrose', password_confirmation: 'myrose', role: 'user', email_confirmed: true}]
-             
-    leagues = [{league_name: 'Cheetah', pass_code: 'rose0'},{league_name: 'Flying Angel', pass_code: 'rose1'},{league_name: 'Eagles', pass_code: 'rose2'}]
-             
+             {user_id: 'yujhuang', email: 'yujun-huang@uiowa.edu', password: 'myrose', password_confirmation: 'myrose', role: 'user', email_confirmed: true},
+             {user_id: 'Connor', email: 'connor@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true},
+             {user_id: 'Nathan', email: 'nathan@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true},
+             {user_id: 'Xi', email: 'xi@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true},
+             {user_id: 'Leon', email: 'leon@gmail.com', password: 'password', password_confirmation: 'password', role: 'user', email_confirmed: true}]
+
+    leagues = [{league_name: 'Cheetah', pass_code: 'rose0'},{league_name: 'Flying Angel', pass_code: 'rose1'},{league_name: 'Eagles', pass_code: 'rose2'},
+                {league_name: 'Hawkeye XC', pass_code: 'hawkeye'}]
+                
     athletes = [{first_name: 'Aaron', last_name:'Andrews', birth_date: '01/01/1991',country:'Argentina',notes:'Player A'},
                    {first_name: 'Barry', last_name:'Bonds', birth_date: '02/02/1992',country:'Brazil',notes:'Player B'},
                    {first_name: 'Charlie', last_name:'Chaplin', birth_date: '03/03/1993',country:'China',notes:'Player C'},
@@ -474,7 +479,25 @@
     curAthlete = Athlete.find_by(:first_name => "Zinaida", :last_name => "Sendriute")
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id)
                 
-            
+    kevin = User.find_by(:user_id => "Kevin")
+    leon = User.find_by(:user_id => "Leon")
+    connor = User.find_by(:user_id => "Connor")
+    xi = User.find_by(:user_id => "Xi")
+    nathan = User.find_by(:user_id => "Nathan")
+    
+    hawkeyeXC = League.find_by(:league_name => "Hawkeye XC")
+    hawkeyeXC.update_attribute(:creator_id, kevin.id)
+    
+    settings = hawkeyeXC.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
+    settings.save
+    
+    LeagueMember.create!(league_id: hawkeyeXC.id, user_id: kevin.id)
+    LeagueMember.create!(league_id: hawkeyeXC.id, user_id: leon.id)
+    LeagueMember.create!(league_id: hawkeyeXC.id, user_id: connor.id)
+    LeagueMember.create!(league_id: hawkeyeXC.id, user_id: xi.id)
+    LeagueMember.create!(league_id: hawkeyeXC.id, user_id: nathan.id)
             
     leagues = League.order(:id).take(6)
     50.times do

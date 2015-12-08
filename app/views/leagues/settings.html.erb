@@ -18,10 +18,9 @@
         </nav>
    </div></center>
    <div class = "container">
-    <h2>League Settings</h2>
-    <% if(@league.creator_id == @thisUser.id) %>
-      <h3><%= link_to "Change Settings", edit_league_setting_path(@settings), method: "get" %></h3>
-    <% end %>
+      <div class="well well-sm">
+        <h2>League Settings</h2>
+      </div>
     </br>
     <div class="jumbotron">
       <h1>Points</h1>
