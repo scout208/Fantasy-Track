@@ -268,6 +268,26 @@
     curAthlete = Athlete.find_by(:first_name => "Bram", :last_name => "Som")
     m800.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrants800 = m100.active_event_entrants
+    place = 1
+    time = 105.2
+    
+    entrants800.each do |r|
+        if(place == 3)
+            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.34
+    end
+    
     m400h = dohaMeet.events.find_by(:event_name => "400M HURDLES MEN")
     curAthlete = Athlete.find_by(:first_name => "Bershawn", :last_name => "Jackson")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -285,6 +305,27 @@
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Felix", :last_name => "Sanchez")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id)
+    
+    entrants400h = m100.active_event_entrants
+    
+    place = 1
+    time = 48.98
+    
+    entrants400h.each do |r|
+        if(place == 3)
+            m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.33
+    end
     
     mtj = dohaMeet.events.find_by(:event_name => "TRIPLE JUMP MEN")
     curAthlete = Athlete.find_by(:first_name => "Pedro Pablo", :last_name => "Pichardo")
@@ -305,7 +346,28 @@
     mtj.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Pablo", :last_name => "Torrijos")
     mtj.active_event_entrants.create(:athlete_id => curAthlete.id)
+    
+    entrantstj = mtj.active_event_entrants
+    
+    place = 1
+    distance = 17.08
+    
+    entrantstj.each do |r|
+        if(place == 3)
+            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+        else
+            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        end
         
+        place = place + 1
+        distance = distance - 0.13
+    end
+    
     msp = dohaMeet.events.find_by(:event_name => "SHOT PUT MEN")
     curAthlete = Athlete.find_by(:first_name => "David", :last_name => "Storl")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -325,6 +387,27 @@
     msp.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Kurt", :last_name => "Roberts")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id)
+    
+    entrantssp = msp.active_event_entrants
+    
+    place = 1
+    distance = 20.58
+    
+    entrantssp.each do |r|
+        if(place == 3)
+            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+        else
+            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        distance = distance - 0.23
+    end
     
     mjt = dohaMeet.events.find_by(:event_name => "JAVELIN THROW MEN")
     curAthlete = Athlete.find_by(:first_name => "Tero", :last_name => "Pitkamaki")
@@ -348,6 +431,27 @@
     curAthlete = Athlete.find_by(:first_name => "Kim", :last_name => "Amb")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrantsjt = msp.active_event_entrants
+    
+    place = 1
+    distance = 65.98
+    
+    entrantsjt.each do |r|
+        if(place == 3)
+            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+        else
+            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        distance = distance - 0.48
+    end
+    
     w200 = dohaMeet.events.find_by(:event_name => "200M WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Allyson", :last_name => "Felix")
     w200.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -366,6 +470,27 @@
     curAthlete = Athlete.find_by(:first_name => "Kaylin", :last_name => "Whitney")
     w200.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrants200 = w200.active_event_entrants
+    
+    place = 1
+    time = 21.92
+    
+    entrants200.each do |r|
+        if(place == 3)
+            w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.13
+    end
+    
     w400 = dohaMeet.events.find_by(:event_name => "400M WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Francena", :last_name => "McCorory")
     w400.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -383,6 +508,27 @@
     w400.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Libania", :last_name => "Grenot")
     w400.active_event_entrants.create(:athlete_id => curAthlete.id)
+    
+    entrants400 = w400.active_event_entrants
+    
+    place = 1
+    time = 50.03
+    
+    entrants400.each do |r|
+        if(place == 3)
+            w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.18
+    end
     
     w1500 = dohaMeet.events.find_by(:event_name => "1500M WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Sifan", :last_name => "Hassan")
@@ -416,6 +562,26 @@
     curAthlete = Athlete.find_by(:first_name => "Lydia", :last_name => "Wafula")
     w1500.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrants1500 = w1500.active_event_entrants
+    place = 1
+    time = 241.24
+    
+    entrants1500.each do |r|
+        if(place == 3)
+            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 2, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.84
+    end
+    
     w100h = dohaMeet.events.find_by(:event_name => "100M HURDLES WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Jasmin", :last_name => "Stowers")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -433,6 +599,27 @@
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Dawn", :last_name => "Harper-Nelson")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id)
+    
+    entrants100h = w100h.active_event_entrants
+    
+    place = 1
+    time = 12.23
+    
+    entrants100h.each do |r|
+        if(place == 3)
+            w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+        else
+            w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        time = time + 0.12
+    end
     
     whj = dohaMeet.events.find_by(:event_name => "HIGH JUMP WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Airine", :last_name => "Palsyte")
@@ -456,6 +643,27 @@
     curAthlete = Athlete.find_by(:first_name => "Barbara", :last_name => "Szabo")
     whj.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrantshj = whj.active_event_entrants
+    
+    place = 1
+    distance = 1.92
+    
+    entrantshj.each do |r|
+        if(place == 3)
+            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+        else
+            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        distance = distance - 0.06
+    end
+    
     wlj = dohaMeet.events.find_by(:event_name => "LONG JUMP WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Tianna", :last_name => "Bartoletta")
     wlj.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -478,6 +686,27 @@
     curAthlete = Athlete.find_by(:first_name => "Melanie", :last_name => "Bauschke")
     wlj.active_event_entrants.create(:athlete_id => curAthlete.id)
     
+    entrantslj = wlj.active_event_entrants
+    
+    place = 1
+    distance = 6.25
+    
+    entrantslj.each do |r|
+        if(place == 3)
+            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+        else
+            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        distance = distance - 0.13
+    end
+    
     wdt = dohaMeet.events.find_by(:event_name => "DISCUS THROW WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Sandra", :last_name => "Perkovic")
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id)
@@ -499,6 +728,27 @@
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id)
     curAthlete = Athlete.find_by(:first_name => "Zinaida", :last_name => "Sendriute")
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id)
+                
+    entrantsdt = wdt.active_event_entrants
+    
+    place = 1
+    distance = 57.91
+    
+    entrantsdt.each do |r|
+        if(place == 3)
+            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        elsif(place == 1)
+            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
+                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+        else
+            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
+        end
+        
+        place = place + 1
+        distance = distance - 0.48
+    end
                 
     kevin = User.find_by(:user_id => "Kevin")
     leon = User.find_by(:user_id => "Leon")
