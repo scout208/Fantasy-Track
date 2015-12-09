@@ -155,7 +155,8 @@
                    
                 
                     
-    meets = [{meet_name: 'Doha Diamond League', location_city: 'Doha', location_country: 'QAT', start_date: '15/05/2015', end_date: '15/05/2015'},
+    meets = [{meet_name: 'Doha Diamond League', location_city: 'Doha', location_country: 'QAT', start_date: '15/05/2015', end_date: '15/05/2015', released: true},
+            {meet_name: 'Iowa Intrasquad', location_city: 'Iowa City', location_country: 'USA', start_date: '06/12/2015', end_date: '06/12/2015', released: true},
             {meet_name: 'Doha Diamond League', location_city: 'Doha', location_country: 'QAT', start_date: '06/05/2016', end_date: '06/05/2016'},
             {meet_name: 'Shanghai Diamond League', location_city: 'Shanghai', location_country: 'CHN', start_date: '14/05/2016', end_date: '14/05/2016'},
             {meet_name: 'Eugene Diamond League', location_city: 'Eugene', location_country: 'USA', start_date: '28/05/2016', end_date: '28/05/2016'},
@@ -758,6 +759,20 @@
     
     hawkeyeXC = League.find_by(:league_name => "Hawkeye XC")
     hawkeyeXC.update_attribute(:creator_id, kevin.id)
+    
+    iowaMeet = Meet.find_by(:meet_name => "Iowa Intrasquad")
+    
+    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 63)
+    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 59)
+    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 51)
+    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 48)
+    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 46)
+    
+    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 43)
+    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 49)
+    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 41)
+    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 58)
+    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 56)
     
     settings = hawkeyeXC.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
                 nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
