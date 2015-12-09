@@ -103,6 +103,12 @@ class LeaguesController < ApplicationController
     @thisUser = User.find_by_session_token(session[:session_token])
   end
   
+  def boxScore
+    @user = User.find(params[:user_id])
+    @meet = Meet.find(params[:meet_id])
+    @athlete_selections = Athelete_selection.find_by_user_id_and_meet_id(@user.id,@meet.id)
+  end
+  
   def myteam
     
    @availablemeets = []
