@@ -128,6 +128,7 @@ class LeaguesController < ApplicationController
   end
   
   def meet_scoreboard
+    @meet = Meet.find(1) #change this to be the current meet we just got
     render :partial=>'meet_scoreboard'
   end
   
