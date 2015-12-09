@@ -20,6 +20,23 @@
    </div></center>
 </div>
 <center><div class="container">
+  <h3>League Info</h3>
+  <table>
+    <tr>
+      <% @leagueCreator = User.find_by_id(@league.creator_id) %>
+      <td>League Creator:</td>
+    </tr>
+    <tr>
+      <td><%=@leagueCreator.user_id %></td> 
+    </tr>
+    <tr>
+      <td>Number of Members:</td>
+    </tr>
+    <tr>
+      <td><%= @league.members.count %></td>
+    </tr>
+      
+  </table>
   <% if @league.league_messages.any? %>
       <h3>League Messages (<%= @league.league_messages.count %>)</h3>
       <ol class="league_messages">
