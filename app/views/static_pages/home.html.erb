@@ -21,7 +21,6 @@
    <center><strong><h2>Latest News</h2></strong></center>
     <div id="myCarousel">
       <!-- Indicators -->
-<<<<<<< HEAD
       <table class = "table">
         <tbody>
           <tr id="Firstslide"  >
@@ -63,66 +62,6 @@
         </tbody>
       </table>
       
-=======
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active"  id="Firstslide">
-          <div class="container">
-            <div class="carousel-caption">
-              <% if @titles != nil %>
-                  <h1><%= link_to @titles[0], @links[0]%></h1>
-              <% else %>
-                  <h1> Second Screen</h1>
-              <% end %>
-                </br>
-                </br>
-                <% if !logged_in? %>
-                  <%= link_to 'Sign up Today !', 'signup', method: 'get',class: "btn btn-lg btn-primary" %>
-                <% end %>    
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="item" id="Secondslide">
-          <div class="container" >
-            <div class="carousel-caption">
-              <% if @titles != nil %>
-                <h1><%= link_to @titles[1], @links[1]%></h1>
-              <% else %>
-                <h1> Second Screen</h1>
-              <% end %>
-              <p>Brief Description about the advantage of the application</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item" id="Thirdslide">
-          <div class="container" >
-            <div class="carousel-caption">
-              <% if @titles != nil %>
-                <h1><%= link_to @titles[2], @links [2]%></h1>
-              <% else %>
-                 <h1> Third Screen</h1>
-              <% end %>
-              <p>Slide through the stories of our athletes</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a> <a class="btn btn-lg btn-success" href="#" role="button">Share Your Story</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
->>>>>>> 9ca440342b6931de9c6c0c94730c01fd57cf0065
     </div><!-- /.carousel -->
 </div>
 
