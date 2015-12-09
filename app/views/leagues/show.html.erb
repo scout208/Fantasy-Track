@@ -25,7 +25,11 @@
     <tr>
       <% @leagueCreator = User.find_by_id(@league.creator_id) %>
       <td>League Creator:  </td>
-      <td class ="infocol"><%=@leagueCreator.user_id %></td> 
+      <td class ="infocol">
+        <% if @leagueCreator != nil %>
+           <td><%=@leagueCreator.user_id %></td> 
+         <%end %>
+      </td> 
     </tr>
     <tr>
       <td>Number of Members:   </td>
