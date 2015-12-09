@@ -13,7 +13,11 @@
         <div class="item active"  id="Firstslide">
           <div class="container">
             <div class="carousel-caption">
-              <h1><%= link_to @titles[0], @links[0]%></h1>
+              <% if @titles != nil %>
+                  <h1><%= link_to @titles[0], @links[0]%></h1>
+              <% else %>
+                  <h1> Second Screen</h1>
+              <% end %>
                 </br>
                 </br>
                 <% if !logged_in? %>
@@ -26,7 +30,11 @@
         <div class="item" id="Secondslide">
           <div class="container" >
             <div class="carousel-caption">
-              <h1><%= link_to @titles[1], @links[1]%></h1>
+              <% if @titles != nil %>
+                <h1><%= link_to @titles[1], @links[1]%></h1>
+              <% else %>
+                <h1> Second Screen</h1>
+              <% end %>
               <p>Brief Description about the advantage of the application</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
@@ -35,7 +43,11 @@
         <div class="item" id="Thirdslide">
           <div class="container" >
             <div class="carousel-caption">
-              <h1><%= link_to @titles[2], @links [2]%></h1>
+              <% if @titles != nil %>
+                <h1><%= link_to @titles[2], @links [2]%></h1>
+              <% else %>
+                 <h1> Third Screen</h1>
+              <% end %>
               <p>Slide through the stories of our athletes</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a> <a class="btn btn-lg btn-success" href="#" role="button">Share Your Story</a></p>
             </div>
