@@ -14,6 +14,14 @@ class EventsController < ApplicationController
     session[:current_event] = @event.id
     @entrants = @event.entrants
   end
+  
+  def addSelectedPlayer
+    
+    @athlete = Athlete.find(params[:id])
+    @athlete.selected = true
+    
+  end
+
 
   def new
     @event = Event.new
