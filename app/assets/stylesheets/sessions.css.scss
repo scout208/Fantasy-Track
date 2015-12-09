@@ -12,18 +12,34 @@
 
 #login {
     color:black;
+    padding:0;
     //margin-top: 100px;
     h1{
       text-align:center;
       font-weight:bolder;
-      color: black;
+      color: white;
+    }
+    #remember{
+      color:black;
+      font-weight:500;
+      font-size:large;
     }
     p{
         font-weight:bold;
+        color:white;
+    }
+    #emailLabel {
+      color:white;
+    }
+    #passLabel{
+      color:white;
     }
     background-image:image-url('welcometitle.jpg');
     background-position:bottom;
+    background-repeat:no-repeat;
     background-size: cover;
+   
+    
 }
 
 .checkbox {

@@ -16,11 +16,16 @@
             </div>
           </div>
         </nav>
+   </div></center>
+   
+   <div class = "container">
+ 
       <div class="jumbotron">
-        <h3><%= @user.user_id %> Box Score</h3>
+        <h3><%= @user.user_id %> Box Score For <%= @meet.meet_name %></h3>
       </div>
       
       <table>
+          <% @totalScore =0 %>
           <tr>
               <th>Athlete First Name</th>
               <th>Athlete Last Name</th>
@@ -32,23 +37,30 @@
               <tr>
               <td>no entry</td>
               </tr>
+
             <% else %>
               <% @athlete_selections.each do |s|%>
               <% @event_entrant = EventEntrant.find_by_event_id_and_athlete_id(s.event_id,s.athlete_id) %>
               <% @athlete = Athlete.find_by_id(@event_entrant.athlete_id) %>
               <% @event = Event.find_by_id(@event_entrant.event_id) %>
               <tr>
-                  <td><%= @athlete.first_name %></td>
-                  <td><%= @athlete.last_name %></td>
-                  <td><%= @event.event_name %></td>
-                  <td><% 0 %></td>
-                  <td><%= @event_entrant.points %> </td>
+                  <td width=15%><%= @athlete.first_name %></td>
+                  <td width=15%><%= @athlete.last_name %></td>
+                  <td width=25%><%= @event.event_name %></td>
+                  <td width=15%> -- </td>
+                  <td width=15%><%= @event_entrant.points %> </td>
+                  <% @totalScore = @totalScore + @event_entrant.points %>
               </tr>
               <% end %>
             <% end %>
       </table>
       
-      
+      <table>
+        <tr>
+          <td width = 90%>Total Points</td>
+          <td width = 10%><%= @totalScore %></td>
+        </tr>
+      </table>
       
       <li><%= link_to 'Back to scoreboard', scoreboard_path %><li>
-   </div></center>
+   </div>
