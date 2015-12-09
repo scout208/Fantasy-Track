@@ -68,6 +68,7 @@ class LeaguesController < ApplicationController
     if(@leagueInfo.pass_code == @existingLeague.pass_code)
       @thisUser = User.find_by_session_token(session[:session_token])
       @thisUser.active_league_memberships.create(league_id: @existingLeague.id, user_id: @thisUser.id)
+      @existingLeague.league_messages.create!(user: User.find_by(user_id: 'Admin'), content: "Welcome #{view_context.link_to @thisUser.user_id, @thisUser} to #{@existingLeague.league_name}!")
       flash[:notice] = "You have successcully joined #{@existingLeague.league_name}!"
       redirect_to leagues_path
     else
@@ -97,6 +98,7 @@ class LeaguesController < ApplicationController
   def standings
     @league = League.find(session[:current_league])
     @thisUser = User.find_by_session_token(session[:session_token])
+    @members = @league.members
   end
   
   def scoreboard

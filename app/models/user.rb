@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  attr_accessor :score
   has_many :active_league_memberships, class_name:  "LeagueMember",
                                   foreign_key: "user_id",
                                   dependent:   :destroy
@@ -68,6 +69,14 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+  
+  def totalScore
+    score = 0
+    active_meet_scores.each do |meet_score|
+      score += meet_score.points
+    end
+    return score
   end
   
   private 
