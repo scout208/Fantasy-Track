@@ -9,10 +9,11 @@ class StaticPagesController < ApplicationController
     end
 
       doc = Nokogiri::HTML(open("http://www.flotrack.org/"))
-      @links = doc.css('section#recentBanners a')
-      @titles = doc.css('section#recentBanners').css('strong').to_ary
-      @title_images = doc.css('section#recentBanners').css('a img')
-      @hrefs = @links.map {|link| link.attribute('href').to_s}.delete_if {|href| href.empty?}
+      @links = doc.css('div.figure-mask').css('a')
+      @title_images = doc.css('div.figure-mask').css('a img')
+      @titles = @title_images.map{|images| images['alt']}.delete_if {|alt| alt.empty?}
+      @titles.to_ary
+      @hrefs = @links.map {|link| link['href']}.delete_if {|href| href.empty?}
       @hrefs.to_ary
       @srcs = @title_images.map {|images| images.attribute('src').to_s}.delete_if {|src| src.empty?}
       @srcs.to_ary
