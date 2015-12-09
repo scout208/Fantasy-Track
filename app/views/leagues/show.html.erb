@@ -21,21 +21,20 @@
 </div>
 <div class="container">
   <h3>League Info</h3>
-  <table>
+  <table id = "info">
     <tr>
       <% @leagueCreator = User.find_by_id(@league.creator_id) %>
-      <td>League Creator:</td>
+      <td>League Creator:  </td>
+      <td class ="infocol"><%=@leagueCreator.user_id %></td> 
     </tr>
     <tr>
-      <td><%=@leagueCreator.user_id %></td> 
+      <td>Number of Members:   </td>
+      <td class ="infocol">   <%= @league.members.count %></td>
     </tr>
     <tr>
-      <td>Number of Members:</td>
+      <td>Passcode:  </td>
+      <td class ="infocol"><%= @league.pass_code %></td>
     </tr>
-    <tr>
-      <td><%= @league.members.count %></td>
-    </tr>
-      
   </table>
   <% if @league.league_messages.any? %>
       <h3>League Messages (<%= @league.league_messages.count %>)</h3>
