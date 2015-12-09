@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208175008) do
+ActiveRecord::Schema.define(version: 20151209031542) do
 
   create_table "athlete_selections", force: :cascade do |t|
     t.integer "user_id"
     t.integer "league_id"
-    t.integer "event_entrant_id"
     t.integer "meet_id"
     t.integer "points"
+    t.integer "event_id"
+    t.integer "athlete_id"
   end
 
   create_table "athletes", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151208175008) do
     t.integer  "athlete_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "points"
   end
 
   create_table "events", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20151208175008) do
     t.decimal  "jump_6"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "points"
   end
 
   create_table "league_members", force: :cascade do |t|
@@ -130,6 +133,7 @@ ActiveRecord::Schema.define(version: 20151208175008) do
     t.decimal  "time_seconds"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "points"
   end
 
   create_table "sprint_results", force: :cascade do |t|
@@ -143,6 +147,7 @@ ActiveRecord::Schema.define(version: 20151208175008) do
     t.decimal  "time_seconds"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "points"
   end
 
   create_table "throw_results", force: :cascade do |t|
@@ -162,6 +167,7 @@ ActiveRecord::Schema.define(version: 20151208175008) do
     t.decimal  "throw_6"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "points"
   end
 
   create_table "users", force: :cascade do |t|

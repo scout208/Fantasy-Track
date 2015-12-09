@@ -20,6 +20,10 @@ class Event < ActiveRecord::Base
     has_many :active_jump_results, class_name: "JumpResult",
                                     foreign_key: "event_id",
                                     dependent: :destroy
+                                    
+    has_many :active_athlete_selections, class_name: "AthleteSelection",
+                                        foreign_key: "event_id",
+                                        dependent: :destroy                                
                                   
     has_many :entrants, through: :active_event_entrants, source: :athlete
 end

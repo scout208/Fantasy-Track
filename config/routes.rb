@@ -47,6 +47,7 @@ Rails.application.routes.draw do
       post :addMember
       post :requestFriend
       get :inviteFriend
+      get :boxScore
     end
   end
   resources :singleleague
