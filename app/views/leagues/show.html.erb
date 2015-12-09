@@ -27,7 +27,9 @@
       <td>League Creator:</td>
     </tr>
     <tr>
+      <% if @leagueCreator != nil %>
       <td><%=@leagueCreator.user_id %></td> 
+      <%end %>
     </tr>
     <tr>
       <td>Number of Members:</td>
