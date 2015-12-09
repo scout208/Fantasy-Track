@@ -101,13 +101,16 @@ class LeaguesController < ApplicationController
   
   def scoreboard
     @league = League.find(session[:current_league])
+    session[:current_meet] = 1
     @thisUser = User.find_by_session_token(session[:session_token])
   end
   
   def boxScore
-    @user = User.find(params[:user_id])
-    @meet = Meet.find(params[:meet_id])
-    @athlete_selections = Athelete_selection.find_by_user_id_and_meet_id(@user.id,@meet.id)
+    @thisUser = User.find_by_session_token(session[:session_token])
+    @league = League.find(session[:current_league])
+    @user = User.find(params[:id])
+    @meet = Meet.find(session[:current_meet])
+    @athlete_selections = AthleteSelection.all
   end
   
   def myteam

@@ -17,7 +17,7 @@
           </div>
         </nav>
       <div class="jumbotron">
-        <h3><%= @User.user_id %> Box Score</h3>
+        <h3><%= @user.user_id %> Box Score</h3>
       </div>
       
       <table>
@@ -31,7 +31,7 @@
           
           <% if @athlete_selections != nil %>
               <% @athlete_selections.each do |s|%>
-              <% @event_entrant = Event_entrant.find_by_id(s.event_entrant_id) %>
+              <% @event_entrant = EventEntrant.find_by_id(s.event_entrant_id) %>
               <% @athlete = Athlete.find_by_id(@event_entrant.athlete_id) %>
               <% @event = Event.find_by_id(@event_entrant.event_id) %>
               <tr>
