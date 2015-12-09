@@ -11,9 +11,11 @@ class StaticPagesController < ApplicationController
       doc = Nokogiri::HTML(open("http://www.flotrack.org/"))
       @links = []
       @titles = []
-      headlines = doc.css('div.figure-mask').map do |h|
+      @srcs = []
+      headlines = doc.css('section.headlines').css('div.figure-mask').map do |h|
         @links += [h.at_css("a")['href']]
         @titles += [h.at_css("img").attr('alt')]
+        @srcs += [h.at_css("img").attr('src')]
       end
 
   end

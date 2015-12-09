@@ -4,6 +4,7 @@ class LeaguesController < ApplicationController
   helper_method :addMember
   helper_method :inviteFriend
   helper_method :requestFriend
+  helper_method :boxScore
   
   def show
     #@league = Meet.find(params[:id])
@@ -101,7 +102,17 @@ class LeaguesController < ApplicationController
   
   def scoreboard
     @league = League.find(session[:current_league])
+    session[:current_meet] = 1
     @thisUser = User.find_by_session_token(session[:session_token])
+  end
+  
+  def boxScore
+    @thisUser = User.find_by_session_token(session[:session_token])
+    @league = League.find(session[:current_league])
+    @user = User.find(params[:id])
+    @meet = Meet.find(session[:current_meet])
+    @athlete_selections = AthleteSelection.find_by_user_id_and_meet_id(@user.user_id,@meet.id)
+    # .all is for developing Please fix it later
   end
   
   def myteam
@@ -122,6 +133,7 @@ class LeaguesController < ApplicationController
   end
   
   def meet_scoreboard
+    @meet = Meet.find(1) #change this to be the current meet we just got
     render :partial=>'meet_scoreboard'
   end
   
