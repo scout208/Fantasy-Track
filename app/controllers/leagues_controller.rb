@@ -4,6 +4,7 @@ class LeaguesController < ApplicationController
   helper_method :addMember
   helper_method :inviteFriend
   helper_method :requestFriend
+  helper_method :boxScore
   
   def show
     #@league = Meet.find(params[:id])
