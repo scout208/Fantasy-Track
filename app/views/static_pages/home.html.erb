@@ -1,13 +1,13 @@
      <script>
        
         $(document).ready(function( ) {
-          $("#Firstslide").click(function() {
+          $("#firstslide").click(function() {
                 document.location.href = "<%= @links[0]%>";
           })
-          $("#Secondslide").click(function() {
+          $("#secondslide").click(function() {
                 document.location.href = "<%= @links[1]%>";
           })
-          $("#Thirdslide").click(function() {
+          $("#thirdslide").click(function() {
                 document.location.href = "<%= @links[2]%>";
           })
        });
@@ -23,7 +23,7 @@
       <!-- Indicators -->
       <table class = "table">
         <tbody>
-          <tr id="Firstslide"  >
+          <tr id="firstslide"  >
             <td>
               <div >
                 <img id= "image" src= <%=@srcs[0] %> />
@@ -35,7 +35,7 @@
                </div>
             </td>
           </tr>
-          <tr id="Secondslide" >
+          <tr id="secondslide" >
             <td>
               <div >
                 <img id="image" src= <%=@srcs[1]%> />
@@ -47,7 +47,7 @@
                </div>
             </td>
           </tr>
-          <tr id="Thirdslide">
+          <tr id="thirdslide">
             <td>
               <div >
                 <img id = "image" src= <%=@srcs[2]%>/>
