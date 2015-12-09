@@ -5,12 +5,4 @@ class AthleteSelection < ActiveRecord::Base
     belongs_to :athlete, class_name: "Athlete"
     belongs_to :event, class_name: "Event"
     
-    
-    def selected
-        
-    end
-    
-    def selected=val
-        @selected=val
-    end
 end

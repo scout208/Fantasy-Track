@@ -1,3 +1,27 @@
+<script>
+  $(function(){
+    $('.board').hide();
+    $('#id-' + <%= @first %>).show();
+    
+    $('.list-group-item').click(function( ){
+      $('.board').hide();
+      $("a.active").removeClass("active");
+      var idStr = $(this).attr("id");
+      var length = idStr.length;
+      length = length - 2
+      var id = idStr.substr(2,length)
+      $('#id-' + id).show();
+      $(this).addClass("active");
+    });
+  });
+</script>
+
+<script>
+    $(document).ready(function() {
+    $('.example').DataTable();
+    } );
+</script>
+  
   <center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
  <center><div class="container" id = "leagueNavBar">
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -25,16 +49,22 @@
         <div class="well col-sm-4">
           <h3>Meets</h3>
           <div class="list-group">
-            <a class="list-group-item active">Doha</a>
-            <a class="list-group-item">Eugene</a>
-            <a class="list-group-item">Monaco</a>
-            <a class="list-group-item">Beijing</a>
+            <% i = 1 %>
+            <% @meets.each do |meet| %>
+              <% if(i == 1) %>
+                <a id='a-<%= meet.id %>' class="list-group-item active"><%= meet.meet_name %></a>
+                <% i = i + 1 %>
+              <% else %>
+                <a id='a-<%= meet.id %>' class="list-group-item"><%= meet.meet_name %></a>
+              <% end %>
+            <% end %>
           </div>
         </div>
-      
-        <div class="well col-sm-4">
-          <%= render(:partial => "meet_scoreboard" ,:controller=>"leagues") %>
+        <% @meets.each do |m| %>
+        <div id="id-<%=m.id %>" class="well col-sm-4 board">
+          <%= render(:partial => "meet_scoreboard" , :controller=>"leagues", :object => m) %>
         </div>
+        <% end %>
       </div>
    </div>
    

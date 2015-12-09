@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   get    'current_user' => 'sessions#show'
   delete  'meetdetail'  => 'meets#destroy'
   delete  'eventdetail'  => 'events#destroy'
-  put     'addSelectedPlayer' => 'events#addSelectedPlayer'
+  post    'addSelectedPlayer' => 'events#addSelectedPlayer'
+  post    'showForUserInLeague' => 'events#showForUserInLeague'
+  
+  
+  
   resources :users do
     member do
       get :confirm_email
