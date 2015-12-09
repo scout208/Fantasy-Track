@@ -52,7 +52,6 @@
             <td>Birth Date</td>
             <td>Comments</td>
             <td> Add or Drop</td>
-
             <% if @current_user.role == "admin" %>
                 <td>Remove</td>
                 <td>Enter Result</td>
@@ -65,8 +64,13 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
-                <td><%= button_to "Add" , myteam_path, class: 'Add'%></td>
-
+                
+                <% if p.selected? %>
+                    <td><%= button_to 'Drop', addSelectedPlayer_path(@p), class: "Add", method: :put, remote: true, id = "addOrDrop"%></td>
+                <% else %>
+                    <td><%= button_to 'Add', 'myteam_path', class: "Add", method: :put, remote: true, id = "addOrDrop"%></td>
+                <% end %>
+                
                   <% if @current_user.role == "admin" %>
                      <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
                      <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
