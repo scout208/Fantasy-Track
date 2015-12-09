@@ -2,6 +2,15 @@
     $(document).ready(function() {
     $('#example').DataTable();
     } );
+    
+    $(document).ready(function() {
+    $('#addOrDrop')
+    
+    
+    
+    } );
+    
+ 
 </script>
 <div class = "container" id = "eventdetail">
    <% provide(:title, 'Event Info') %>
@@ -55,7 +64,13 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
-                <td><%= button_to 'Add', '#', class: "Add"%></td>
+                
+                <% if p.selected == true %>
+                    <td><%= button_to 'Drop', addSelectedPlayer_path(@p), class: "Add", method: :put, remote: true, id = "addOrDrop"%></td>
+                <% else %>
+                    <td><%= button_to 'Add', 'checkIfSelected()', class: "Add", method: :put, remote: true, id = "addOrDrop"%></td>
+                <% end %>
+                
                   <% if @current_user.role == "admin" %>
                      <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
                      <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
