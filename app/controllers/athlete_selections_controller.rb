@@ -19,6 +19,14 @@ class AthleteSelectionsController < ApplicationController
   def destroy
     
   end
+  
+  def addSelectedPlayer
+    
+    @athlete = Athlete.find(params[:id])
+    @athlete.selected = true
+    
+    
+  end
  
   private
 

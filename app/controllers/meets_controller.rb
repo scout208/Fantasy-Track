@@ -11,6 +11,13 @@ class MeetsController < ApplicationController
     @meet = Meet.find(params[:id])
     @events = @meet.events()
   end
+  
+  def addSelectedPlayer
+    
+    @athlete = Athlete.find(params[:id])
+    @athlete.selected = true
+    
+  end
 
   def new
     @meet = Meet.new
