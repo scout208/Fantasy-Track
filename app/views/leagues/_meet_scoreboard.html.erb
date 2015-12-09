@@ -16,7 +16,11 @@
         <tr>
             <td>Kevin</td>
             <td>78</td>
-            <td><%= link_to "Box Score", boxScore_league_path(:user_id => 1, :meet_id => 1), method: 'get' %></td>
+            <td><%= link_to 'Box Score',
+            {controller: 'leagues',
+             action: 'boxScore',
+             user_id: 1,
+             meet_id: 1}, method: 'get' %></td>
         </tr>
         <tr>
             <td>Connor</td>
