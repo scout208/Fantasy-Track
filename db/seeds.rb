@@ -833,7 +833,7 @@
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: nathan.id)
             
     leagues = League.order(:id).take(6)
-    50.times do
+    5.times do
         content = Faker::Lorem.sentence(5)
         leagues.each { |league| league.league_messages.create!(user_id: 1, content: content) }
     end
