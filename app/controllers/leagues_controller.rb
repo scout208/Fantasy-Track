@@ -110,7 +110,7 @@ class LeaguesController < ApplicationController
     @league = League.find(session[:current_league])
     @user = User.find(params[:id])
     @meet = Meet.find(session[:current_meet])
-    @athlete_selections = AthleteSelection.all
+    @athlete_selections = AthleteSelection.find_by_user_id_and_meet_id(@user.user_id,@meet.id)
     # .all is for developing Please fix it later
   end
   
