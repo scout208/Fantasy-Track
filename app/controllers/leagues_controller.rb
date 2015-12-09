@@ -111,6 +111,7 @@ class LeaguesController < ApplicationController
     @user = User.find(params[:id])
     @meet = Meet.find(session[:current_meet])
     @athlete_selections = AthleteSelection.all
+    # .all is for developing Please fix it later
   end
   
   def myteam
