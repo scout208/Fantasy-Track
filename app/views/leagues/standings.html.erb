@@ -17,8 +17,31 @@
             </div>
           </div>
         </nav>
-        <div class="jumbotron">
-          <h3>League Standings</h3>
-        </div>
-   </div></center>
-  
+  </div></center>
+  <div class="container">
+    <div class="jumbotron">
+      <h3 align="center">League Standings</h3>
+    </div>
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>User</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count = 0 %>
+          <% @members.each do |member| %>
+            <% count += 1 %>
+            <tr>
+              <th scope="row"><%= count %></th>
+              <td><%= member.user_id %></td>
+              <td><%= member.score %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

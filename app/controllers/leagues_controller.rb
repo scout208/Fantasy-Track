@@ -96,6 +96,7 @@ class LeaguesController < ApplicationController
   def standings
     @league = League.find(session[:current_league])
     @thisUser = User.find_by_session_token(session[:session_token])
+    @members = @league.members
   end
   
   def scoreboard
