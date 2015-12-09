@@ -103,6 +103,9 @@ class LeaguesController < ApplicationController
     @league = League.find(session[:current_league])
     session[:current_meet] = 1
     @thisUser = User.find_by_session_token(session[:session_token])
+    @meets = Meet.where(:released => true)
+    @first = @meets.first.id
+    @meet = @meets.first
   end
   
   def boxScore
@@ -132,8 +135,10 @@ class LeaguesController < ApplicationController
   end
   
   def meet_scoreboard
-    @meet = Meet.find(1) #change this to be the current meet we just got
-    render :partial=>'meet_scoreboard'
+    #@meet = Meet.find(params[:id]) #change this to be the current meet we just got
+    @meet = Meet.find(2)
+    session[:current_meet] = params[:id]
+    #render :partial=>'meet_scoreboard'
   end
   
   def edit_league_setting

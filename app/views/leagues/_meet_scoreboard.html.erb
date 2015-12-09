@@ -1,10 +1,5 @@
-<script>
-    $(document).ready(function() {
-    $('#example').DataTable();
-    } );
-</script>
-<h3>Scores for Doha</h3>
-<table id="example" class="display" cellspacing="0" width="100%">
+<h3>Scores for <%= @meet.meet_name %></h3>
+<table id="example" class="display example" cellspacing="0" width="100%">
     <thead>
         <tr>
             <td>User</td>
@@ -21,22 +16,22 @@
         <tr>
             <td>Connor</td>
             <td>63</td>
-            <td>link</td>
+            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
         </tr>
         <tr>
             <td>Xi</td>
             <td>59</td>
-            <td>link</td>
+            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
         </tr>
         <tr>
             <td>Nathan</td>
             <td>53</td>
-            <td>link</td>
+            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
         </tr>
         <tr>
             <td>Leon</td>
             <td>7</td>
-            <td>link</td>
+            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
         </tr>
     </tbody>
 </table>
