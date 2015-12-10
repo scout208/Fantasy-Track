@@ -14,10 +14,13 @@ class MeetsController < ApplicationController
   
   def addSelectedPlayer
     
+    #@meet = Meet.find
+    
     @athlete = Athlete.find(params[:id])
     @athlete.selected = true
     
   end
+  
 
   def new
     @meet = Meet.new
