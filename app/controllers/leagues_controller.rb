@@ -43,6 +43,7 @@ class LeaguesController < ApplicationController
   
   def searchLeague
     @leagues = League.all()
+    @thisUser = User.find_by_session_token(session[:session_token])
   end
   
   def inviteFriend
@@ -60,6 +61,7 @@ class LeaguesController < ApplicationController
   
   def joinLeague
     @league = League.find(params[:id])
+    @thisUser = User.find_by_session_token(session[:session_token])
   end
   
   def addMember
