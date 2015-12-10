@@ -5,4 +5,6 @@ class AthleteSelection < ActiveRecord::Base
     belongs_to :athlete, class_name: "Athlete"
     belongs_to :event, class_name: "Event"
     
+    attr_accessor :selected
+    
 end
