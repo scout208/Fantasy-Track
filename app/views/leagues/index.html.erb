@@ -1,8 +1,32 @@
-<div class = "container" id = "leagues">
-   
-  <h2>Your League List</h2>
-  <h3><a><%= link_to "Create New League", new_league_path, method: "get" %></a></h3>
-  <% @leagues.each do |p| %>
-    <h5><%=link_to p.league_name, league_path(p) %></h5>
-  <% end %>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>
+
+<div class = "container">
+   <h2>Your League List</h2>
+   <h3><a><%= link_to "Create New League", new_league_path, method: "get" %></a></h3>
+     <table id="example" class="display" cellspacing="0" width="100%">
+       <thead>
+         <td>League Name</td>
+         <td>Players</td>
+         <td>Enter</td>
+       </thead>
+       <tbody>
+          <h5><% @leagues.each do |p| %></h5>
+          <tr>
+              <td><%= p.league_name %></td>
+              <td><%= p.league_messages.count %></td>
+              <td>
+                <% if p.creator_id = @thisUser.user_id %>
+                  <%= link_to 'Manage', league_path(p) %>
+                <% else %>
+                   <%= link_to 'Enter', league_path(p) %>
+                <% end %>
+              </td>
+           </tr>
+          <% end %>
+       </tbody>
+     </table>
 </div>

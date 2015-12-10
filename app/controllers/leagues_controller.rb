@@ -36,9 +36,6 @@ class LeaguesController < ApplicationController
   def index
     @thisUser = User.find_by_session_token(session[:session_token])
     @leagues = @thisUser.leagues()
-   # @leagues = League.all() #will do @thisUser = User.find_by_session_token(session[:session_token])
-                            # @leagues = @thisUser.leagues
-    @allLeagues = League.all()
   end
   
   def searchLeague
