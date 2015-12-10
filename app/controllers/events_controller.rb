@@ -17,8 +17,22 @@ class EventsController < ApplicationController
   
   def addSelectedPlayer
     
-    @athlete = Athlete.find(params[:id])
-    @athlete.selected = true
+   # @athlete = Athlete.find(params[:id])
+   # @athlete.selected = true
+    #@thisUser = User.find_by_session_token(session[:session_token])
+        
+    @user = User.find(session[:current_user])
+    @event = Event.find(session[:current_event])
+    @legue = League.find(session[:current_league])
+    @meet = Meet.find(session[:current_meet])
+    @athlete = Athlete.find(session[:current_athlete])
+    
+    @user.league.meet.event.athlete.selected = true
+    
+    
+    
+    
+    
     
   end
 

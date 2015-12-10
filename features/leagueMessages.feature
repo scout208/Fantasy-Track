@@ -1,7 +1,26 @@
 Feature: League Messages
+  
   As a user in a league
   I want to view league messages
   So that I can know what's going on around the league.
+  
+Background: messages have been added to database
+  
+  Given the following users have been added to FantasyTrack:
+  |  user_id   |     email          | role   |  password   |  
+  |   Admin    | admin@gmail.com    | admin  |   password  |     
+  |   tester   | tester@testing.com |  user  |    tester   |
+  
+  Given the following leagues have been added to FantasyTrack:
+  |  league_name       |   pass_code    |
+  |     cheetah        |      rose0     |
+  
+  Given the following messages have been added to Cheetah: 
+  | league_id  | user_id  |     content     |
+  |     1      |  Admin   | Test message 1  |
+  |     1      |  Admin   | Test message 2  |
+  |     1      |  Admin   | Test message 3  |
+  |     1      |  Admin   | Test message 4  |
   
   Scenario: See all messages for a league
     Given I am logged in as a member of the league
