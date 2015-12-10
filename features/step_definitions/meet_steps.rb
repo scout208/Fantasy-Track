@@ -110,8 +110,40 @@ Given(/^the following leagues have been added to FantasyTrack:$/) do |leagues_ta
     l.league_name = league['league_name']
     l.pass_code = league['pass_code']
     l.save()
+    if l.league_name == "eagles"
+        tester = User.find_by(:user_id => "tester")
+        eagles = League.find_by(:league_name => "eagles")
+        eagles.update_attribute(:creator_id,tester.id)
+        LeagueMember.create!(league_id: eagles.id, user_id: tester.id)
+    end
   end
 end
+
+Given(/^I am on the view to join "(.*?)"$/) do |arg1|
+  click_on 'Join League'
+  within('tr',text: arg1) do
+      click_on 'Join'
+  end
+end
+
+Given(/^I am on the view to invite new memeber for "(.*?)"$/) do |arg1|
+   visit '/leagues'
+   within('tr',text: arg1) do
+      click_on 'Enter'
+   end
+   click_on 'Invite Friends'
+end
+
+Then(/^I can see "(.*?)" with "(.*?)" Link$/) do |arg1, arg2|
+  within('tr', text: arg1) do
+      should have_link(arg2)
+  end
+end
+
+Given(/^I am on the view to create league$/) do
+  visit '/leagues/new'
+end
+
 
 Then(/^I should see the view where I am able to create new league$/) do
   current_path.should == "/leagues/new"

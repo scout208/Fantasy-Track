@@ -13,18 +13,21 @@ Background: The following data have been added to FantasyTrack
   |     cheetah        |      rose0     |
   |     eagles         |      rose1     |      
   
-Scenario: User create league  
+Scenario: User go to create league page
   Given I am logged in with email of "tester@testing.com" and a password "tester"
   And I click "My Leagues"
   And I click "Create New League"
   Then I should see "Create A New League"
   And I should see the view where I am able to create new league
-  
+
+Scenario: User create league  
+  Given I am logged in with email of "tester@testing.com" and a password "tester"
+  And I am on the view to create league
   When I fill in the league name with "lighting" and pass code with "rose2"
   And I press "Create League"
   Then I am on the my league page
   And I should see "lighting successcully created."
-  And I should see "lighting" Link
+  And I should see "lighting"
   
 Scenario: user see the created league in public League List
   Given I am logged in with email of "tester@testing.com" and a password "tester"

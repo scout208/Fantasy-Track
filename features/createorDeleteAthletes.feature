@@ -27,7 +27,7 @@ Feature: Administrator creates new Athlete
    And I will see "Ana Simic" with country "Croatia" and birthdate with "1983-08-25"
    
    
-  Scenario: Delete an Athlete
+ Scenario: Delete an Athlete
    Given I am logged in with email of "admin@gmail.com" and a password "password"
    And I am on the athlete page
    Then I should see "Barry Bonds"

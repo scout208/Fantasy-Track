@@ -756,9 +756,17 @@
     connor = User.find_by(:user_id => "Connor")
     xi = User.find_by(:user_id => "Xi")
     nathan = User.find_by(:user_id => "Nathan")
+    yujhuang = User.find_by(:user_id => "yujhuang")
+    tester = User.find_by(:user_id => "tester")
     
     hawkeyeXC = League.find_by(:league_name => "Hawkeye XC")
     hawkeyeXC.update_attribute(:creator_id, kevin.id)
+    cheetah = League.find_by(:league_name => "Cheetah")
+    cheetah.update_attribute(:creator_id,yujhuang.id)
+    flyangel = League.find_by(:league_name => "Flying Angel")
+    flyangel.update_attribute(:creator_id,yujhuang.id)
+    eagles = League.find_by(:league_name => "Eagles")
+    eagles.update_attribute(:creator_id,tester.id)
     
     iowaMeet = Meet.find_by(:meet_name => "Iowa Intrasquad")
     
@@ -825,12 +833,32 @@
                 nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
                 athlete_select_option: "1")
     settings.save
+    settings2 = cheetah.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
+    settings2.save
+    settings3 = flyangel.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
+    settings3.save
+    settings4 = eagles.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
+    settings4.save
+    
     
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: kevin.id)
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: leon.id)
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: connor.id)
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: xi.id)
     LeagueMember.create!(league_id: hawkeyeXC.id, user_id: nathan.id)
+    LeagueMember.create!(league_id: cheetah.id, user_id: yujhuang.id)
+    LeagueMember.create!(league_id: cheetah.id, user_id: leon.id)
+    LeagueMember.create!(league_id: eagles.id, user_id: connor.id)
+    LeagueMember.create!(league_id: eagles.id, user_id: tester.id)
+    LeagueMember.create!(league_id: flyangel.id, user_id: xi.id)
+    LeagueMember.create!(league_id: flyangel.id, user_id: nathan.id)
+    LeagueMember.create!(league_id: flyangel.id, user_id: tester.id)
             
     leagues = League.order(:id).take(6)
     5.times do
