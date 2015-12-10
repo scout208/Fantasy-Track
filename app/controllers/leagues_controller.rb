@@ -42,8 +42,9 @@ class LeaguesController < ApplicationController
   end
   
   def searchLeague
-    @leagues = League.all()
     @thisUser = User.find_by_session_token(session[:session_token])
+    @myleagues = @thisUser.leagues
+    @leagues = League.all() -  @myleagues
   end
   
   def inviteFriend
