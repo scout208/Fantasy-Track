@@ -4,12 +4,12 @@
     } );
 </script>
  <center><div class="container" id = "leagueNavBar">
-     <center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
+     <center><h2 id="header">League: <%=@league.league_name %></h2></center>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><%= link_to 'League Home', league_path(League.find(session[:current_league])) %></li>
+                <li><%= link_to 'League Home', league_path(@league) %></li>
                 <li><%= link_to 'My Team', myteam_path %></li>
                 <li><%= link_to 'Standings', standings_path %></li>
                 <li><%= link_to 'Scoreboard', scoreboard_path %></li>

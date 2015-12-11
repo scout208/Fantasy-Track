@@ -115,6 +115,10 @@ Given(/^the following leagues have been added to FantasyTrack:$/) do |leagues_ta
         eagles = League.find_by(:league_name => "eagles")
         eagles.update_attribute(:creator_id,tester.id)
         LeagueMember.create!(league_id: eagles.id, user_id: tester.id)
+        settings = eagles.league_settings.build(league_id: @league_id, standard_scoring: true, pr_bonus: true, wr_bonus: true,
+                nr_bonus: true, fastest_start_bonus: true, split_leader_bonus: true, best_of_round_bonus: true, 
+                athlete_select_option: "1")
+        settings.save
     end
   end
 end

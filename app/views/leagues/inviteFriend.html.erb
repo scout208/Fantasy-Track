@@ -1,7 +1,7 @@
 <div class = "container" id = "invite">  
    <% provide(:title, 'Invite new member') %>
-   <br></br>
   <center><div class="container" id = "leagueNavBar">
+    <center><h2 id="header">League: <%=League.find(session[:current_league]).league_name %></h2></center>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
@@ -24,7 +24,7 @@
       <br/>
       <%= form_for(:user, url: requestFriend_league_path) do |f| %>
       
-        <%= f.label :email, "Friend Email: " %>
+        <%= f.label :email, "Friend Email: " , :id => "label"%>
         <%= f.text_field :email, :value => "" %>
         
         </br>
