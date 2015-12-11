@@ -9,12 +9,11 @@ Background: The following data have been added to FantasyTrack
 
   
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date | end_date  |
-  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
-  | Doha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
-  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
-  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |
-  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |
+  |  meet_name             | location_city| location_country | start_date| end_date   | released  |
+  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |   true    |
+  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |   false   |
+  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |   false   |
+  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |   false   |
    
   Given the following Events have been added to Doha Diamond League Meet:
   |     event_name         |   event_type |   
@@ -53,10 +52,27 @@ Scenario: User select meet to view related events
 Given I am logged in with email of "tester@testing.com" and a password "tester"
 And I am on the Meets screen
 When I click "Doha Diamond League"
-Then I should see all events for "Doha Diamond League" Meet
+Then I should see "Meet Detail"
+And I should see "Meet: Doha Diamond League"
+And I should see "Location: Doha, QAT"
+And I should see "Start Date: 2015-05-15"
+And I should see "End Date: 2015-05-15"
+And I should see "Released: true"
+And I should see all events for "Doha Diamond League" Meet
 And I should not see "Create New Event" Link
 And I should not see "Delete" Button
 And I should not see "Release" Button
+
+Scenario: User select meet that unreleased
+Given I am logged in with email of "tester@testing.com" and a password "tester"
+And I am on the Meets screen
+When I click "Shanghai Diamond League"
+Then I should see "Meet Detail"
+And I should see "Meet: Shanghai Diamond League"
+And I should see "Location: Shanghai, CHN"
+And I should see "Start Date: 2016-05-14"
+And I should see "End Date: 2016-05-14"
+And I should see "Released: false"
 
 
 
@@ -75,10 +91,10 @@ And I am on the Meets screen
 When I click "Doha Diamond League"
 Then I should see "Meet Detail"
 And I should see "Meet: Doha Diamond League"
-And I should see "Location: Doha"
+And I should see "Location: Doha, QAT"
 And I should see "Start Date: 2015-05-15"
 And I should see "End Date: 2015-05-15"
-And I should see "Released: false"
+And I should see "Released: true"
 And I should see all events for "Doha Diamond League" Meet
 And I should see "Create New Event" Link
 And I should see "Delete" Button

@@ -10,11 +10,11 @@ Feature: Add or remove entrants in Events
 
   
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date | end_date  |
-  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
-  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
-  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |
-  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |
+  |  meet_name             | location_city| location_country | start_date| end_date   | released  |
+  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |   true    |
+  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |   false   |
+  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |   false   |
+  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |   false   |
    
   
   Given the following Events have been added to Doha Diamond League Meet:

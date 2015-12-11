@@ -130,6 +130,7 @@ Given(/^the following Meets have been added to FantasyTrack:$/) do |meets_table|
     m.location_country = meet['location_country']
     m.start_date = meet['start_date']
     m.end_date = meet['end_date']
+    m.released = meet['released']
     m.save()
   end
 end

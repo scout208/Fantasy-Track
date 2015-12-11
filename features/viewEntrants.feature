@@ -9,12 +9,11 @@ Background: The following data have been added to FantasyTrack
 
   
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date | end_date  |
-  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |
-  | Doha Diamond League 2  |       Doha   |       QAT        | 06/05/2016| 06/05/2016 |
-  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |
-  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |
-  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |
+  |  meet_name             | location_city| location_country | start_date| end_date   | released  |
+  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |   true    |
+  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |   false   |
+  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |   false   |
+  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |   false   |
    
   
   Given the following Events have been added to Doha Diamond League Meet:
@@ -46,6 +45,8 @@ Given I am logged in with email of "tester@testing.com" and a password "tester"
 And I am on the event screen of "Doha Diamond League"
 When I click "800M MEN"
 Then I should see all the entrants attending "800M MEN"
+And I should see "Event: 800M MEN"
+And I should see "Event type: Sprint/Hurdle"
 And I should see "Results" Link
 And I should not see "Add Entrant" Link
 And I should not see "Delete Event" Button
@@ -58,6 +59,8 @@ Given I am logged in with email of "admin@gmail.com" and a password "password"
 And I am on the event screen of "Doha Diamond League"  
 When I click "800M MEN"
 Then I should see "Event Detail"
+And I should see "Event: 800M MEN"
+And I should see "Event type: Sprint/Hurdle"
 And I should see all the entrants attending "800M MEN"
 And I should see "Results" Link
 And  I should see "Add Entrant" Link
