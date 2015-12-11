@@ -51,11 +51,11 @@
             <td>Country</td>
             <td>Birth Date</td>
             <td>Comments</td>
-            <td> Add or Drop</td>
-
             <% if @current_user.role == "admin" %>
                 <td>Remove</td>
                 <td>Enter Result</td>
+            <% else %>
+                <td> Add or Drop</td>
             <% end %>
         </thead>
         <tbody>
@@ -65,13 +65,13 @@
                 <td><%= p.country %></td>
                 <td><%= p.birth_date %></td>
                 <td><%= p.notes %></td>
-                <td><%= button_to "Add" , myteam_path, class: 'Add'%></td>
-
-                  <% if @current_user.role == "admin" %>
-                     <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
-                     <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
-                  <%end%>
-                  </tr>
+                <% if @current_user.role == "admin" %>
+                   <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
+                   <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
+                <% else%>
+                   <td><%= button_to "Add" , myteam_path, class: 'Add'%></td>
+                <%end%>
+            </tr>
           <%end%>
         </tbody>
     </table>

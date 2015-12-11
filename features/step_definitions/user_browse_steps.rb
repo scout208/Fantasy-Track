@@ -247,9 +247,6 @@ Then(/^I should see "(.*?)" Button$/) do |arg1|
   page.should have_button(arg1)
 end
 
-Then(/^log out currnet user$/) do
-   @current_user = nil
-end
 
 Then(/^I will see "(.*?)" with Event type of "(.*?)"$/) do |arg1, arg2|
    within('tr', text: arg1) do
