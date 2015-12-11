@@ -2,6 +2,7 @@ class SprintResultsController < ApplicationController
     
   def show
     @event = Event.find(session[:current_event])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @results = SprintResult.where(:event_id => @event.id)
     @results.each do |r|
         athlete = Athlete.find(r.athlete_id)
@@ -11,6 +12,7 @@ class SprintResultsController < ApplicationController
 
   def new
     @athlete = Athlete.find(session[:current_athlete])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @event = Event.find(session[:current_event])
   end
   
@@ -20,7 +22,7 @@ class SprintResultsController < ApplicationController
     @r = SprintResult.new(result_params)
     @event.active_sprint_results.create(event_id: @event.id, athlete_id: @athleteID, fastest_start: @r.fastest_start, 
           place: @r.place, time_seconds: @r.time_seconds, pr: @r.pr, nr: @r.nr, wr: @r.wr)
-          
+    @thisUser = User.find_by_session_token(session[:session_token])     
     points = nil
     if(@r.place == 1)
       points = 10

@@ -3,6 +3,7 @@ class ThrowResultsController < ApplicationController
   def show
     @event = Event.find(session[:current_event])
     @results = ThrowResult.where( :event_id => @event.id)
+    @thisUser = User.find_by_session_token(session[:session_token])
     @results.each do |r|
         athlete = Athlete.find(r.athlete_id)
         r.name= athlete.first_name + " " + athlete.last_name
@@ -11,11 +12,13 @@ class ThrowResultsController < ApplicationController
 
   def new
     @athlete = Athlete.find(session[:current_athlete])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @event = Event.find(session[:current_event])
   end
   
   def create
     @event = Event.find(session[:current_event])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @athleteID = session[:current_athlete]
     @r = ThrowResult.new(result_params)
     @event.active_throw_results.create(event_id: @event.id, athlete_id: @athleteID, place: @r.place, best_throw: @r.best_throw, 

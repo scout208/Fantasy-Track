@@ -52,9 +52,11 @@
             <td>Birth Date</td>
             <td>Comments</td>
             <% if @current_user.role == "admin" %>
-                <td>Remove</td>
-                <td>Enter Result</td>
-            <% else %>
+               <% if !@meet.scored %>
+                  <td>Remove</td>
+                  <td>Enter Result</td>
+               <% end %>
+            <% else if !@meet.scored %>
                 <td> Add or Drop</td>
             <% end %>
         </thead>

@@ -38,7 +38,7 @@
                 <td><%= p.jump_5 %></td>
                 <td><%= p.jump_6 %></td>
                 <% if(@thisUser.role == "admin") %>
-                    <td><%= button_to 'Delete', jump_result_path(@p), :method => :delete, :confirm => 'Are you sure?'%><td>
+                    <td><%= button_to 'Delete', jump_result_path(p), :method => :delete, :confirm => 'Are you sure?'%><td>
                 <% end %>
             </tr>
           <% end %>

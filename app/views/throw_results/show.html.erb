@@ -38,7 +38,7 @@
                 <td><%= p.throw_5 %></td>
                 <td><%= p.throw_6 %></td>
                 <% if(@thisUser.role == "admin") %>
-                    <td><%= button_to 'Delete', throw_result_path(@p), :method => :delete, :confirm => 'Are you sure?'%><td>
+                    <td><%= button_to 'Delete', throw_result_path(p), :method => :delete, :confirm => 'Are you sure?'%><td>
                 <% end %>
             </tr>
           <% end %>

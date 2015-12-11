@@ -17,8 +17,15 @@
       <% if @current_user.role == "admin" %>
         <h5><a href="/events/new">Create New Event</a></h5>
         <label><%= button_to 'Delete', meet_path(@meet), :method => :delete, :confirm => 'Are you sure?'%></label>
-        <label><%= button_to 'Release', releaseMeet_path, :method => :post %></label>
-        <label><%= button_to 'Score Meet', scoreMeet_path, :method => :post %></label>
+        <% if @meet.scored %>
+           <label><%= button_to 'Score Meet', scoreMeet_path, :method => :post %></label>
+        <% else %>
+           <% if @meet.released %>
+               <label><%= button_to 'Score Meet', scoreMeet_path, :method => :post %></label>
+           <% else %>
+               <label><%= button_to 'Release', releaseMeet_path, :method => :post %></label>
+           <% end %>
+        <% end %>
       <%end%>
     <%end%>
 <div>

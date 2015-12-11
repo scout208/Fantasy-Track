@@ -2,6 +2,7 @@ class MidResultsController < ApplicationController
   
   def show
     @event = Event.find(session[:current_event])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @results = MidResult.where(:event_id => @event.id)
     @results.each do |r|
         athlete = Athlete.find(r.athlete_id)
@@ -11,11 +12,13 @@ class MidResultsController < ApplicationController
 
   def new
     @athlete = Athlete.find(session[:current_athlete])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @event = Event.find(session[:current_event])
   end
   
   def create
     @event = Event.find(session[:current_event])
+    @thisUser = User.find_by_session_token(session[:session_token])
     @athleteID = session[:current_athlete]
     minutes = params[:minutes]
     seconds = params[:seconds]
@@ -75,7 +78,6 @@ class MidResultsController < ApplicationController
       
     @entrant = EventEntrant.find_by(:athlete_id => @athleteID, :event_id => @event.id)
     @entrant.update_attribute(:points => points)
-    
     redirect_to event_path(@event)
   end
   

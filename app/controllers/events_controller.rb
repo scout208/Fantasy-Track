@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     session[:current_event] = @event.id
     @entrants = @event.entrants
+    @meet = Meet.find(session[:current_meet])
     thisUser = User.find_by_session_token(session[:session_token])
     if(thisUser.role == "user")
       league_id = session[:current_league]
