@@ -74,6 +74,11 @@ Given I am logged in with email of "admin@gmail.com" and a password "password"
 And I am on the Meets screen
 When I click "Doha Diamond League"
 Then I should see "Meet Detail"
+And I should see "Meet: Doha Diamond League"
+And I should see "Location: Doha"
+And I should see "Start Date: 2015-05-15"
+And I should see "End Date: 2015-05-15"
+And I should see "Released: false"
 And I should see all events for "Doha Diamond League" Meet
 And I should see "Create New Event" Link
 And I should see "Delete" Button

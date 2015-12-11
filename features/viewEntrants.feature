@@ -51,7 +51,7 @@ And I should not see "Add Entrant" Link
 And I should not see "Delete Event" Button
 And I should not be seeing "Remove Entrant" Link on each row
 And I should not be seeing "Enter Result" Link on each row
-And I should be seeing "Add" Link on each row
+And I should be seeing "Add" button on each row
 
 Scenario: Admin Views Entarnt table
 Given I am logged in with email of "admin@gmail.com" and a password "password"
@@ -64,7 +64,7 @@ And  I should see "Add Entrant" Link
 And I should see "Delete Event" Button
 And I should be seeing "Remove Entrant" Link on each row
 And I should be seeing "Enter Result" Link on each row
-And I should not be seeing "Add" Link on each row
+And I should not be seeing "Add" button on each row
 
 When I click "Charlie Chaplin"
 And I should see "Edit Athlete" Link

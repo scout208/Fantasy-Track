@@ -271,3 +271,16 @@ Then(/^I will see "(.*?)" with country "(.*?)" and birthdate with "(.*?)"$/) do 
    end
  end
  
+#view Entrants
+
+Then(/^I should be seeing "(.*?)" button on each row$/) do |arg1|
+  page.all(:css, 'tr').each do 
+    should have_button(arg1)
+  end
+end
+
+Then(/^I should not be seeing "(.*?)" button on each row$/) do |arg1|
+  page.all(:css, 'tr').each do 
+    should_not have_button(arg1)
+  end
+end
