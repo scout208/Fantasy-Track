@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   helper_method :addEntrant
   helper_method :removeEntrant
   helper_method :enterResult
+  helper_method :dropAthlete
+  helper_method :claimAthlete
   
   def set_current_user
     @current_user ||=	session[:session_token] && User.find_by_session_token(session[:session_token])
@@ -13,6 +15,51 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     session[:current_event] = @event.id
     @entrants = @event.entrants
+    thisUser = User.find_by_session_token(session[:session_token])
+    if(thisUser.role == "user")
+      league_id = session[:current_league]
+      event_id = @event.id
+      selections = AthleteSelection.where(:user_id => thisUser.id, :league_id => league_id, :event_id => event_id)
+      count = nil
+      @entrants.each do |entrant|
+        selections.each do |pick|
+          if(pick.athlete_id == entrant.id)
+            entrant.selected = true
+            if(count == nil)
+              count = 1
+            else
+              count = count + 1
+            end
+          end
+        end
+      end
+      @count = count
+    end
+  end
+  
+  def dropAthlete
+    @athlete = Athlete.find(params[:id])
+    league_id = session[:current_league]
+    event_id = session[:current_event]
+    meet_id = session[:current_meet]
+    thisUser = User.find_by_session_token(session[:session_token])
+    AthleteSelection.delete_all(:athlete_id => @athlete.id, :league_id => league_id, :event_id => event_id, 
+                            :meet_id => meet_id, :user_id => thisUser.id)
+                            
+    redirect_to event_path(event_id)
+    
+  end
+  
+  def claimAthlete
+    @athlete = Athlete.find(params[:id])
+    league_id = session[:current_league]
+    event_id = session[:current_event]
+    meet_id = session[:current_meet]
+    thisUser = User.find_by_session_token(session[:session_token])
+    AthleteSelection.create(:athlete_id => @athlete.id, :league_id => league_id, :event_id => event_id, 
+                            :meet_id => meet_id, :user_id => thisUser.id)
+                            
+    redirect_to event_path(event_id)
   end
   
   def addSelectedPlayer

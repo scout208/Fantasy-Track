@@ -210,21 +210,21 @@
     
     m100 = dohaMeet.events.find_by(:event_name => "100M MEN")
     curAthlete = Athlete.find_by(:first_name => "Justin", :last_name => "Gatlin")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Michael", :last_name => "Rodgers")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Keston", :last_name => "Bledman")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Kim", :last_name => "Collins")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
-    curAthlete = Athlete.find_by(:first_name => "Femi", :last_name => "Ogunode")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Nesta", :last_name => "Carter")
     m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Diondre", :last_name => "Batson")
-    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
-    curAthlete = Athlete.find_by(:first_name => "James", :last_name => "Dasaolu")
+    curAthlete = Athlete.find_by(:first_name => "Michael", :last_name => "Rodgers")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
+    curAthlete = Athlete.find_by(:first_name => "Keston", :last_name => "Bledman")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Kim", :last_name => "Collins")
     m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
+    curAthlete = Athlete.find_by(:first_name => "Femi", :last_name => "Ogunode")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Nesta", :last_name => "Carter")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Diondre", :last_name => "Batson")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "James", :last_name => "Dasaolu")
+    m100.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     
     entrants100 = m100.active_event_entrants
     
@@ -233,11 +233,11 @@
     
     entrants100.each do |r|
         if(place == 3)
-            m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+            m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
             m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             m100.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -249,25 +249,25 @@
     
     m800 = dohaMeet.events.find_by(:event_name => "800M MEN")
     curAthlete = Athlete.find_by(:first_name => "Ayanleh", :last_name => "Souleiman")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Ferguson Rotich", :last_name => "Cheruiyot")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Alfred", :last_name => "Kipketer")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Pierre-Ambroise", :last_name => "Bosse")
     m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Asbel", :last_name => "Kiprop")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Job", :last_name => "Kinyor")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
-    curAthlete = Athlete.find_by(:first_name => "Jeremiah Kipkorir", :last_name => "Mutai")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Musaeb Abdulrahman", :last_name => "Balla")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
-    curAthlete = Athlete.find_by(:first_name => "Mohammed", :last_name => "Aman")
-    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Bram", :last_name => "Som")
+    curAthlete = Athlete.find_by(:first_name => "Ferguson Rotich", :last_name => "Cheruiyot")
     m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
+    curAthlete = Athlete.find_by(:first_name => "Alfred", :last_name => "Kipketer")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Pierre-Ambroise", :last_name => "Bosse")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
+    curAthlete = Athlete.find_by(:first_name => "Asbel", :last_name => "Kiprop")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Job", :last_name => "Kinyor")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Jeremiah Kipkorir", :last_name => "Mutai")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "Musaeb Abdulrahman", :last_name => "Balla")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    curAthlete = Athlete.find_by(:first_name => "Mohammed", :last_name => "Aman")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Bram", :last_name => "Som")
+    m800.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrants800 = m100.active_event_entrants
     place = 1
@@ -275,11 +275,11 @@
     
     entrants800.each do |r|
         if(place == 3)
-            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
+            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+            m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             m800.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -291,19 +291,19 @@
     
     m400h = dohaMeet.events.find_by(:event_name => "400M HURDLES MEN")
     curAthlete = Athlete.find_by(:first_name => "Bershawn", :last_name => "Jackson")
-    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Javier", :last_name => "Culson")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
     curAthlete = Athlete.find_by(:first_name => "Thomas", :last_name => "Barr")
-    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
     curAthlete = Athlete.find_by(:first_name => "Jack", :last_name => "Green")
-    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Jeffery", :last_name => "Gibson")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Lj", :last_name => "Van Zyl")
-    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Rasmus", :last_name => "Magi")
+    curAthlete = Athlete.find_by(:first_name => "Jeffery", :last_name => "Gibson")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Lj", :last_name => "Van Zyl")
+    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Rasmus", :last_name => "Magi")
+    m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
     curAthlete = Athlete.find_by(:first_name => "Felix", :last_name => "Sanchez")
     m400h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     
@@ -314,11 +314,11 @@
     
     entrants400h.each do |r|
         if(place == 3)
-            m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+            m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
             m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             m400h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -330,23 +330,23 @@
     
     mtj = dohaMeet.events.find_by(:event_name => "TRIPLE JUMP MEN")
     curAthlete = Athlete.find_by(:first_name => "Pedro Pablo", :last_name => "Pichardo")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
-    curAthlete = Athlete.find_by(:first_name => "Christian", :last_name => "Taylor")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Teddy", :last_name => "Tamgho")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Alexis", :last_name => "Copello")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Nelson", :last_name => "Evora")
     mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Tosin", :last_name => "Oke")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
-    curAthlete = Athlete.find_by(:first_name => "Alexey", :last_name => "Fyodorov")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Marian", :last_name => "Oprea")
-    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
-    curAthlete = Athlete.find_by(:first_name => "Pablo", :last_name => "Torrijos")
+    curAthlete = Athlete.find_by(:first_name => "Christian", :last_name => "Taylor")
     mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
+    curAthlete = Athlete.find_by(:first_name => "Teddy", :last_name => "Tamgho")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Alexis", :last_name => "Copello")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
+    curAthlete = Athlete.find_by(:first_name => "Nelson", :last_name => "Evora")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Tosin", :last_name => "Oke")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Alexey", :last_name => "Fyodorov")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "Marian", :last_name => "Oprea")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    curAthlete = Athlete.find_by(:first_name => "Pablo", :last_name => "Torrijos")
+    mtj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrantstj = mtj.active_event_entrants
     
@@ -355,11 +355,11 @@
     
     entrantstj.each do |r|
         if(place == 3)
-            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+            mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
         else
             mtj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
@@ -371,23 +371,23 @@
     
     msp = dohaMeet.events.find_by(:event_name => "SHOT PUT MEN")
     curAthlete = Athlete.find_by(:first_name => "David", :last_name => "Storl")
-    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
-    curAthlete = Athlete.find_by(:first_name => "Reese", :last_name => "Hoffa")
-    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 9)
-    curAthlete = Athlete.find_by(:first_name => "Ryan", :last_name => "Whiting")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Joe", :last_name => "Kovacs")
-    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Asmir", :last_name => "Kolasinac")
+    curAthlete = Athlete.find_by(:first_name => "Reese", :last_name => "Hoffa")
+    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
+    curAthlete = Athlete.find_by(:first_name => "Ryan", :last_name => "Whiting")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Lujan", :last_name => "Lauro")
+    curAthlete = Athlete.find_by(:first_name => "Joe", :last_name => "Kovacs")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
+    curAthlete = Athlete.find_by(:first_name => "Asmir", :last_name => "Kolasinac")
+    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Lujan", :last_name => "Lauro")
+    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
     curAthlete = Athlete.find_by(:first_name => "Borja", :last_name => "Vivas Jimenez")
     msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
     curAthlete = Athlete.find_by(:first_name => "O\'Dayne", :last_name => "Richards")
-    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     curAthlete = Athlete.find_by(:first_name => "Kurt", :last_name => "Roberts")
-    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    msp.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrantssp = msp.active_event_entrants
     
@@ -396,11 +396,11 @@
     
     entrantssp.each do |r|
         if(place == 3)
-            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+            msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
         else
             msp.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
@@ -412,25 +412,25 @@
     
     mjt = dohaMeet.events.find_by(:event_name => "JAVELIN THROW MEN")
     curAthlete = Athlete.find_by(:first_name => "Tero", :last_name => "Pitkamaki")
-    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
-    curAthlete = Athlete.find_by(:first_name => "Antti", :last_name => "Ruuskanen")
-    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
-    curAthlete = Athlete.find_by(:first_name => "Vitezslav", :last_name => "Vesely")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
-    curAthlete = Athlete.find_by(:first_name => "Ihab", :last_name => "Abdelrahman")
-    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Thomas", :last_name => "Rohler")
+    curAthlete = Athlete.find_by(:first_name => "Antti", :last_name => "Ruuskanen")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Julius", :last_name => "Yego")
-    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Hamish", :last_name => "Peacock")
+    curAthlete = Athlete.find_by(:first_name => "Vitezslav", :last_name => "Vesely")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Keshorn", :last_name => "Walcott")
+    curAthlete = Athlete.find_by(:first_name => "Ihab", :last_name => "Abdelrahman")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Dmitriy", :last_name => "Tarabin")
+    curAthlete = Athlete.find_by(:first_name => "Thomas", :last_name => "Rohler")
+    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Julius", :last_name => "Yego")
+    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Hamish", :last_name => "Peacock")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Kim", :last_name => "Amb")
+    curAthlete = Athlete.find_by(:first_name => "Keshorn", :last_name => "Walcott")
     mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    curAthlete = Athlete.find_by(:first_name => "Dmitriy", :last_name => "Tarabin")
+    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Kim", :last_name => "Amb")
+    mjt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrantsjt = msp.active_event_entrants
     
@@ -439,11 +439,11 @@
     
     entrantsjt.each do |r|
         if(place == 3)
-            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+            mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
         else
             mjt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
@@ -457,19 +457,19 @@
     curAthlete = Athlete.find_by(:first_name => "Allyson", :last_name => "Felix")
     w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Murielle", :last_name => "Ahoure")
-    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
     curAthlete = Athlete.find_by(:first_name => "Anthonique", :last_name => "Strachan")
-    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
     curAthlete = Athlete.find_by(:first_name => "Tiffany", :last_name => "Townsend")
     w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
     curAthlete = Athlete.find_by(:first_name => "Shalonda", :last_name => "Solomon")
-    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
-    curAthlete = Athlete.find_by(:first_name => "Bianca", :last_name => "Williams")
-    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Charonda", :last_name => "Williams")
     w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Bianca", :last_name => "Williams")
+    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Charonda", :last_name => "Williams")
+    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
     curAthlete = Athlete.find_by(:first_name => "Kaylin", :last_name => "Whitney")
-    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    w200.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     
     entrants200 = w200.active_event_entrants
     
@@ -478,11 +478,11 @@
     
     entrants200.each do |r|
         if(place == 3)
-            w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+            w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
             w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             w200.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -494,15 +494,15 @@
     
     w400 = dohaMeet.events.find_by(:event_name => "400M WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Francena", :last_name => "McCorory")
-    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Sanya", :last_name => "Richards-Ross")
-    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
     curAthlete = Athlete.find_by(:first_name => "Stephenie", :last_name => "McPherson")
     w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
     curAthlete = Athlete.find_by(:first_name => "Novlene", :last_name => "Williams-Mills")
-    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
+    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
     curAthlete = Athlete.find_by(:first_name => "Natasha", :last_name => "Hastings")
-    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
+    w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
     curAthlete = Athlete.find_by(:first_name => "Christine", :last_name => "Day")
     w400.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
     curAthlete = Athlete.find_by(:first_name => "Kabange", :last_name => "Mupopo")
@@ -517,11 +517,11 @@
     
     entrants400.each do |r|
         if(place == 3)
-            w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+            w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
             w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             w400.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -533,35 +533,35 @@
     
     w1500 = dohaMeet.events.find_by(:event_name => "1500M WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Sifan", :last_name => "Hassan")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Senbere", :last_name => "Teferi")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 9)
-    curAthlete = Athlete.find_by(:first_name => "Anna", :last_name => "Mishchenko")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Luiza", :last_name => "Gega")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Axumawit", :last_name => "Embaye")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
-    curAthlete = Athlete.find_by(:first_name => "Abeba", :last_name => "Aregawi")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Rababe", :last_name => "Arafi")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Gudaf", :last_name => "Tsegay")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Malika", :last_name => "Akkaoui")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 12)
-    curAthlete = Athlete.find_by(:first_name => "Selah", :last_name => "Busienei")
     w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Renata", :last_name => "Plis")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
-    curAthlete = Athlete.find_by(:first_name => "Siham", :last_name => "Hilali")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Kristina", :last_name => "Ugarova")
+    curAthlete = Athlete.find_by(:first_name => "Anna", :last_name => "Mishchenko")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Luiza", :last_name => "Gega")
     w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Tamara", :last_name => "Tverdostup")
-    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
-    curAthlete = Athlete.find_by(:first_name => "Lydia", :last_name => "Wafula")
+    curAthlete = Athlete.find_by(:first_name => "Axumawit", :last_name => "Embaye")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Abeba", :last_name => "Aregawi")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Rababe", :last_name => "Arafi")
     w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "Gudaf", :last_name => "Tsegay")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    curAthlete = Athlete.find_by(:first_name => "Malika", :last_name => "Akkaoui")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Selah", :last_name => "Busienei")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Renata", :last_name => "Plis")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Siham", :last_name => "Hilali")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Kristina", :last_name => "Ugarova")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Tamara", :last_name => "Tverdostup")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Lydia", :last_name => "Wafula")
+    w1500.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrants1500 = w1500.active_event_entrants
     place = 1
@@ -569,11 +569,11 @@
     
     entrants1500.each do |r|
         if(place == 3)
-            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 1, 
+            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 2, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+            w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             w1500.active_mid_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, split_leader: 0, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -585,21 +585,21 @@
     
     w100h = dohaMeet.events.find_by(:event_name => "100M HURDLES WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Jasmin", :last_name => "Stowers")
-    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Sharika", :last_name => "Nelvis")
-    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
-    curAthlete = Athlete.find_by(:first_name => "Tiffany", :last_name => "Porter")
-    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Sally", :last_name => "Pearson")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Queen", :last_name => "Harrison")
+    curAthlete = Athlete.find_by(:first_name => "Tiffany", :last_name => "Porter")
+    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Sally", :last_name => "Pearson")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
-    curAthlete = Athlete.find_by(:first_name => "Kristi", :last_name => "Castlin")
+    curAthlete = Athlete.find_by(:first_name => "Queen", :last_name => "Harrison")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Kristi", :last_name => "Castlin")
+    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
     curAthlete = Athlete.find_by(:first_name => "Tenaya", :last_name => "Jones")
     w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
     curAthlete = Athlete.find_by(:first_name => "Dawn", :last_name => "Harper-Nelson")
-    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    w100h.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     
     entrants100h = w100h.active_event_entrants
     
@@ -608,11 +608,11 @@
     
     entrants100h.each do |r|
         if(place == 3)
-            w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: true, 
+            w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
         elsif(place == 1)
             w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
-                place: place, time_seconds: time, pr: true, nr: false, wr: false)
+                place: place, time_seconds: time, pr: false, nr: false, wr: false)
         else
             w100h.active_sprint_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, fastest_start: false, 
                 place: place, time_seconds: time, pr: false, nr: false, wr: false)
@@ -624,25 +624,25 @@
     
     whj = dohaMeet.events.find_by(:event_name => "HIGH JUMP WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Airine", :last_name => "Palsyte")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Irina", :last_name => "Gordeyeva")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Isobel", :last_name => "Pooley")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Ana", :last_name => "Simic")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
-    curAthlete = Athlete.find_by(:first_name => "Levern", :last_name => "Spencer")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
-    curAthlete = Athlete.find_by(:first_name => "Justyna", :last_name => "Kasprzycka")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
-    curAthlete = Athlete.find_by(:first_name => "Ruth", :last_name => "Beitia")
     whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
-    curAthlete = Athlete.find_by(:first_name => "Oksana", :last_name => "Okuneva")
+    curAthlete = Athlete.find_by(:first_name => "Isobel", :last_name => "Pooley")
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
+    curAthlete = Athlete.find_by(:first_name => "Ana", :last_name => "Simic")
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
+    curAthlete = Athlete.find_by(:first_name => "Levern", :last_name => "Spencer")
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    curAthlete = Athlete.find_by(:first_name => "Justyna", :last_name => "Kasprzycka")
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    curAthlete = Athlete.find_by(:first_name => "Ruth", :last_name => "Beitia")
     whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "Oksana", :last_name => "Okuneva")
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     curAthlete = Athlete.find_by(:first_name => "Svetlana", :last_name => "Radzivil")
     whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     curAthlete = Athlete.find_by(:first_name => "Barbara", :last_name => "Szabo")
-    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
+    whj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrantshj = whj.active_event_entrants
     
@@ -651,11 +651,11 @@
     
     entrantshj.each do |r|
         if(place == 3)
-            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+            whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
         else
             whj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
@@ -667,25 +667,25 @@
     
     wlj = dohaMeet.events.find_by(:event_name => "LONG JUMP WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Tianna", :last_name => "Bartoletta")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Shara", :last_name => "Proctor")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
     curAthlete = Athlete.find_by(:first_name => "Christabel", :last_name => "Nettey")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
     curAthlete = Athlete.find_by(:first_name => "Lorraine", :last_name => "Ugen")
     wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
     curAthlete = Athlete.find_by(:first_name => "Brittney", :last_name => "Reese")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
     curAthlete = Athlete.find_by(:first_name => "Ivana", :last_name => "Spanovic")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
     curAthlete = Athlete.find_by(:first_name => "Darya", :last_name => "Klishina")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
-    curAthlete = Athlete.find_by(:first_name => "Erica", :last_name => "Jarder")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 11)
-    curAthlete = Athlete.find_by(:first_name => "Funmi", :last_name => "Jimoh")
-    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
-    curAthlete = Athlete.find_by(:first_name => "Melanie", :last_name => "Bauschke")
     wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    curAthlete = Athlete.find_by(:first_name => "Erica", :last_name => "Jarder")
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
+    curAthlete = Athlete.find_by(:first_name => "Funmi", :last_name => "Jimoh")
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    curAthlete = Athlete.find_by(:first_name => "Melanie", :last_name => "Bauschke")
+    wlj.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
     
     entrantslj = wlj.active_event_entrants
     
@@ -694,11 +694,11 @@
     
     entrantslj.each do |r|
         if(place == 3)
-            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_jump: distance, pr: true, nr: false, wr: false)
+            wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_jump: distance, pr: false, nr: false, wr: false)
         else
             wlj.active_jump_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_jump: distance, pr: false, nr: false, wr: false)
@@ -710,25 +710,25 @@
     
     wdt = dohaMeet.events.find_by(:event_name => "DISCUS THROW WOMEN")
     curAthlete = Athlete.find_by(:first_name => "Sandra", :last_name => "Perkovic")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 10)
     curAthlete = Athlete.find_by(:first_name => "Nadine", :last_name => "Muller")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 8)
     curAthlete = Athlete.find_by(:first_name => "Dani", :last_name => "Samuels")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
     curAthlete = Athlete.find_by(:first_name => "Yekaterina", :last_name => "Strokova")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 6)
     curAthlete = Athlete.find_by(:first_name => "Melina", :last_name => "Robert-Michon")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 9)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 5)
     curAthlete = Athlete.find_by(:first_name => "Zaneta", :last_name => "Glanc")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
     curAthlete = Athlete.find_by(:first_name => "Gia", :last_name => "Lewis-Smallwood")
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 3)
     curAthlete = Athlete.find_by(:first_name => "Irina", :last_name => "Rodrigues")
     wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 2)
     curAthlete = Athlete.find_by(:first_name => "Yaimi", :last_name => "Perez")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 7)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 1)
     curAthlete = Athlete.find_by(:first_name => "Zinaida", :last_name => "Sendriute")
-    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 4)
+    wdt.active_event_entrants.create(:athlete_id => curAthlete.id, :points => 0)
                 
     entrantsdt = wdt.active_event_entrants
     
@@ -737,11 +737,11 @@
     
     entrantsdt.each do |r|
         if(place == 3)
-            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 1, 
+            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
         elsif(place == 1)
-            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 2, 
-                place: place, best_throw: distance, pr: true, nr: false, wr: false)
+            wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
+                place: place, best_throw: distance, pr: false, nr: false, wr: false)
         else
             wdt.active_throw_results.create!(event_id: r.event_id, athlete_id: r.athlete_id, best_of_round: 0, 
                 place: place, best_throw: distance, pr: false, nr: false, wr: false)
@@ -770,17 +770,17 @@
     
     iowaMeet = Meet.find_by(:meet_name => "Iowa Intrasquad")
     
-    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 63)
-    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 59)
-    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 51)
-    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 48)
-    MeetScore.create!(:meet_id => dohaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 46)
+   # MeetScore.create!(:meet_id => dohaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 63)
+   # MeetScore.create!(:meet_id => dohaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 59)
+   # MeetScore.create!(:meet_id => dohaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 51)
+   # MeetScore.create!(:meet_id => dohaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 48)
+   # MeetScore.create!(:meet_id => dohaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 46)
     
-    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 43)
-    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 49)
-    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 41)
-    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 58)
-    MeetScore.create!(:meet_id => iowaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 56)
+    #MeetScore.create!(:meet_id => iowaMeet.id, :user_id => kevin.id, :league_id => hawkeyeXC.id, :points => 43)
+    #MeetScore.create!(:meet_id => iowaMeet.id, :user_id => leon.id, :league_id => hawkeyeXC.id, :points => 49)
+    #MeetScore.create!(:meet_id => iowaMeet.id, :user_id => connor.id, :league_id => hawkeyeXC.id, :points => 41)
+    #MeetScore.create!(:meet_id => iowaMeet.id, :user_id => xi.id, :league_id => hawkeyeXC.id, :points => 58)
+    #MeetScore.create!(:meet_id => iowaMeet.id, :user_id => nathan.id, :league_id => hawkeyeXC.id, :points => 56)
     
     firstEvents = dohaMeet.events
     firstEvents.each do |r|

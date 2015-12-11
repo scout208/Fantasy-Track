@@ -1,4 +1,4 @@
-<h3>Scores for <%= @meet.meet_name %></h3>
+<h3>Scores for <%= meet.meet_name %></h3>
 <table id="example" class="display example" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -8,30 +8,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Kevin</td>
-            <td>78</td>
-            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
-        </tr>
-        <tr>
-            <td>Connor</td>
-            <td>63</td>
-            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
-        </tr>
-        <tr>
-            <td>Xi</td>
-            <td>59</td>
-            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
-        </tr>
-        <tr>
-            <td>Nathan</td>
-            <td>53</td>
-            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
-        </tr>
-        <tr>
-            <td>Leon</td>
-            <td>7</td>
-            <td><%= link_to 'Box Score', boxScore_league_path(4), method: 'get' %></td>
-        </tr>
+        <% people.each do |p| %>
+            <tr>
+                <td><%= p.user_id %></td>
+                <td><% scores.each do |s| %>
+                        <% if(s.user_id == p.id && s.meet_id == meet.id) %>
+                            <%= s.points %>
+                        <% end %>
+                    <% end %>
+                </td>
+                <td><%= link_to 'Box Score', "/leagues/#{p.id}/boxScore/?meet_id=#{meet.id}" %>
+                </td>
+            </tr>
+        <% end %>
     </tbody>
 </table>

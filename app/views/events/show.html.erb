@@ -69,7 +69,11 @@
                    <td><%= link_to "Remove Entrant", removeEntrant_event_path(p), method: "get" %></td>
                    <td><%= link_to "Enter Result", enterResult_event_path(p), method: "get" %></td>
                 <% else%>
-                   <td><%= button_to "Add" , myteam_path, class: 'Add'%></td>
+                   <td><% if(p.selected) %>
+                       <%= button_to "Drop" , dropAthlete_event_path(p), class: 'Drop'%>
+                       <% elsif (@count != 3) %>
+                       <%= button_to "Add" , claimAthlete_event_path(p), class: 'Add'%>
+                       <% end %></td>
                 <%end%>
             </tr>
           <%end%>

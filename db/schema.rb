@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209031542) do
+ActiveRecord::Schema.define(version: 20151211173822) do
 
   create_table "athlete_selections", force: :cascade do |t|
     t.integer "user_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20151209031542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "released"
+    t.boolean  "scored"
   end
 
   create_table "mid_results", force: :cascade do |t|
