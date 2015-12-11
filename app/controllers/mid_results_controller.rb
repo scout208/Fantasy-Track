@@ -23,6 +23,58 @@ class MidResultsController < ApplicationController
     @r = MidResult.new(result_params)
     @event.active_mid_results.create(event_id: @event.id, athlete_id: @athleteID, split_leader: @r.split_leader, 
           place: @r.place, time_seconds: seconds, pr: @r.pr, nr: @r.nr, wr: @r.wr)
+          
+    points = nil
+    if(@r.place == 1)
+      points = 10
+    elsif(@r.place == 2)
+      points = 8
+    elsif(@r.place == 3)
+      points = 6
+    elsif(@r.place == 4)
+      points = 5
+    elsif(@r.place == 5)
+      points = 4
+    elsif(@r.place == 6)
+      points = 3
+    elsif(@r.place == 7)
+       points = 2
+    elsif(@r.place == 8)
+      points = 1
+    end
+    
+    if(@r.wr)
+      if(points == nil)
+        points = 12
+      else
+        points = points + 12
+      end
+    elsif(@r.nr)
+      if(points == nil)
+        points = 6
+      else
+        points = points + 6
+      end
+    elsif(@r.pr)
+      if(points == nil)
+        points = 2
+      else
+        points = points + 2
+      end
+    end
+    
+    if(points == nil)
+      points = split_leader
+    else
+      points = points + (split_leader)
+    end
+    
+    if(points == nil)
+      points = 0
+    end
+      
+    @entrant = EventEntrant.find_by(:athlete_id => @athleteID, :event_id => @event.id)
+    @entrant.update_attribute(:points => points)
     
     redirect_to event_path(@event)
   end
@@ -32,7 +84,11 @@ class MidResultsController < ApplicationController
   end
   
   def destroy
-    
+    @current_meet = Meet.find(session[:current_meet])
+    @result = MidResult.find(params[:id])
+    @result.destroy
+    #flash[:notice] = "Event '#{@event.event_name}' deleted."
+    redirect_to meet_path(@current_meet)
   end
  
   private

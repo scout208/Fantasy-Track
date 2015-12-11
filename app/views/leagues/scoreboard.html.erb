@@ -60,9 +60,10 @@
             <% end %>
           </div>
         </div>
-        <% @meets.each do |m| %>
-        <div id="id-<%=m.id %>" class="well col-sm-4 board">
-          <%= render(:partial => "meet_scoreboard" , :controller=>"leagues", :object => m) %>
+        <% @meets.each do |meet| %>
+        <div id="id-<%=meet.id %>" class="well col-sm-4 board">
+          <%= render(:partial => "meet_scoreboard", :locals => {:meet => meet, :people => @people,
+                      :scores => @scores }) %>
         </div>
         <% end %>
       </div>

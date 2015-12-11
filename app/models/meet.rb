@@ -9,4 +9,13 @@ class Meet < ActiveRecord::Base
                                     dependent: :destroy
                                     
     validates_uniqueness_of :meet_name, scope: :start_date
+    
+    def scores
+        @scores
+    end
+    
+    def scores= vals
+        @scores = vals
+    end
+        
 end

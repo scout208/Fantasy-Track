@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get   'show_all' => 'leagues#show_all'
   post  'scoring_rules' => 'static_pages#scoring_rules'
   post  'releaseMeet' => 'meets#releaseMeet'
+  post 'scoreMeet' => 'meets#scoreMeet'
   get    'standings' => 'leagues#standings'
   get    'scoreboard'=> 'leagues#scoreboard'
   get    'myteam'  => 'leagues#myteam'
@@ -33,6 +34,8 @@ Rails.application.routes.draw do
       get :addEntrant
       get :removeEntrant
       get :enterResult
+      post :claimAthlete
+      post :dropAthlete
     end
   end
   resources :athletes

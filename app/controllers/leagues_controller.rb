@@ -97,25 +97,52 @@ class LeaguesController < ApplicationController
   
   def standings
     @league = League.find(session[:current_league])
+    
+    meets = Meet.where(:released => true)
     @thisUser = User.find_by_session_token(session[:session_token])
+    members = @league.members
+    meets.each do |m|
+      scores = MeetScore.where(:league_id => @league.id, :meet_id => m.id)
+      if(m.scored == true && scores.empty?)
+        members.each do |member|
+          selections = AthleteSelection.where(:meet_id => m.id, :user_id => member.id, :league_id => @league.id)
+          score = nil
+          selections.each do |selection|
+            if(score == nil)
+              score = selection.points
+            else
+              score += selection.points
+            end
+          end
+          MeetScore.create(:meet_id => m.id, :user_id => member.id, :league_id => @league.id, :points => score)
+        end
+      end
+    end
+    
     @members = @league.members
   end
   
   def scoreboard
     @league = League.find(session[:current_league])
+    @scores = MeetScore.where(:league_id => @league.id)
+    @people = @league.members
     session[:current_meet] = 1
     @thisUser = User.find_by_session_token(session[:session_token])
     @meets = Meet.where(:released => true)
+   # @meets.each do |m|
+    #  m.scores= m.active_meet_scores
+   # end
     @first = @meets.first.id
-    @meet = @meets.first
+   # @meet = @meets.first
   end
   
   def boxScore
     @thisUser = User.find_by_session_token(session[:session_token])
     @league = League.find(session[:current_league])
     @user = User.find(params[:id])
-    @meet = Meet.find(session[:current_meet])
-    @athlete_selections = AthleteSelection.where(:user_id => params[:id], :meet_id => @meet.id)
+    #@meet = Meet.find(session[:current_meet])
+    @meet = Meet.find(params[:meet_id])
+    @athlete_selections = AthleteSelection.where(:user_id => params[:id], :meet_id => @meet.id, :league_id => @league.id)
     # .all is for developing Please fix it later
   end
   
