@@ -20,3 +20,7 @@ Then(/^The second nav bar should have "(.*?)" "(.*?)" "(.*?)" "(.*?)" "(.*?)" an
   end
 end
 
+
+Then(/^I should be on the meets screen$/) do
+  current_path.should == "/meets"
+end
