@@ -9,4 +9,12 @@ class MidResult < ActiveRecord::Base
     def name= val
         @name = val
     end
+    
+    def minutes
+        @minutes
+    end
+    
+    def minutes= val
+        @minutes = val
+    end
 end

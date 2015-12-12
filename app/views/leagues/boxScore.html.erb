@@ -49,6 +49,9 @@
                   <td width=25%><%= @event.event_name %></td>
                   <td width=15%> -- </td>
                   <td width=15%><%= @event_entrant.points %> </td>
+                  <% if(@event_entrant.points == nil) %>
+                  <% @event_entrant.points = 0 %>
+                  <% end %>
                   <% @totalScore = @totalScore + @event_entrant.points %>
               </tr>
               <% end %>
