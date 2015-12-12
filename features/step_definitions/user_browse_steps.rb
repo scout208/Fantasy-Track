@@ -269,3 +269,10 @@ end
 Given(/^I am not logged in$/) do
   visit root_url
 end
+
+
+Then(/^I will see "(.*?)" button on the row with name of "(.*?)"$/) do |arg1, arg2|
+  within('tr',text: arg2) do
+    should have_button(arg1)
+  end
+end

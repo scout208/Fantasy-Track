@@ -54,6 +54,14 @@ And I should not be seeing "Remove Entrant" Link on each row
 And I should not be seeing "Enter Result" Link on each row
 And I should be seeing "Add" button on each row
 
+
+Scenario: User added a entrant as a team member
+  Given I am logged in with email of "tester@testing.com" and a password "tester"
+  And I am on the event screen of "Doha Diamond League"
+  When I click "800M MEN"
+  And I clicked "Add" on the row with name of "Barry"
+  Then I will see "Drop" button on the row with name of "Barry"
+
 Scenario: Admin Views Entarnt table
 Given I am logged in with email of "admin@gmail.com" and a password "password"
 And I am on the event screen of "Doha Diamond League"  
@@ -68,6 +76,7 @@ And I should see "Delete Event" Button
 And I should be seeing "Remove Entrant" Link on each row
 And I should be seeing "Enter Result" Link on each row
 And I should not be seeing "Add" button on each row
+And I should not be seeing "Drop" button on each row
 
 When I click "Charlie Chaplin"
 And I should see "Edit Athlete" Link
