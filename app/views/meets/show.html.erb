@@ -15,7 +15,9 @@
     <h4>Released: <% if @meet.released %>true<%else%>false<%end%></h4>
     <% if logged_in? %>
       <% if @current_user.role == "admin" %>
-        <h5><a href="/events/new">Create New Event</a></h5>
+        <% if !@meet.scored %>
+           <h5><a href="/events/new">Create New Event</a></h5>
+        <% end %>
         <label><%= button_to 'Delete', meet_path(@meet), :method => :delete, :confirm => 'Are you sure?'%></label>
         <% if @meet.scored %>
            <label><%= button_to 'Score Meet', scoreMeet_path, :method => :post %></label>
@@ -28,8 +30,7 @@
         <% end %>
       <%end%>
     <%end%>
-</div>
-<div>
+  <div>
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <td>Event</td>
@@ -57,4 +58,5 @@
           <% end %>
         </tbody>
     </table>
+  </div>
 </div>
