@@ -7,14 +7,15 @@ end
     click_on arg1
   end
 
-  When(/^I see the "(.*?)" "(.*?)" and "(.*?)" options on menu$/) do |arg1, arg2, arg3|
+  When(/^I see the "(.*?)" "(.*?)" "(.*?)" and "(.*?)" options on menu$/) do |arg1, arg2, arg3, arg4|
      within('#navbar') do
-       should have_content(arg1)
-       should have_content(arg2)
-       should have_content(arg3)
+       should have_link(arg1)
+       should have_link(arg2)
+       should have_link(arg3)
+       should have_link(arg4)
     end
   end
-
+  
   Then(/^I should see the view where I am able to login$/) do
     current_path.should == "/login"
     page.should have_field('session_email')
@@ -47,9 +48,10 @@ end
     fill_in('session_password', :with => arg2)
   end
   
-  Then(/^I should be redirected to homepage without seeing "(.*?)" Button$/) do |arg1|
+  Then(/^I should be redirected to homepage without seeing "(.*?)" and "(.*?)" Button$/) do |arg1,arg2|
     current_path.should == "/"
-    page.should have_no_content(arg1)
+    page.should have_no_button(arg1)
+    page.should have_no_button(arg2)
   end
 
   Then(/^I should see "(.*?)"$/) do |arg1|

@@ -5,7 +5,7 @@ Feature: Allow user to sign up
  
 Scenario: User finds sign up page through home page
   When I am on the Fantasy-Track home page
-  And I press "Sign up Today !"
+  And I press "Signup"
   Then I should see the view where I am able to sign up
  
 
