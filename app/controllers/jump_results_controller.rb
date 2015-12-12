@@ -75,7 +75,7 @@ class JumpResultsController < ApplicationController
     end
       
     @entrant = EventEntrant.find_by(:athlete_id => @athleteID, :event_id => @event.id)
-    @entrant.update_attribute(:points => points)
+    @entrant.update_attribute(:points, points)
     
     redirect_to event_path(@event)
   end
