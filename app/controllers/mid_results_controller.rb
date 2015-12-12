@@ -20,9 +20,9 @@ class MidResultsController < ApplicationController
     @event = Event.find(session[:current_event])
     @thisUser = User.find_by_session_token(session[:session_token])
     @athleteID = session[:current_athlete]
-    minutes = params[:minutes]
-    seconds = params[:seconds]
-    seconds = seconds + (60 * minutes)
+    @minutes = params[:minutes]
+    @seconds = params[:seconds]
+    @seconds = @seconds + (60 * @minutes)
     @r = MidResult.new(result_params)
     @event.active_mid_results.create(event_id: @event.id, athlete_id: @athleteID, split_leader: @r.split_leader, 
           place: @r.place, time_seconds: seconds, pr: @r.pr, nr: @r.nr, wr: @r.wr)
