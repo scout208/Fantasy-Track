@@ -4,7 +4,7 @@ Feature: navbar
   
   Given the following users have been added to FantasyTrack:
   |  user_id   |     email          | role   |  password   |  
-  |   Admin    | admin@gmail.com    | admin  |   password  |     
+  |   Admin    | admin@gmail.com    | admin  |   password  |
   |   tester   | tester@testing.com |  user  |    tester   |
   |   tester2  | tester2@testing.com|  user  |    tester2  |
 
