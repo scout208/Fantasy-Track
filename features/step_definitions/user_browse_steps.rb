@@ -276,3 +276,28 @@ Then(/^I will see "(.*?)" button on the row with name of "(.*?)"$/) do |arg1, ar
     should have_button(arg1)
   end
 end
+# view rules results 
+Then(/^I should see twitter icon$/) do
+  page.should have_selector(:xpath, ".//a[@href='http://www.twitter.com']")
+end
+
+Then(/^I should see "(.*?)" button$/) do |arg1|
+  page.should have_button(arg1)
+end
+
+
+
+Then(/^I should see the rules view$/) do
+  current_path.should == "/scoring_rules"
+  page.should have_content("Step 1: Sign Up!")
+  page.should have_content("Signing up is easy! Press the login button and fill out your information. Check your email for the confirmation email and get ready to compete against your friends.")
+  page.should have_content("Step 2: Form a League!")
+  page.should have_content("After you have logged in. Find the Join league tab and either join a friends league or create your own. There are plenty of options to choose from and there is no limit to how many friends you can invite!")
+  page.should have_content("Step 3: Compete!")
+  page.should have_content("Once your league has been formed, choose athletes to join your team and compete against your friends.")
+end
+
+
+Then(/^I should be still on the homepage$/) do
+   current_path.should == '/'
+end

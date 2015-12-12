@@ -30,7 +30,7 @@ Feature: viewMyTeam
   |       Emilio     |      Eugene  |   05/05/1995     |   Egypt   | Player E |
   |        Fred      |      Monaco  |   06/06/1996     |   France  | Player F |
   
-  Given the following athletes are added to event "800M MEN" under "Doha Diamond League":
+  Given the following athletes are added to event "100M MEN" under "Doha Diamond League":
   |    first_name    |    last_name |   birth_date     |  country  |   notes  |
   |      Barry       |       Bonds  |    02/02/1992    |   Brazil  |  Player B|
   |     Charlie      |     Chaplin  |   03/03/1993     |   China   | Player C |
@@ -42,28 +42,12 @@ Feature: viewMyTeam
   |  league_name       |   pass_code    |    
   |     cheetah        |      rose0     |    
   |     eagles         |      rose1     |   
-  
-  Given the following teams apart of the league "eagles"
-  | team_name | points |
-  | team1 | 100 |
-  | team2 | 105 |
-  | team3 | 110 |
  
   
   Given I am logged in with email of "tester@testing.com" and a password "tester" 
   And I am on the "eagles" homepage
  
- Scenario: View League Standings:
-   Given I am on the "eagles" homepage
-   When I click "Standings" button
-   Then I should see the league standings for "eagles"
  
- Scenario: View Correct order of teams
-   Given I am on the "Standings" page
-   Then I should see "team3" first
-   And I should see "team2" second
-   And I should see "team3" last
-   
  Scenario: View events
    Given I am on "My Team" of the league
    And I click "Doha Diamond League"
@@ -71,12 +55,6 @@ Feature: viewMyTeam
    Then I should see "800M MEN"
    And I should see "TRIPLE JUMP MEN"
 
-Scenario: Ensuring Correct Points
-    Given I am on the "Standings" page
-    Then I should see "team3" with "110" points
-    And I should see "team2" with "105" points
-    And I should see "team1" with "100" points
-    
    
 Scenario: User add players to the team
    Given I am on "My Team" of the league

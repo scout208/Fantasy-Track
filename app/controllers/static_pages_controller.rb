@@ -29,12 +29,15 @@ class StaticPagesController < ApplicationController
   end
   
   def recent_meet
-    @availablemeets = []
-     @meets = Meet.all()
-     @meets.each do |meet|
-     @availablemeets << meet if meet.released == true
+    if(logged_in?) 
+      @availablemeets = []
+      @meets = Meet.all()
+      @meets.each do |meet|
+        @availablemeets << meet if meet.released == true
+      end
+    else
+      redirect_to root_url, notice: "Please log in to view recent meets!"
     end
   end
-  
 end
   
