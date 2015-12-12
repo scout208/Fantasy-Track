@@ -75,9 +75,17 @@ class User < ActiveRecord::Base
     score = nil
     active_meet_scores.each do |meet_score|
       if(score == nil)
-        score = meet_score.points
+        if(meet_score.points == nil)
+          score = 0
+        else
+          score = meet_score.points
+        end
       else
-        score += meet_score.points
+        if(meet_score.points == nil)
+          score = score + 0
+        else
+          score += meet_score.points
+        end
       end
     end
     return score

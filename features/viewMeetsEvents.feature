@@ -9,11 +9,11 @@ Background: The following data have been added to FantasyTrack
 
   
   Given the following Meets have been added to FantasyTrack:
-  |  meet_name             | location_city| location_country | start_date| end_date   | released  |
-  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |   true    |
-  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |   false   |
-  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |   false   |
-  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |   false   |
+  |  meet_name             | location_city| location_country | start_date| end_date   | released  | scored |
+  | Doha Diamond League    |       Doha   |       QAT        | 15/05/2015| 15/05/2015 |   true    |  true  |
+  | Shanghai Diamond League|      Shanghai|       CHN        | 14/05/2016| 14/05/2016 |   true    |  false |
+  | Eugene Diamond League  |      Eugene  |       USA        | 28/05/2016| 28/05/2016 |   false   |  false |
+  | Monaco Diamond League  |      Monaco  |       MON        | 15/07/2016| 15/07/2016 |   false   |  false |
    
   Given the following Events have been added to Doha Diamond League Meet:
   |     event_name         |   event_type |   
@@ -61,19 +61,8 @@ And I should see "Released: true"
 And I should see all events for "Doha Diamond League" Meet
 And I should not see "Create New Event" Link
 And I should not see "Delete" Button
+And I should not see "Score Meet" Button
 And I should not see "Release" Button
-
-Scenario: User select meet that unreleased
-Given I am logged in with email of "tester@testing.com" and a password "tester"
-And I am on the Meets screen
-When I click "Shanghai Diamond League"
-Then I should see "Meet Detail"
-And I should see "Meet: Shanghai Diamond League"
-And I should see "Location: Shanghai, CHN"
-And I should see "Start Date: 2016-05-14"
-And I should see "End Date: 2016-05-14"
-And I should see "Released: false"
-
 
 
 Scenario: Admin Views meet table
@@ -85,7 +74,7 @@ And I should see "Meet List"
 And I should see "Create New Meet" Link
 
 
-Scenario: Admin Views Event table
+Scenario: Admin Views meet detail that is released and scored
 Given I am logged in with email of "admin@gmail.com" and a password "password"
 And I am on the Meets screen
 When I click "Doha Diamond League"
@@ -96,6 +85,37 @@ And I should see "Start Date: 2015-05-15"
 And I should see "End Date: 2015-05-15"
 And I should see "Released: true"
 And I should see all events for "Doha Diamond League" Meet
+And I should not see "Create New Event" Link
+And I should see "Delete" Button
+And I should see "Score Meet" Button
+And I should not see "Release" Button
+
+Scenario: Admin Views meet detail that is released but not scored
+Given I am logged in with email of "admin@gmail.com" and a password "password"
+And I am on the Meets screen
+When I click "Shanghai Diamond League"
+Then I should see "Meet: Shanghai Diamond League"
+And I should see "Location: Shanghai, CHN"
+And I should see "Start Date: 2016-05-14"
+And I should see "End Date: 2016-05-14"
+And I should see "Released: true"
+And I should see all events for "Shanghai Diamond League" Meet
+And I should see "Create New Event" Link
+And I should see "Delete" Button
+And I should see "Score Meet" Button
+And I should not see "Release" Button
+
+Scenario: Admin Views meet detail that is not released
+Given I am logged in with email of "admin@gmail.com" and a password "password"
+And I am on the Meets screen
+When I click "Eugene Diamond League"
+Then I should see "Meet: Eugene Diamond League"
+And I should see "Location: Eugene, USA"
+And I should see "Start Date: 2016-05-28"
+And I should see "End Date: 2016-05-28"
+And I should see "Released: false"
+And I should see all events for "Eugene Diamond League" Meet
 And I should see "Create New Event" Link
 And I should see "Delete" Button
 And I should see "Release" Button
+And I should not see "Score Meet" Button
