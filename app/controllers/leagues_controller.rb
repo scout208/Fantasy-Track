@@ -132,7 +132,11 @@ class LeaguesController < ApplicationController
    # @meets.each do |m|
     #  m.scores= m.active_meet_scores
    # end
-    @first = @meets.first.id
+    if(@meets.empty?)
+      @first = 0
+    else
+      @first = @meets.first.id
+    end
    # @meet = @meets.first
   end
   
