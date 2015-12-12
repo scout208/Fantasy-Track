@@ -20,9 +20,16 @@ class MidResultsController < ApplicationController
     @event = Event.find(session[:current_event])
     @thisUser = User.find_by_session_token(session[:session_token])
     @athleteID = session[:current_athlete]
-    @minutes = params[:minutes]
-    @seconds = params[:seconds]
-    @seconds = @seconds + (60 * @minutes)
+    midResult = MidResult.new(result_params)
+    if(midResult.time_seconds == nil)
+      midResult.time_seconds = 0
+    end
+    minutes = params[:minutes]
+    if(minutes == nil)
+      minutes = 0
+    end
+    seconds = midResult.time_seconds
+    seconds = seconds + (60 * minutes)
     @r = MidResult.new(result_params)
     @event.active_mid_results.create(event_id: @event.id, athlete_id: @athleteID, split_leader: @r.split_leader, 
           place: @r.place, time_seconds: seconds, pr: @r.pr, nr: @r.nr, wr: @r.wr)
@@ -67,9 +74,9 @@ class MidResultsController < ApplicationController
     end
     
     if(points == nil)
-      points = split_leader
+      points = @r.split_leader
     else
-      points = points + (split_leader)
+      points = points + (@r.split_leader)
     end
     
     if(points == nil)
@@ -96,6 +103,6 @@ class MidResultsController < ApplicationController
   private
 
     def result_params
-      params.require(:mid_result).permit(:event_id, :minutes, :seconds, :athlete_id, :pr, :nr, :wr, :split_leader, :place, :time_seconds)
+      params.require(:mid_result).permit(:event_id, :minutes, :time_seconds, :athlete_id, :pr, :nr, :wr, :split_leader, :place, :time_seconds)
     end
 end
