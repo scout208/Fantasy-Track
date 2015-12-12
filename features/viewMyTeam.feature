@@ -42,15 +42,27 @@ Feature: viewMyTeam
   |  league_name       |   pass_code    |    
   |     cheetah        |      rose0     |    
   |     eagles         |      rose1     |   
+  
+  Given the following teams apart of the league "eagles"
+  | team_name | points |
+  | team1 | 100 |
+  | team2 | 105 |
+  | team3 | 110 |
+ 
+  
   Given I am logged in with email of "tester@testing.com" and a password "tester" 
   And I am on the "eagles" homepage
  
- Scenario: View released meets:
-   Given I am on "My Team" of the league
-   Then I should see "Doha Diamond League"
-   And I should see "Eugene Diamond League"
-   And I should not see "Shanghai Diamond League"
-   And I should not see "Monaco Diamond League"
+ Scenario: View League Standings:
+   Given I am on the "eagles" homepage
+   When I click "Standings" button
+   Then I should see the league standings for "eagles"
+ 
+ Scenario: View Correct order of teams
+   Given I am on the "Standings" page
+   Then I should see "team3" first
+   And I should see "team2" second
+   And I should see "team3" last
    
  Scenario: View events
    Given I am on "My Team" of the league
@@ -58,6 +70,13 @@ Feature: viewMyTeam
    Then I should see "100M MEN"
    Then I should see "800M MEN"
    And I should see "TRIPLE JUMP MEN"
+
+Scenario: Ensuring Correct Points
+    Given I am on the "Standings" page
+    Then I should see "team3" with "110" points
+    And I should see "team2" with "105" points
+    And I should see "team1" with "100" points
+    
    
 Scenario: User add players to the team
    Given I am on "My Team" of the league
